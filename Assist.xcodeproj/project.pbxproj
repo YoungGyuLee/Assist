@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0706B1BC1F00D66D00ACE4A1 /* SplashLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0706B1BB1F00D66D00ACE4A1 /* SplashLogin.storyboard */; };
+		0706B1BF1F01178600ACE4A1 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1BE1F01178600ACE4A1 /* SplashVC.swift */; };
+		0706B1C41F01180400ACE4A1 /* SignBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1C31F01180400ACE4A1 /* SignBaseVC.swift */; };
+		0706B1C61F01180C00ACE4A1 /* SignDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1C51F01180C00ACE4A1 /* SignDetailVC.swift */; };
+		0706B1C81F01181300ACE4A1 /* SignSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1C71F01181300ACE4A1 /* SignSearchVC.swift */; };
+		0706B1CA1F0118B300ACE4A1 /* SignCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1C91F0118B300ACE4A1 /* SignCreateVC.swift */; };
+		0706B1CC1F01191E00ACE4A1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1CB1F01191E00ACE4A1 /* LoginVC.swift */; };
+		0706B1CE1F0119E400ACE4A1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1CD1F0119E400ACE4A1 /* MainVC.swift */; };
+		0706B1D31F011A2200ACE4A1 /* Team.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0706B1D21F011A2200ACE4A1 /* Team.storyboard */; };
+		0706B1D51F011AAC00ACE4A1 /* SignTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1D41F011AAC00ACE4A1 /* SignTab.swift */; };
+		0706B1D71F011D6300ACE4A1 /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0706B1D61F011D6300ACE4A1 /* Data.storyboard */; };
+		0706B1D91F0176DB00ACE4A1 /* SignTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1D81F0176DB00ACE4A1 /* SignTemp.swift */; };
 		070BDE911EFFF8BE0052FA77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070BDE901EFFF8BE0052FA77 /* AppDelegate.swift */; };
 		070BDE931EFFF8BE0052FA77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070BDE921EFFF8BE0052FA77 /* ViewController.swift */; };
 		070BDE961EFFF8BE0052FA77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070BDE941EFFF8BE0052FA77 /* Main.storyboard */; };
@@ -17,6 +29,18 @@
 
 /* Begin PBXFileReference section */
 		00911895D4294008CFF506E1 /* Pods_Assist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0706B1BB1F00D66D00ACE4A1 /* SplashLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashLogin.storyboard; sourceTree = "<group>"; };
+		0706B1BE1F01178600ACE4A1 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		0706B1C31F01180400ACE4A1 /* SignBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignBaseVC.swift; sourceTree = "<group>"; };
+		0706B1C51F01180C00ACE4A1 /* SignDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDetailVC.swift; sourceTree = "<group>"; };
+		0706B1C71F01181300ACE4A1 /* SignSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSearchVC.swift; sourceTree = "<group>"; };
+		0706B1C91F0118B300ACE4A1 /* SignCreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignCreateVC.swift; sourceTree = "<group>"; };
+		0706B1CB1F01191E00ACE4A1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0706B1CD1F0119E400ACE4A1 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		0706B1D21F011A2200ACE4A1 /* Team.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Team.storyboard; sourceTree = "<group>"; };
+		0706B1D41F011AAC00ACE4A1 /* SignTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTab.swift; sourceTree = "<group>"; };
+		0706B1D61F011D6300ACE4A1 /* Data.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = "<group>"; };
+		0706B1D81F0176DB00ACE4A1 /* SignTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTemp.swift; sourceTree = "<group>"; };
 		070BDE8D1EFFF8BE0052FA77 /* Assist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		070BDE901EFFF8BE0052FA77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		070BDE921EFFF8BE0052FA77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +64,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0706B1BD1F01177400ACE4A1 /* SplashLogin */ = {
+			isa = PBXGroup;
+			children = (
+				0706B1BB1F00D66D00ACE4A1 /* SplashLogin.storyboard */,
+				0706B1BE1F01178600ACE4A1 /* SplashVC.swift */,
+				0706B1C31F01180400ACE4A1 /* SignBaseVC.swift */,
+				0706B1C51F01180C00ACE4A1 /* SignDetailVC.swift */,
+				0706B1C71F01181300ACE4A1 /* SignSearchVC.swift */,
+				0706B1C91F0118B300ACE4A1 /* SignCreateVC.swift */,
+				0706B1CB1F01191E00ACE4A1 /* LoginVC.swift */,
+				0706B1D41F011AAC00ACE4A1 /* SignTab.swift */,
+				0706B1D81F0176DB00ACE4A1 /* SignTemp.swift */,
+			);
+			name = SplashLogin;
+			sourceTree = "<group>";
+		};
+		0706B1C21F0117B300ACE4A1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0706B1D11F011A0300ACE4A1 /* Data */,
+				0706B1D01F0119FD00ACE4A1 /* Card */,
+				0706B1CF1F0119F800ACE4A1 /* Team */,
+				070BDE941EFFF8BE0052FA77 /* Main.storyboard */,
+				0706B1CD1F0119E400ACE4A1 /* MainVC.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		0706B1CF1F0119F800ACE4A1 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				0706B1D21F011A2200ACE4A1 /* Team.storyboard */,
+			);
+			name = Team;
+			sourceTree = "<group>";
+		};
+		0706B1D01F0119FD00ACE4A1 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		0706B1D11F011A0300ACE4A1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0706B1D61F011D6300ACE4A1 /* Data.storyboard */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		070BDE841EFFF8BE0052FA77 = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +136,10 @@
 		070BDE8F1EFFF8BE0052FA77 /* Assist */ = {
 			isa = PBXGroup;
 			children = (
+				0706B1C21F0117B300ACE4A1 /* Main */,
+				0706B1BD1F01177400ACE4A1 /* SplashLogin */,
 				070BDE901EFFF8BE0052FA77 /* AppDelegate.swift */,
 				070BDE921EFFF8BE0052FA77 /* ViewController.swift */,
-				070BDE941EFFF8BE0052FA77 /* Main.storyboard */,
 				070BDE971EFFF8BE0052FA77 /* Assets.xcassets */,
 				070BDE991EFFF8BE0052FA77 /* LaunchScreen.storyboard */,
 				070BDE9C1EFFF8BE0052FA77 /* Info.plist */,
@@ -151,9 +227,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0706B1D71F011D6300ACE4A1 /* Data.storyboard in Resources */,
 				070BDE9B1EFFF8BE0052FA77 /* LaunchScreen.storyboard in Resources */,
+				0706B1BC1F00D66D00ACE4A1 /* SplashLogin.storyboard in Resources */,
 				070BDE981EFFF8BE0052FA77 /* Assets.xcassets in Resources */,
 				070BDE961EFFF8BE0052FA77 /* Main.storyboard in Resources */,
+				0706B1D31F011A2200ACE4A1 /* Team.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0706B1C81F01181300ACE4A1 /* SignSearchVC.swift in Sources */,
+				0706B1C41F01180400ACE4A1 /* SignBaseVC.swift in Sources */,
+				0706B1D51F011AAC00ACE4A1 /* SignTab.swift in Sources */,
+				0706B1CC1F01191E00ACE4A1 /* LoginVC.swift in Sources */,
 				070BDE931EFFF8BE0052FA77 /* ViewController.swift in Sources */,
+				0706B1CE1F0119E400ACE4A1 /* MainVC.swift in Sources */,
+				0706B1CA1F0118B300ACE4A1 /* SignCreateVC.swift in Sources */,
 				070BDE911EFFF8BE0052FA77 /* AppDelegate.swift in Sources */,
+				0706B1C61F01180C00ACE4A1 /* SignDetailVC.swift in Sources */,
+				0706B1BF1F01178600ACE4A1 /* SplashVC.swift in Sources */,
+				0706B1D91F0176DB00ACE4A1 /* SignTemp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,11 +25,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-604" y="-44"/>
         </scene>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="y3O-3V-KsQ">
             <objects>
-                <viewController id="zbw-pa-Wie" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="zbw-pa-Wie" customClass="MainVC" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fvU-Xh-fup"/>
                         <viewControllerLayoutGuide type="bottom" id="GgV-pN-2F6"/>
@@ -51,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdp-H9-3oJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934" y="95"/>
+            <point key="canvasLocation" x="502" y="-43"/>
         </scene>
     </scenes>
 </document>
