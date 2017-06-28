@@ -9,48 +9,104 @@
 import Foundation
 import UIKit
 
-class SignSearchVC : UIViewController{
+class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var back: UINavigationItem!
-    var navBar: UINavigationBar = UINavigationBar()
+    //var navBar: UINavigationBar = UINavigationBar()
 
+    @IBOutlet var searchTable: UITableView!
+    var searchList : [SearchVO] = [SearchVO]()
     
-    func uicolorFromHex(rgbValue:UInt32)->UIColor{
-        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
-        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
-        let blue = CGFloat(rgbValue & 0xFF)/256.0
-        
-        return UIColor(red:red, green:green, blue:blue, alpha:1.0)
-    }
+    
     func goback(){
         
         navigationController?.popViewController(animated: true)
     }
+    @IBAction func searchBtn(_ sender: Any) {
+        initData()
+    }
+    
+    func initData(){
+//        let infoVO = CellVO(name: name, campus: campus, part: part, partImg: "develop")
+        let string1 = "아아"
+        let string2 = "성남시"
+        let string3 = "이영규"
+        
+        
+        let data1 = SearchVO(teamName: string1, plcaeName: string2, coachName: string3)
+        
+//        let data2 = SearchVO(teamName: "아아1", plcaeName: "서울시", coachName: "이영규1")
+//        
+//        let data3 = SearchVO(teamName: "아아2", plcaeName: "부산시", coachName: "이영규2")
+        searchList.append(data1)
+        //searchList.append(data2)
+        //searchList.append(data3)
+        print("테이블 다 들어감")
+        searchTable.isHidden = false
+        searchTable.reloadData()
+        
+    }
+
     
     override func viewDidLoad() {
-        back.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "join_left_button"), style: .plain, target: self, action: #selector(goback))
-        
-        // back.title = "회원가입"
-        // back.title.co
-        self.navBar.frame = CGRect(x: 0, y: 0, width: 30, height: 67)
-        self.navBar.barTintColor = uicolorFromHex(rgbValue: 0x012A6A)
-        self.navBar.tintColor = uicolorFromHex(rgbValue: 0xffffff)
-        self.navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-        
-        //self.navigationItem.title = "회원가입"
         
         
-        self.navBar.setItems([back], animated: false)
-        self.view.addSubview(navBar)
-    }
-    @IBAction func toMain(_ sender: Any) {
-        let main_storyboard = UIStoryboard(name : "Main", bundle : nil)
-        print("들어왔졍1")
-        guard let main = main_storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else{return}
-        print("들어왔졍2")
-        self.present(main, animated: true)
-        //self.remove
+        //initData()
+        searchTable.isHidden = true
+        searchTable.delegate = self
+        searchTable.dataSource = self
+        print("테이블 이제 시작")
+       // initData()
+        
         
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchList.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = searchTable.dequeueReusableCell(withIdentifier: "SearchCell") as! SearchCell
+        //해당 셀 이름과 클래스 명시
+        let searchVO = searchList[indexPath.row]
+        
+        
+        cell.teamName.text = searchVO.teamName
+        cell.placeName.text = searchVO.plcaeName
+        cell.coachName.text = searchVO.coachName
+        
+        return cell
+        
+    }
+    
+    var place : String?
+    var team : String?
+    var coach : String?
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searchVO = searchList[indexPath.row]
+        //infoVO는 테이블(infoList)에서 row번 째 인덱스
+        
+        guard let dvc = storyboard?.instantiateViewController(withIdentifier: "SearchTab") as? SearchTab else {return}
+        
+        
+        
+        dvc.place = searchVO.plcaeName
+        dvc.coach = searchVO.coachName
+        dvc.team = searchVO.teamName
+        
+      //  place = searchVO.plcaeName
+//        
+        
+//        dvc.name = infoVO.name//dvc는 DetailVC
+//        dvc.campus = infoVO.campus
+//        dvc.image = UIImage(named: infoVO.partImg!)//이미지를 통으로 넘김(String형식으로)
+    
+        navigationController?.present(dvc, animated:false, completion:{})
+        //navigationController?.pushViewController(dvc, animated: false)
+
+        //UImage(named : `)
+        
+        
+    }
+    
     
 }

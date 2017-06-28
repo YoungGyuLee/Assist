@@ -46,16 +46,7 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet var userImage: UIImageView!
     @IBOutlet var userImageSelect: UIButton!
     
-    
-    
-    func uicolorFromHex(rgbValue:UInt32)->UIColor{
-        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
-        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
-        let blue = CGFloat(rgbValue & 0xFF)/256.0
-        
-        return UIColor(red:red, green:green, blue:blue, alpha:1.0)
-    }
-    
+
     
     override func viewWillAppear(_ animated: Bool) {
         back.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "join_left_button"), style: .plain, target: self, action: #selector(goback))
@@ -170,8 +161,8 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate{
     @IBAction func toSignSearch(_ sender: Any) {
         
         guard let signTab = storyboard?.instantiateViewController(withIdentifier: "SignTabVC") as? SignTab else {return}
-        //navigationController?.present(signTab, animated: true, completion: {})
-        navigationController?.pushViewController(signTab, animated: true)
+        navigationController?.present(signTab, animated: true, completion: {})
+        //navigationController?.pushViewController(signTab, animated: true)
 
     }
     

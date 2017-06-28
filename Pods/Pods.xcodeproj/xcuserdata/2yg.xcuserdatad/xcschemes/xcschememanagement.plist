@@ -64,6 +64,31 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KDCircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBCircularProgressBar-MBCircularProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBCircularProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MKRingProgressView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Assist.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3205FB3AC9EC12A7A310703A627ACB6A</key>
+		<key>322428ECC8C5EC71F14C92233787C7AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +147,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C5A2DB7A84B7B78E359870D2E1B24AA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CAC840DD7C14BED838F74AD37CD7CBBA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB34D9D6318E23B9B54B7F408106A1BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,7 +172,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>F579AA4D4755DD9570010BC36D0422F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>F6A77E2753C279F67F70C5C21D6FAE15</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F78419DDB15508AB523353995D5CFF37</key>
 		<dict>
 			<key>primary</key>
 			<true/>

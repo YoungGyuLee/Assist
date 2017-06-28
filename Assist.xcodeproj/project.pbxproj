@@ -19,17 +19,32 @@
 		0706B1D51F011AAC00ACE4A1 /* SignTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1D41F011AAC00ACE4A1 /* SignTab.swift */; };
 		0706B1D71F011D6300ACE4A1 /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0706B1D61F011D6300ACE4A1 /* Data.storyboard */; };
 		0706B1D91F0176DB00ACE4A1 /* SignTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1D81F0176DB00ACE4A1 /* SignTemp.swift */; };
+		070730E41F0371C30007E7D7 /* SearchTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070730E31F0371C30007E7D7 /* SearchTab.swift */; };
+		070A12E81F03BF1C00CAD26B /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12E71F03BF1C00CAD26B /* TeamTab.swift */; };
+		070A12EA1F03C62A00CAD26B /* MKRingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12E91F03C62A00CAD26B /* MKRingProgressView.swift */; };
+		070A12EC1F03C66C00CAD26B /* MKGradientGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12EB1F03C66C00CAD26B /* MKGradientGenerator.swift */; };
+		070A12F01F03CEF700CAD26B /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */; };
+		070A12F41F03EF9000CAD26B /* TeamToMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */; };
 		070BDE911EFFF8BE0052FA77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070BDE901EFFF8BE0052FA77 /* AppDelegate.swift */; };
 		070BDE931EFFF8BE0052FA77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070BDE921EFFF8BE0052FA77 /* ViewController.swift */; };
 		070BDE961EFFF8BE0052FA77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070BDE941EFFF8BE0052FA77 /* Main.storyboard */; };
 		070BDE981EFFF8BE0052FA77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070BDE971EFFF8BE0052FA77 /* Assets.xcassets */; };
 		070BDE9B1EFFF8BE0052FA77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070BDE991EFFF8BE0052FA77 /* LaunchScreen.storyboard */; };
 		07AB46451F027CEE001EFB89 /* BarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB46441F027CEE001EFB89 /* BarCustom.swift */; };
+		07AEED0A1F037537001D21AF /* SignSearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEED091F037537001D21AF /* SignSearchDetail.swift */; };
+		07AEED0C1F0376B2001D21AF /* SignTemp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEED0B1F0376B2001D21AF /* SignTemp2.swift */; };
+		07AEED101F038396001D21AF /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEED0F1F038396001D21AF /* SearchCell.swift */; };
+		07AEED121F0383A6001D21AF /* SearchVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEED111F0383A6001D21AF /* SearchVO.swift */; };
+		07AEED161F039264001D21AF /* SearchDataPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEED151F039264001D21AF /* SearchDataPacket.swift */; };
+		07AEED181F039441001D21AF /* ExtensionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEED171F039441001D21AF /* ExtensionControl.swift */; };
 		07E974021F01F47300728D21 /* SearchNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E974011F01F47300728D21 /* SearchNavi.swift */; };
 		07E974041F01F49100728D21 /* CreateNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E974031F01F49100728D21 /* CreateNavi.swift */; };
 		07E974061F02075500728D21 /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E974051F02075500728D21 /* Card.storyboard */; };
 		07E974081F02078400728D21 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E974071F02078400728D21 /* CardVC.swift */; };
 		07E9740C1F0208DC00728D21 /* DataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9740B1F0208DC00728D21 /* DataVC.swift */; };
+		07F8BFDA1F03A372002CEA97 /* TeamMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFD91F03A372002CEA97 /* TeamMainVC.swift */; };
+		07F8BFDC1F03A37A002CEA97 /* TeamScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFDB1F03A37A002CEA97 /* TeamScheduleVC.swift */; };
+		07F8BFDE1F03A382002CEA97 /* TeamMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */; };
 		C250D27597407B1F099AEA8C /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00911895D4294008CFF506E1 /* Pods_Assist.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +62,12 @@
 		0706B1D41F011AAC00ACE4A1 /* SignTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTab.swift; sourceTree = "<group>"; };
 		0706B1D61F011D6300ACE4A1 /* Data.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = "<group>"; };
 		0706B1D81F0176DB00ACE4A1 /* SignTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTemp.swift; sourceTree = "<group>"; };
+		070730E31F0371C30007E7D7 /* SearchTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTab.swift; sourceTree = "<group>"; };
+		070A12E71F03BF1C00CAD26B /* TeamTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
+		070A12E91F03C62A00CAD26B /* MKRingProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRingProgressView.swift; sourceTree = "<group>"; };
+		070A12EB1F03C66C00CAD26B /* MKGradientGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGradientGenerator.swift; sourceTree = "<group>"; };
+		070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamToMainVC.swift; sourceTree = "<group>"; };
 		070BDE8D1EFFF8BE0052FA77 /* Assist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		070BDE901EFFF8BE0052FA77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		070BDE921EFFF8BE0052FA77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,11 +76,20 @@
 		070BDE9A1EFFF8BE0052FA77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		070BDE9C1EFFF8BE0052FA77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07AB46441F027CEE001EFB89 /* BarCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCustom.swift; sourceTree = "<group>"; };
+		07AEED091F037537001D21AF /* SignSearchDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSearchDetail.swift; sourceTree = "<group>"; };
+		07AEED0B1F0376B2001D21AF /* SignTemp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTemp2.swift; sourceTree = "<group>"; };
+		07AEED0F1F038396001D21AF /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		07AEED111F0383A6001D21AF /* SearchVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVO.swift; sourceTree = "<group>"; };
+		07AEED151F039264001D21AF /* SearchDataPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataPacket.swift; sourceTree = "<group>"; };
+		07AEED171F039441001D21AF /* ExtensionControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionControl.swift; sourceTree = "<group>"; };
 		07E974011F01F47300728D21 /* SearchNavi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavi.swift; sourceTree = "<group>"; };
 		07E974031F01F49100728D21 /* CreateNavi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNavi.swift; sourceTree = "<group>"; };
 		07E974051F02075500728D21 /* Card.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
 		07E974071F02078400728D21 /* CardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		07E9740B1F0208DC00728D21 /* DataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataVC.swift; sourceTree = "<group>"; };
+		07F8BFD91F03A372002CEA97 /* TeamMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMainVC.swift; sourceTree = "<group>"; };
+		07F8BFDB1F03A37A002CEA97 /* TeamScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamScheduleVC.swift; sourceTree = "<group>"; };
+		07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberVC.swift; sourceTree = "<group>"; };
 		53A0CBBD52C9F9FC5B20C49A /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
 		67301E41C45862286ADE4DD3 /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				0706B1BB1F00D66D00ACE4A1 /* SplashLogin.storyboard */,
+				07AEED0F1F038396001D21AF /* SearchCell.swift */,
 				0706B1BE1F01178600ACE4A1 /* SplashVC.swift */,
 				0706B1C31F01180400ACE4A1 /* SignBaseVC.swift */,
 				0706B1C51F01180C00ACE4A1 /* SignDetailVC.swift */,
@@ -90,7 +121,11 @@
 				0706B1D81F0176DB00ACE4A1 /* SignTemp.swift */,
 				07E974011F01F47300728D21 /* SearchNavi.swift */,
 				07E974031F01F49100728D21 /* CreateNavi.swift */,
-				07AB46441F027CEE001EFB89 /* BarCustom.swift */,
+				070730E31F0371C30007E7D7 /* SearchTab.swift */,
+				07AEED091F037537001D21AF /* SignSearchDetail.swift */,
+				07AEED0B1F0376B2001D21AF /* SignTemp2.swift */,
+				07AEED111F0383A6001D21AF /* SearchVO.swift */,
+				07AEED151F039264001D21AF /* SearchDataPacket.swift */,
 			);
 			name = SplashLogin;
 			sourceTree = "<group>";
@@ -111,6 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				0706B1D21F011A2200ACE4A1 /* Team.storyboard */,
+				070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */,
+				07F8BFD91F03A372002CEA97 /* TeamMainVC.swift */,
+				07F8BFDB1F03A37A002CEA97 /* TeamScheduleVC.swift */,
+				07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */,
+				070A12E71F03BF1C00CAD26B /* TeamTab.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -157,10 +197,15 @@
 				0706B1C21F0117B300ACE4A1 /* Main */,
 				0706B1BD1F01177400ACE4A1 /* SplashLogin */,
 				070BDE901EFFF8BE0052FA77 /* AppDelegate.swift */,
+				07AB46441F027CEE001EFB89 /* BarCustom.swift */,
 				070BDE921EFFF8BE0052FA77 /* ViewController.swift */,
 				070BDE971EFFF8BE0052FA77 /* Assets.xcassets */,
 				070BDE991EFFF8BE0052FA77 /* LaunchScreen.storyboard */,
 				070BDE9C1EFFF8BE0052FA77 /* Info.plist */,
+				07AEED171F039441001D21AF /* ExtensionControl.swift */,
+				070A12E91F03C62A00CAD26B /* MKRingProgressView.swift */,
+				070A12EB1F03C66C00CAD26B /* MKGradientGenerator.swift */,
+				070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */,
 			);
 			path = Assist;
 			sourceTree = "<group>";
@@ -310,20 +355,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F8BFDA1F03A372002CEA97 /* TeamMainVC.swift in Sources */,
 				0706B1C81F01181300ACE4A1 /* SignSearchVC.swift in Sources */,
+				07AEED0A1F037537001D21AF /* SignSearchDetail.swift in Sources */,
 				07E9740C1F0208DC00728D21 /* DataVC.swift in Sources */,
 				0706B1C41F01180400ACE4A1 /* SignBaseVC.swift in Sources */,
+				070A12EC1F03C66C00CAD26B /* MKGradientGenerator.swift in Sources */,
+				070A12F01F03CEF700CAD26B /* KDCircularProgress.swift in Sources */,
+				07AEED121F0383A6001D21AF /* SearchVO.swift in Sources */,
 				0706B1D51F011AAC00ACE4A1 /* SignTab.swift in Sources */,
+				070A12EA1F03C62A00CAD26B /* MKRingProgressView.swift in Sources */,
+				07AEED181F039441001D21AF /* ExtensionControl.swift in Sources */,
 				07E974021F01F47300728D21 /* SearchNavi.swift in Sources */,
+				070730E41F0371C30007E7D7 /* SearchTab.swift in Sources */,
 				07E974081F02078400728D21 /* CardVC.swift in Sources */,
+				07F8BFDE1F03A382002CEA97 /* TeamMemberVC.swift in Sources */,
 				0706B1CC1F01191E00ACE4A1 /* LoginVC.swift in Sources */,
+				07AEED101F038396001D21AF /* SearchCell.swift in Sources */,
+				07AEED161F039264001D21AF /* SearchDataPacket.swift in Sources */,
 				070BDE931EFFF8BE0052FA77 /* ViewController.swift in Sources */,
 				0706B1CE1F0119E400ACE4A1 /* MainVC.swift in Sources */,
 				0706B1CA1F0118B300ACE4A1 /* SignCreateVC.swift in Sources */,
+				07AEED0C1F0376B2001D21AF /* SignTemp2.swift in Sources */,
 				07AB46451F027CEE001EFB89 /* BarCustom.swift in Sources */,
 				070BDE911EFFF8BE0052FA77 /* AppDelegate.swift in Sources */,
+				070A12F41F03EF9000CAD26B /* TeamToMainVC.swift in Sources */,
 				0706B1C61F01180C00ACE4A1 /* SignDetailVC.swift in Sources */,
 				0706B1BF1F01178600ACE4A1 /* SplashVC.swift in Sources */,
+				07F8BFDC1F03A37A002CEA97 /* TeamScheduleVC.swift in Sources */,
+				070A12E81F03BF1C00CAD26B /* TeamTab.swift in Sources */,
 				07E974041F01F49100728D21 /* CreateNavi.swift in Sources */,
 				0706B1D91F0176DB00ACE4A1 /* SignTemp.swift in Sources */,
 			);

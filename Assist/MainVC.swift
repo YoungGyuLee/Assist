@@ -28,7 +28,10 @@ class MainVC : UIViewController{
     }
     
     @IBAction func toTeam(_ sender: Any) {
-        
+        print("들어왔졍1")
+        guard let team = data_storyboard.instantiateViewController(withIdentifier: "TeamMainVC") as? TeamMainVC else{return}
+        print("들어왔졍2")
+        self.present(team, animated: true)
         
     }
     

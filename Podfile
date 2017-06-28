@@ -14,4 +14,8 @@ target 'Assist' do
     pod 'FacebookShare'
     pod 'DropDown'
     pod 'DLRadioButton', '~>1.4'
+    pod 'Kingfisher'
+    pod 'MKRingProgressView'
+    pod 'MBCircularProgressBar'
+    pod 'KDCircularProgress'
 end
