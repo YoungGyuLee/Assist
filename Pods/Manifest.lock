@@ -5,6 +5,8 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DLRadioButton (1.4.9)
+  - DropDown (2)
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -56,6 +58,8 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
 
 DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
+  - DropDown
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -65,6 +69,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DLRadioButton: 7bb8a6e3768b572469ace553391ab4d2af6f9c19
+  DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
@@ -80,6 +86,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
 
-PODFILE CHECKSUM: 5e5b67f14484f2335c1803a91c809a567accd478
+PODFILE CHECKSUM: 68e8597359209ff2db8d3b88702aaef821645b1a
 
 COCOAPODS: 1.2.1

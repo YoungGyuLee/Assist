@@ -13,8 +13,18 @@ class SignCreateVC : UIViewController{
     @IBOutlet var back: UINavigationItem!
     
     override func viewDidLoad() {
-        //back.
+        self.navigationController?.isNavigationBarHidden = true
     }
     
+    @IBAction func toMain(_ sender: Any) {
+        
+                        let main_storyboard = UIStoryboard(name : "Main", bundle : nil)
+                        print("들어왔졍1")
+                        guard let main = main_storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else{return}
+                        print("들어왔졍2")
+                        self.present(main, animated: true)
+        
+    }
+
     
 }

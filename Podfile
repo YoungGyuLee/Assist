@@ -12,4 +12,6 @@ target 'Assist' do
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'FacebookShare'
+    pod 'DropDown'
+    pod 'DLRadioButton', '~>1.4'
 end

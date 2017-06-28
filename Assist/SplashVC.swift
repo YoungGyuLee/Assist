@@ -66,21 +66,34 @@ class SplashVC : UIViewController{
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-                let objVC: LoginVC? = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        //let objVC: SecondViewController? = SecondViewController()
+//                let objVC: LoginVC? = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//        //let objVC: SecondViewController? = SecondViewController()
+//        print("얘도 들어오오오오옴")
+//
+//        let aObjNavi = UINavigationController(rootViewController: objVC!)
+//        //let aObjNavi = UINavigationController(rootViewController: objVC!)
+//        let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+//        // appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+//      //  aObjNavi.hidesBarsOnTap = true
+//        //aObjNavi.hidesBarsOnSwipe = false
+//        //aObjNavi.isNavigationBarHidden = true
+//        //aObjNavi.isToolbarHidden = true
+//        appDelegate.window?.rootViewController = aObjNavi
+        let objVC: LoginVC? = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+       // let objVC: SecondViewController? = SecondViewController()
         print("얘도 들어오오오오옴")
-
+        
         let aObjNavi = UINavigationController(rootViewController: objVC!)
         //let aObjNavi = UINavigationController(rootViewController: objVC!)
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-        // appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+        aObjNavi.isNavigationBarHidden = true
+        aObjNavi.isToolbarHidden = true
+       // appDelegate.window?.rootViewController?.navigationController?.isToolbarHidden = true
         appDelegate.window?.rootViewController = aObjNavi
+        //appDelegate.window?.rootViewController.i
+
+      //  UINavigationController(rootViewController: <#T##UIViewController#>)
+        //let  appDelegate.window?.rootViewController
     }
 
-    
-    
-    
-    
-    
-    
 }
