@@ -19,7 +19,11 @@ class DataPeronalRoot : UIPageViewController, UIPageViewControllerDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self;dataSource = self
+        delegate = self;
+        dataSource = self
+       // self.transitionStyle
+        
+        
         self.setViewControllers([getViewControllerAtIndex(0)] as [UIViewController], direction: .forward, animated: true, completion: nil)
         set_pageControl()
     }

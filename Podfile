@@ -16,4 +16,5 @@ target 'Assist' do
     pod 'DLRadioButton', '~>1.4'
     pod 'Kingfisher'
     pod 'KDCircularProgress'
+    pod 'ScrollableGraphView'
 end

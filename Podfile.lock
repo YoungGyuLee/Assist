@@ -58,6 +58,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - KDCircularProgress (1.5.2)
   - Kingfisher (3.6.2)
+  - ScrollableGraphView (3.1.0)
 
 DEPENDENCIES:
   - DLRadioButton (~> 1.4)
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - FSCalendar
   - KDCircularProgress
   - Kingfisher
+  - ScrollableGraphView
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -91,7 +93,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
+  ScrollableGraphView: e2c8bedc7bbb643e8ac57b9456070d68355c4e4c
 
-PODFILE CHECKSUM: 99fa29a5cca29ec479537bef57802b17f481f913
+PODFILE CHECKSUM: 31022465c48a927cf1b2ce1556d4e87cebc75de1
 
 COCOAPODS: 1.2.1

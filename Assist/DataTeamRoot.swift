@@ -20,7 +20,9 @@ class DataTeamRoot : UIPageViewController, UIPageViewControllerDataSource, UIPag
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self;dataSource = self
+        delegate = self;
+        dataSource = self
+        
         self.setViewControllers([getViewControllerAtIndex(0)] as [UIViewController], direction: .forward, animated: true, completion: nil)
         set_pageControl()
     }

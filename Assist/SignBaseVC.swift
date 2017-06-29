@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SignBaseVC : UIViewController, UIGestureRecognizerDelegate{
+class SignBaseVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate{
     
     @IBOutlet var back: UINavigationItem!
     var navBar: UINavigationBar = UINavigationBar()
@@ -31,9 +31,40 @@ class SignBaseVC : UIViewController, UIGestureRecognizerDelegate{
         print("inin!!")
         var tap = UITapGestureRecognizer(target: self, action: #selector(handleTap_mainview(_:)))
         tap.delegate = self
+        
+        nameText.delegate = self
+        nameText.tag = 0
+        
+        emailText.delegate = self
+        emailText.tag = 1
+        
+        passwordText.delegate = self
+        passwordText.tag = 2
+        
+        checkText.delegate = self
+        checkText.tag = 3
+        
+        nameText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        emailText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        passwordText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        checkText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        
         self.view.addGestureRecognizer(tap)
 
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+    
     func handleTap_mainview(_ sender: UITapGestureRecognizer?){
         print("탭탭")
         // self.idTxt.becomeFirstResponder()

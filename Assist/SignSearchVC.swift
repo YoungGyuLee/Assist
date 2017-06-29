@@ -9,13 +9,19 @@
 import Foundation
 import UIKit
 
-class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet var back: UINavigationItem!
     //var navBar: UINavigationBar = UINavigationBar()
 
     @IBOutlet var searchTable: UITableView!
     var searchList : [SearchVO] = [SearchVO]()
+    
+    @IBOutlet var teamText: UITextField!
+    
+    @IBOutlet var coachText: UITextField!
+    
+    
     
     
     func goback(){
@@ -55,11 +61,31 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         searchTable.isHidden = true
         searchTable.delegate = self
         searchTable.dataSource = self
+        
+        
+        teamText.delegate = self
+        teamText.tag = 0
+        
+        coachText.delegate = self
+        coachText.tag = 1
+        
+        
+        
         print("테이블 이제 시작")
        // initData()
-        
-        
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchList.count
     }

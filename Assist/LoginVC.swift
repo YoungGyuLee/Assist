@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginVC : UIViewController{
+class LoginVC : UIViewController, UITextFieldDelegate{
     var navBar: UINavigationBar = UINavigationBar()
     @IBOutlet var barItem: UINavigationItem!
     
@@ -17,23 +17,49 @@ class LoginVC : UIViewController{
     @IBOutlet var facebookBtn: UIButton!//페북 로그인
     @IBOutlet var kakoBtn: UIButton!//카카오 로그인
     @IBOutlet var signBtn: UIButton!//회원가입
+    
     @IBOutlet var forgetPwd: UITextView!
-    
-    
     @IBOutlet var logoImg: UIImageView!
     @IBOutlet var emailImage: UIImageView!
     
     @IBOutlet var passwordimage: UIImageView!
     //var logoImage = String?
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var passwordText: UITextField!
     
     
     override func viewDidLoad() {
         self.navBar.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         barItem.hidesBackButton = true
         //self.view.addSubview(barItem)
+        emailText.delegate = self
+        emailText.tag = 0
+        
+        passwordText.delegate = self
+        passwordText.tag = 1
+        
+        
+        passwordText.tintColor = uicolorFromHex(rgbValue: 0x95989A)
+        emailText.tintColor = uicolorFromHex(rgbValue: 0x95989A)
+        
         self.view.addSubview(self.navBar)
         
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         //loginBtn.frame.
         loginBtn.layer.cornerRadius = 4
