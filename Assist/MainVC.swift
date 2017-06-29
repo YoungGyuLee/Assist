@@ -21,15 +21,15 @@ class MainVC : UIViewController{
     @IBAction func toData(_ sender: Any) {
         let data_storyboard = UIStoryboard(name : "Data", bundle : nil)
         print("들어왔졍1")
-        guard let data = data_storyboard.instantiateViewController(withIdentifier: "DataVC") as? DataVC else{return}
+        guard let data = data_storyboard.instantiateViewController(withIdentifier: "DataTab") as? DataTab else{return}
         print("들어왔졍2")
         self.present(data, animated: true)
         
     }
     
     @IBAction func toTeam(_ sender: Any) {
-        print("들어왔졍1")
-        guard let team = data_storyboard.instantiateViewController(withIdentifier: "TeamMainVC") as? TeamMainVC else{return}
+        let team_storyboard = UIStoryboard(name : "Team", bundle : nil)
+        guard let team = team_storyboard.instantiateViewController(withIdentifier: "TeamTab") as? TeamTab else{return}
         print("들어왔졍2")
         self.present(team, animated: true)
         

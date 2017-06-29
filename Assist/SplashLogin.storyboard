@@ -873,6 +873,14 @@
                                     <action selector="signUp:" destination="bUG-g8-wxF" eventType="touchUpInside" id="6w8-Vs-0zD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZk-rZ-k2r">
+                                <rect key="frame" x="50" y="98" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="back:" destination="bUG-g8-wxF" eventType="touchUpInside" id="ekZ-7J-OUx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -968,7 +976,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwW-4d-s3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10440.799999999999" y="1993.8530734632686"/>
+            <point key="canvasLocation" x="11716" y="2374"/>
         </scene>
         <!--Bar Custom-->
         <scene sceneID="EBY-7c-D6d">
@@ -1038,7 +1046,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tUu-JA-szv" kind="relationship" relationship="viewControllers" id="Llk-ah-Ao8"/>
                         <segue destination="hl1-L9-agp" kind="relationship" relationship="viewControllers" id="aZR-cp-bJl"/>
                         <segue destination="Cto-zd-wHU" kind="relationship" relationship="viewControllers" id="L43-Wy-qv1"/>
                     </connections>
@@ -1050,7 +1057,7 @@
         <!--Item-->
         <scene sceneID="RY6-VF-GNl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="00e-Ne-8BI" customClass="BarCustom" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="00e-Ne-8BI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Ij7-W9-hzm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="evs-Wb-k6N">
@@ -1083,7 +1090,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hV-Tk-Oir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9501.6000000000004" y="1993.8530734632686"/>
+            <point key="canvasLocation" x="10118" y="2547"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Z9G-eX-aBL">
@@ -1163,6 +1170,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aZR-cp-bJl"/>
+        <segue reference="JWi-XX-Cn5"/>
     </inferredMetricsTieBreakers>
 </document>

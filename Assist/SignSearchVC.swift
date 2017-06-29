@@ -63,6 +63,7 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchList.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchTable.dequeueReusableCell(withIdentifier: "SearchCell") as! SearchCell
         //해당 셀 이름과 클래스 명시
@@ -77,15 +78,11 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         
     }
     
-    var place : String?
-    var team : String?
-    var coach : String?
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let searchVO = searchList[indexPath.row]
         //infoVO는 테이블(infoList)에서 row번 째 인덱스
         
-        guard let dvc = storyboard?.instantiateViewController(withIdentifier: "SearchTab") as? SearchTab else {return}
+        guard let dvc = storyboard?.instantiateViewController(withIdentifier: "SignSearchDetail") as? SignSearchDetail else {return}
         
         
         
@@ -99,8 +96,9 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
 //        dvc.name = infoVO.name//dvc는 DetailVC
 //        dvc.campus = infoVO.campus
 //        dvc.image = UIImage(named: infoVO.partImg!)//이미지를 통으로 넘김(String형식으로)
-    
+        
         navigationController?.present(dvc, animated:false, completion:{})
+        searchTable.deselectRow(at: indexPath, animated: false)
         //navigationController?.pushViewController(dvc, animated: false)
 
         //UImage(named : `)

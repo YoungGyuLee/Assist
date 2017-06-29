@@ -13,11 +13,12 @@ class BarCustom : UINavigationController{
     
    
     override func viewDidLoad() {
-        self.navigationBar.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        self.navigationItem.hidesBackButton = true
-        self.navigationBar.isHidden = true
-        self.navigationController?.isNavigationBarHidden = true
-        self.navigationController?.isToolbarHidden = true
+        self.navigationBar.frame = CGRect(x: 0, y: 0, width: 375, height: 66)
+        self.navigationBar.backgroundColor = uicolorFromHex(rgbValue: 0x110000)
+//        self.navigationItem.hidesBackButton = true
+//        self.navigationBar.isHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isToolbarHidden = true
         
         //self.view.addSubview(self.navBar)
         

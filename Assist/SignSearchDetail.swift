@@ -23,6 +23,9 @@ class SignSearchDetail : UIViewController{
     @IBOutlet var coachName: UILabel!
     
     var progress1: KDCircularProgress!
+    
+    
+    
 
 
 
@@ -82,5 +85,8 @@ class SignSearchDetail : UIViewController{
         print("들어왔졍2")
         self.present(main, animated: true)
         
+    }
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: false, completion: {})
     }
 }

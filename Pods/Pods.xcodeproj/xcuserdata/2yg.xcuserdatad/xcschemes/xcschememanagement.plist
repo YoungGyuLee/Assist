@@ -74,21 +74,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MBCircularProgressBar-MBCircularProgressBar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>MBCircularProgressBar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>MKRingProgressView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Assist.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -98,6 +83,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2C161D21C8D4B0C2E344833847AAA6CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,32 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAC840DD7C14BED838F74AD37CD7CBBA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CB34D9D6318E23B9B54B7F408106A1BE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F579AA4D4755DD9570010BC36D0422F7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>F6A77E2753C279F67F70C5C21D6FAE15</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F78419DDB15508AB523353995D5CFF37</key>
 		<dict>
 			<key>primary</key>
 			<true/>

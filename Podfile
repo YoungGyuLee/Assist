@@ -15,7 +15,5 @@ target 'Assist' do
     pod 'DropDown'
     pod 'DLRadioButton', '~>1.4'
     pod 'Kingfisher'
-    pod 'MKRingProgressView'
-    pod 'MBCircularProgressBar'
     pod 'KDCircularProgress'
 end
