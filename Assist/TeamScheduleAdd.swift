@@ -36,8 +36,6 @@ class TeamScheduleAdd : UIViewController{
         
         navigationController?.pushViewController(dataInsert, animated: true)
 
-        
-        
     }
     
     func getDate(date : Date){

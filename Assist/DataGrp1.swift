@@ -20,6 +20,8 @@ class DataGrp1 : UIViewController{
         graphView.set(data: data, withLabels: labels)
         //graphView
        // graphView.backgroundColor = nil
+         graphView.backgroundFillColor.withAlphaComponent(0)
+        
         self.graph1.addSubview(graphView)
     
     }
