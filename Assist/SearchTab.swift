@@ -32,20 +32,20 @@ class SearchTab : UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("상세 검색 들어 옴")
-        
-                guard let dvc = storyboard?.instantiateViewController(withIdentifier: "SignSearchDetail") as? SignSearchDetail else {return}
-
-        let destination = SignSearchDetail()
-        print(place)
-        
-        dvc.coach = coach
-        dvc.team = team
-        dvc.place = place
-        
-        
-        destination.coach = coach
-        destination.team = team
-        destination.place = place
+//        
+//                guard let dvc = storyboard?.instantiateViewController(withIdentifier: "SignSearchDetail") as? SignSearchDetail else {return}
+//
+//        let destination = SignSearchDetail()
+//        print(place)
+//        
+//        dvc.coach = coach
+//        dvc.team = team
+//        dvc.place = place
+//        
+//        
+//        destination.coach = coach
+//        destination.team = team
+//        destination.place = place
         
 
     
@@ -70,7 +70,7 @@ class SearchTab : UITabBarController{
         tabBtn1.frame = CGRect(x: widthOfOneBtn, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         tabBtn2.frame = CGRect(x: widthOfOneBtn*2, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         
-        tabBtn3.setTitle("<<", for: UIControlState.normal)
+        //tabBtn3.setTitle("<<", for: UIControlState.normal)
         tabBtn1.setTitle("팀 검색", for: UIControlState.normal)
         tabBtn2.setTitle("팀 창단", for: UIControlState.normal)
         
@@ -82,7 +82,7 @@ class SearchTab : UITabBarController{
         self.tabBtn1.isSelected = true
         setAttributeTabBarButton(btn: tabBtn1)
         setAttributeTabBarButton(btn: tabBtn2)
-        setAttributeTabBarButton(btn: tabBtn3)
+        setAttributeTabBarButtonback(btn: tabBtn3)
         
         self.view.addSubview(signTabBarView)
         
@@ -96,6 +96,15 @@ class SearchTab : UITabBarController{
         btn.addTarget(self, action: #selector(onBtnClick(sender:)), for: UIControlEvents.touchUpInside)
         btn.setTitleColor(UIColor(red: 0.5, green: 0.5, blue: 0, alpha: 1), for: UIControlState.normal)
         btn.setTitleColor(UIColor(red: 1, green: 1, blue: 0, alpha: 1), for: UIControlState.selected)
+        self.signTabBarView.addSubview(btn)
+    }
+    
+    func setAttributeTabBarButtonback(btn : UIButton){
+        
+        btn.addTarget(self, action: #selector(onBtnClick(sender:)), for: UIControlEvents.touchUpInside)
+//        btn.setTitleColor(UIColor(red: 0.5, green: 0.5, blue: 0, alpha: 1), for: UIControlState.normal)
+//        btn.setTitleColor(UIColor(red: 1, green: 1, blue: 0, alpha: 1), for: UIControlState.selected)
+        btn.setImage(#imageLiteral(resourceName: "left"), for: .reserved)
         self.signTabBarView.addSubview(btn)
     }
     

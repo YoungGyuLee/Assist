@@ -26,6 +26,10 @@ class SignBaseVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDel
     
     @IBOutlet var checkText: UITextField!
     
+    @IBOutlet var nextBtn: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("inin!!")
@@ -48,6 +52,8 @@ class SignBaseVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDel
         emailText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
         passwordText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
         checkText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        
+        nextBtn.layer.cornerRadius = 4
         
         self.view.addGestureRecognizer(tap)
 
@@ -90,7 +96,8 @@ class SignBaseVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDel
     
     override func viewWillAppear(_ animated: Bool)  {
         print("들어오오오오옴")
-        back.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "join_left_button"), style: .plain, target: self, action: #selector(goback))
+        back.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "left"), style: .plain, target: self, action: #selector(goback))
+        //back.leftBarButtonItem.
 
         back.title = "회원가입"
        // back.title.co

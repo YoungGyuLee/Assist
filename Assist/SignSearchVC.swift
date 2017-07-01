@@ -8,21 +8,26 @@
 
 import Foundation
 import UIKit
-
+import DropDown
+//39 195 296 30
 class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    
+    
     @IBOutlet var back: UINavigationItem!
-    //var navBar: UINavigationBar = UINavigationBar()
-
     @IBOutlet var searchTable: UITableView!
     var searchList : [SearchVO] = [SearchVO]()
     
     @IBOutlet var teamText: UITextField!
-    
     @IBOutlet var coachText: UITextField!
+    @IBOutlet var placeText: UIButton!
+    
+    var place_data = ["서울시", "성남시", "제네바", "오타와", "레이캬비크"]
+    let dropDownPlace = DropDown()
     
     
-    
+    @IBOutlet var setEmpty: UIButton!
+    @IBOutlet var searchBtn: UIButton!
     
     func goback(){
         
@@ -33,6 +38,8 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func initData(){
+        //TODO : 통신 전 미리 데이터 받아놔야 함.
+        
 //        let infoVO = CellVO(name: name, campus: campus, part: part, partImg: "develop")
         let string1 = "아아"
         let string2 = "성남시"
@@ -68,12 +75,36 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         coachText.delegate = self
         coachText.tag = 1
-        
-        
-        
         print("테이블 이제 시작")
+        
+        dropDownPlace.anchorView = placeText.self
+        dropDownPlace.dataSource = place_data
+        dropDownPlace.direction = .bottom
+        
+        setEmpty.layer.cornerRadius = 4
+        searchBtn.layer.cornerRadius = 4
+        
+        
        // initData()
     }
+    
+    @IBAction func clickSetEmpty(_ sender: Any) {
+        teamText.text = ""
+        coachText.text = ""
+        placeText.titleLabel?.text = ""
+    }
+    
+    
+    @IBAction func searchPlace(_ sender: Any) {
+        dropDownPlace.show()
+        dropDownPlace.selectionAction = { [unowned self] (index: Int, item: String) in
+            //self.mainText = item
+            self.placeText.titleLabel?.text = item
+        }
+    }
+    
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Try to find next responder
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
@@ -115,6 +146,7 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         dvc.place = searchVO.plcaeName
         dvc.coach = searchVO.coachName
         dvc.team = searchVO.teamName
+    
         
       //  place = searchVO.plcaeName
 //        

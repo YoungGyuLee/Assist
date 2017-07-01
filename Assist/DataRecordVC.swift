@@ -25,9 +25,8 @@ class DataRecordVC : UIViewController{
         //        dvc.image = UIImage(named: infoVO.partImg!)//이미지를 통으로 넘김(String형식으로)
         
         navigationController?.present(entry, animated:false, completion:{})
-        
+        //navigationController?.pushViewController(entry, animated: true)
     }
-    
     
     
 }

@@ -40,9 +40,15 @@ class SignTab : UITabBarController{
         tabBtn1.frame = CGRect(x: widthOfOneBtn, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         tabBtn2.frame = CGRect(x: widthOfOneBtn*2, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         
-        tabBtn3.setTitle("<<", for: UIControlState.normal)
+        //tabBtn3.backgroundImage.()
+        tabBtn3.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        //tabBtn3.setTitle("<<", for: UIControlState.normal)
         tabBtn1.setTitle("팀 검색", for: UIControlState.normal)
+        tabBtn1.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+    
         tabBtn2.setTitle("팀 창단", for: UIControlState.normal)
+        tabBtn1.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        
         
         tabBtn1.tag = 0
         tabBtn2.tag = 1

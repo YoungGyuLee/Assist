@@ -19,6 +19,9 @@
 		0706B1D51F011AAC00ACE4A1 /* SignTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1D41F011AAC00ACE4A1 /* SignTab.swift */; };
 		0706B1D71F011D6300ACE4A1 /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0706B1D61F011D6300ACE4A1 /* Data.storyboard */; };
 		0706B1D91F0176DB00ACE4A1 /* SignTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706B1D81F0176DB00ACE4A1 /* SignTemp.swift */; };
+		0707035B1F075FC900FF8EFA /* DataDetailEntry2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707035A1F075FC900FF8EFA /* DataDetailEntry2.swift */; };
+		0707035D1F0769E500FF8EFA /* DataGrp1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707035C1F0769E500FF8EFA /* DataGrp1.swift */; };
+		0707035F1F0769F100FF8EFA /* DataGrp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707035E1F0769F100FF8EFA /* DataGrp2.swift */; };
 		070730E41F0371C30007E7D7 /* SearchTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070730E31F0371C30007E7D7 /* SearchTab.swift */; };
 		0707BAD01F04C350006AD50F /* DataTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707BACF1F04C350006AD50F /* DataTab.swift */; };
 		0707BAD21F04C5E6006AD50F /* DataRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707BAD11F04C5E6006AD50F /* DataRecordVC.swift */; };
@@ -48,6 +51,7 @@
 		070BDE961EFFF8BE0052FA77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070BDE941EFFF8BE0052FA77 /* Main.storyboard */; };
 		070BDE981EFFF8BE0052FA77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070BDE971EFFF8BE0052FA77 /* Assets.xcassets */; };
 		070BDE9B1EFFF8BE0052FA77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070BDE991EFFF8BE0052FA77 /* LaunchScreen.storyboard */; };
+		0716FA6F1F0673410046E156 /* TeamScheduleInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716FA6E1F0673410046E156 /* TeamScheduleInsert.swift */; };
 		07AB46451F027CEE001EFB89 /* BarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB46441F027CEE001EFB89 /* BarCustom.swift */; };
 		07AEED0A1F037537001D21AF /* SignSearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEED091F037537001D21AF /* SignSearchDetail.swift */; };
 		07AEED0C1F0376B2001D21AF /* SignTemp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEED0B1F0376B2001D21AF /* SignTemp2.swift */; };
@@ -63,6 +67,8 @@
 		07F8BFDA1F03A372002CEA97 /* TeamMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFD91F03A372002CEA97 /* TeamMainVC.swift */; };
 		07F8BFDC1F03A37A002CEA97 /* TeamScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFDB1F03A37A002CEA97 /* TeamScheduleVC.swift */; };
 		07F8BFDE1F03A382002CEA97 /* TeamMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */; };
+		07F9305E1F060172000EB9DD /* SignSearchDetailScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9305D1F060172000EB9DD /* SignSearchDetailScroll.swift */; };
+		07F930601F06219A000EB9DD /* TeamScheduleAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9305F1F06219A000EB9DD /* TeamScheduleAdd.swift */; };
 		C250D27597407B1F099AEA8C /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00911895D4294008CFF506E1 /* Pods_Assist.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +86,9 @@
 		0706B1D41F011AAC00ACE4A1 /* SignTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTab.swift; sourceTree = "<group>"; };
 		0706B1D61F011D6300ACE4A1 /* Data.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = "<group>"; };
 		0706B1D81F0176DB00ACE4A1 /* SignTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTemp.swift; sourceTree = "<group>"; };
+		0707035A1F075FC900FF8EFA /* DataDetailEntry2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetailEntry2.swift; sourceTree = "<group>"; };
+		0707035C1F0769E500FF8EFA /* DataGrp1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGrp1.swift; sourceTree = "<group>"; };
+		0707035E1F0769F100FF8EFA /* DataGrp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGrp2.swift; sourceTree = "<group>"; };
 		070730E31F0371C30007E7D7 /* SearchTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTab.swift; sourceTree = "<group>"; };
 		0707BACF1F04C350006AD50F /* DataTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTab.swift; sourceTree = "<group>"; };
 		0707BAD11F04C5E6006AD50F /* DataRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRecordVC.swift; sourceTree = "<group>"; };
@@ -111,6 +120,7 @@
 		070BDE971EFFF8BE0052FA77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		070BDE9A1EFFF8BE0052FA77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		070BDE9C1EFFF8BE0052FA77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0716FA6E1F0673410046E156 /* TeamScheduleInsert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamScheduleInsert.swift; sourceTree = "<group>"; };
 		07AB46441F027CEE001EFB89 /* BarCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCustom.swift; sourceTree = "<group>"; };
 		07AEED091F037537001D21AF /* SignSearchDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSearchDetail.swift; sourceTree = "<group>"; };
 		07AEED0B1F0376B2001D21AF /* SignTemp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTemp2.swift; sourceTree = "<group>"; };
@@ -126,6 +136,8 @@
 		07F8BFD91F03A372002CEA97 /* TeamMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMainVC.swift; sourceTree = "<group>"; };
 		07F8BFDB1F03A37A002CEA97 /* TeamScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamScheduleVC.swift; sourceTree = "<group>"; };
 		07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberVC.swift; sourceTree = "<group>"; };
+		07F9305D1F060172000EB9DD /* SignSearchDetailScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSearchDetailScroll.swift; sourceTree = "<group>"; };
+		07F9305F1F06219A000EB9DD /* TeamScheduleAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamScheduleAdd.swift; sourceTree = "<group>"; };
 		53A0CBBD52C9F9FC5B20C49A /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
 		67301E41C45862286ADE4DD3 /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +174,7 @@
 				07AEED0B1F0376B2001D21AF /* SignTemp2.swift */,
 				07AEED111F0383A6001D21AF /* SearchVO.swift */,
 				07AEED151F039264001D21AF /* SearchDataPacket.swift */,
+				07F9305D1F060172000EB9DD /* SignSearchDetailScroll.swift */,
 			);
 			name = SplashLogin;
 			sourceTree = "<group>";
@@ -188,6 +201,8 @@
 				07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */,
 				070A12E71F03BF1C00CAD26B /* TeamTab.swift */,
 				0707BADD1F04D300006AD50F /* TeamEntryMem.swift */,
+				07F9305F1F06219A000EB9DD /* TeamScheduleAdd.swift */,
+				0716FA6E1F0673410046E156 /* TeamScheduleInsert.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -224,6 +239,9 @@
 				0707BAF51F051115006AD50F /* DataPersonalR1.swift */,
 				0707BAF71F05111F006AD50F /* DataPersonalR2.swift */,
 				0707BAF91F051128006AD50F /* DataPersonalR3.swift */,
+				0707035A1F075FC900FF8EFA /* DataDetailEntry2.swift */,
+				0707035C1F0769E500FF8EFA /* DataGrp1.swift */,
+				0707035E1F0769F100FF8EFA /* DataGrp2.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -413,6 +431,8 @@
 				07F8BFDA1F03A372002CEA97 /* TeamMainVC.swift in Sources */,
 				0707BAFA1F051128006AD50F /* DataPersonalR3.swift in Sources */,
 				0707BAFC1F0519C9006AD50F /* ScrollableGraphView.swift in Sources */,
+				07F9305E1F060172000EB9DD /* SignSearchDetailScroll.swift in Sources */,
+				0707035B1F075FC900FF8EFA /* DataDetailEntry2.swift in Sources */,
 				0706B1C81F01181300ACE4A1 /* SignSearchVC.swift in Sources */,
 				07AEED0A1F037537001D21AF /* SignSearchDetail.swift in Sources */,
 				0707BAE01F04D61B006AD50F /* DataToMain.swift in Sources */,
@@ -420,6 +440,7 @@
 				07E9740C1F0208DC00728D21 /* DataVC.swift in Sources */,
 				0706B1C41F01180400ACE4A1 /* SignBaseVC.swift in Sources */,
 				0707BAF61F051115006AD50F /* DataPersonalR1.swift in Sources */,
+				0707035F1F0769F100FF8EFA /* DataGrp2.swift in Sources */,
 				070A12F01F03CEF700CAD26B /* KDCircularProgress.swift in Sources */,
 				0707BAEE1F04EE8C006AD50F /* DataTeamR4.swift in Sources */,
 				07AEED121F0383A6001D21AF /* SearchVO.swift in Sources */,
@@ -444,10 +465,13 @@
 				07AEED0C1F0376B2001D21AF /* SignTemp2.swift in Sources */,
 				0707BADE1F04D300006AD50F /* TeamEntryMem.swift in Sources */,
 				07AB46451F027CEE001EFB89 /* BarCustom.swift in Sources */,
+				0716FA6F1F0673410046E156 /* TeamScheduleInsert.swift in Sources */,
+				07F930601F06219A000EB9DD /* TeamScheduleAdd.swift in Sources */,
 				070BDE911EFFF8BE0052FA77 /* AppDelegate.swift in Sources */,
 				070A12F41F03EF9000CAD26B /* TeamToMainVC.swift in Sources */,
 				0707BAD01F04C350006AD50F /* DataTab.swift in Sources */,
 				0706B1C61F01180C00ACE4A1 /* SignDetailVC.swift in Sources */,
+				0707035D1F0769E500FF8EFA /* DataGrp1.swift in Sources */,
 				0707BADA1F04CA8F006AD50F /* DataDetailEntry.swift in Sources */,
 				0707BAF81F05111F006AD50F /* DataPersonalR2.swift in Sources */,
 				0706B1BF1F01178600ACE4A1 /* SplashVC.swift in Sources */,

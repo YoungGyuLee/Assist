@@ -30,6 +30,8 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
     @IBOutlet var back: UINavigationItem!
     @IBOutlet var mainPosition: UIButton!
     @IBOutlet var detailPosition: UIButton!
+    
+    @IBOutlet var toNext: UIButton!
     let picker = UIImagePickerController()
 
     var main_Toolbar = UIToolbar()
@@ -74,7 +76,7 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
     
     override func viewWillAppear(_ animated: Bool) {
         print("이미지 들어옴요1")
-        back.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "join_left_button"), style: .plain, target: self, action: #selector(goback))
+        back.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "left"), style: .plain, target: self, action: #selector(goback))
         
        // back.title = "회원가입"
         // back.title.co
@@ -92,6 +94,8 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         //userImage.image.layer.cornerRadius
         
        // userImage.image?.accessibilityFrame.cor
+        
+        toNext.layer.cornerRadius = 4
         
         userImage.layer.cornerRadius = userImage.frame.size.height/2
         userImage.layer.mask?.masksToBounds = true
@@ -174,6 +178,8 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         //델리게이트 지정
         picker.delegate = self
         
+        
+        
         dropDownMain.anchorView = mainPosition.self
         dropDownMain.dataSource = ["", "공격수", "수비수", "미드필더", "골키퍼"]
         dropDownMain.direction = .bottom
@@ -194,6 +200,30 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         dropDownDetailGaolK.anchorView = detailPosition.self
         dropDownDetailGaolK.dataSource = ["골키퍼"]
         dropDownDetailGaolK.direction = .bottom
+        
+        dropDownMain.backgroundColor = uicolorFromHex(rgbValue: 0x165388)
+        dropDownMain.backgroundColor?.withAlphaComponent(0.9)
+        dropDownMain.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        
+        dropDownDetailAttack.backgroundColor = uicolorFromHex(rgbValue: 0x165388)
+        dropDownDetailAttack.backgroundColor?.withAlphaComponent(0.9)
+        dropDownDetailAttack.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        
+        dropDownDetailMid.backgroundColor = uicolorFromHex(rgbValue: 0x165388)
+        dropDownDetailMid.backgroundColor?.withAlphaComponent(0.9)
+        dropDownDetailMid.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        
+        
+        dropDownDetailDefense.backgroundColor = uicolorFromHex(rgbValue: 0x165388)
+        dropDownDetailDefense.backgroundColor?.withAlphaComponent(0.9)
+        dropDownDetailDefense.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        
+        
+        dropDownDetailGaolK.backgroundColor = uicolorFromHex(rgbValue: 0x165388)
+        dropDownDetailGaolK.backgroundColor?.withAlphaComponent(0.9)
+        dropDownDetailGaolK.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        
+        
         
         userImage.layer.cornerRadius = userImage.frame.size.height/2
         userImage.layer.mask?.masksToBounds = true

@@ -10,6 +10,13 @@ import Foundation
 import UIKit
 
 class TeamMainVC : UIViewController{
+    @IBOutlet var teamImg: UIImageView!
+    
+    
+    override func viewDidLoad() {
+        //teamImg.layer.cornerRadius =
+        
+    }
     
     
 }

@@ -10,10 +10,17 @@ import Foundation
 import UIKit
 import FSCalendar
 
-class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSource{
+class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSource, getCurrentDate{
+    //인터페이스 상속.
     
     @IBOutlet weak var calendar: FSCalendar!
-    var dates = [Date]()
+    
+    @IBOutlet var listView: UIView!
+    
+    @IBOutlet var addView: UIView!
+    
+    var containerViewController : TeamScheduleAdd?
+    //인터페이스를 싱속하는 클래스 관리 변수.
     
     
     var date = Date()
@@ -21,61 +28,83 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
     
     let dateForamtterGet = DateFormatter()
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        
-    }
     
     override func viewDidLoad() {
+        //로드할 때 여태 찍힌 날짜들이랑 내용 다 불러올 것.
+        
         calendar.locale = Locale(identifier: "ko_kr")
-        //dateForamtterGet.locale = Locale(identifier: "ko")
         dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        dateForamtterGet.locale = Locale(identifier: "ko_kr")
         let date1 : Date? = dateForamtterGet.date(from: "2017-06-12 00:00:00")
         let date2 : Date? = dateForamtterGet.date(from: "2017-06-17 00:00:00")
-        calendar.allowsMultipleSelection = true
+        
+                calendar.allowsMultipleSelection = true
         calendar.select(date1)
         calendar.select(date2)
-        print(date1!)
-        print(date2!)
-        dates.append(date1!)
-        dates.append(date2!)
-        print(dates)
-        
+
+        listView.isHidden = true
+        addView.isHidden = true
         
         
         self.calendar.delegate = self
         self.calendar.dataSource = self
-        print("날짜1")
     }
     
     func calendarCurrentMonthDidChange(_ calendar: FSCalendar!) {
         // Do something
+        //달 변경 이벤트는 여기서
+        
         print("날짜 달 달라짐")
     }
     
+    
+    
+    
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.calendar.select(date)
-        guard let mem = storyboard?.instantiateViewController(withIdentifier: "TeamEntryMem") as? TeamEntryMem else {return}
         
+//        guard let mem = storyboard?.instantiateViewController(withIdentifier: "TeamEntryMem") as? TeamEntryMem else {return}
+//        
+//        
+//        navigationController?.pushViewController(mem, animated:true)
         
-        navigationController?.pushViewController(mem, animated:true)
+        //addView.
+        //이미 등록된 일정 보기.
+
         
-        
+        listView.isHidden = false
+        addView.isHidden = true
         
     }
-    
-    
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("날짜2")
-
-
-        //해당 날 찍었을 때 나오는 이벤트
+        self.dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let mydate = dateForamtterGet.string(from: date)
+        let mydateReal = dateForamtterGet.date(from: mydate)
+    
+        listView.isHidden = true
+        addView.isHidden = false
+        self.date = mydateReal!
+        containerViewController?.getDate(date: mydateReal!)
+     
     }
     
+    //prepareforse
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "TeamScheduleAdd") {
+            containerViewController = segue.destination as? TeamScheduleAdd
+            //컨트롤러를 통해 목적지 세팅
+            containerViewController!.containerToMaster = self
+            //뷰 컨테이너에 연결된 뷰 컨테이너의 프로토콜에 연결된 함수들 가져 옴.as?
+           // containerViewController!.getCurrentDate = self
+            //print("함수 실행")
+        }
+    }
     
-    
-    
-    
-    
+    func getDate(date : Date){
+        self.date = date
+    }
+
 }

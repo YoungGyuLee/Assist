@@ -70,9 +70,10 @@ class LoginVC : UIViewController, UITextFieldDelegate{
         signBtn.layer.borderWidth = 2
         logoImg.layer.cornerRadius = 4
 
-        let logoimage = "login_logo"
+        let logoimage = "logo"
         let emailimage = "login_id"
         let passwordimg = "login_password"
+
         
         
     
