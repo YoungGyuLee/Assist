@@ -16,9 +16,7 @@ class DataGrp2 : UIViewController{
         let data: [Double] = [1, 5, 23, 9, 10, 11]
         let labels = ["one", "two", "three", "four", "five", "six"]
         graphView.set(data: data, withLabels: labels)
-       // graphView.
-        graphView.alpha = 0.0
-       // graphView.backgroundColor = nil
+        
         self.graph.addSubview(graphView)
     
     }

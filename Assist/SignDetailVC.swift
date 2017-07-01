@@ -48,6 +48,9 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
     var mainText : String?
     var detailText : String?
     
+    @IBOutlet var selectedPosition: UILabel!
+  
+    @IBOutlet var selectedDetailPos: UILabel!
     
     
     var main_data = ["", "수비수", "골키퍼", "공격수", "미드필더"]
@@ -109,6 +112,7 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         dropDownMain.selectionAction = { [unowned self] (index: Int, item: String) in
             self.mainText = item
             self.mainPosition.titleLabel?.text = item
+            self.selectedPosition.text = item
         }
     }
     
@@ -119,6 +123,7 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
             dropDownDetailAttack.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.detailText = item
                 self.detailPosition.titleLabel?.text = item
+                self.selectedDetailPos.text = item
             }
         }
         
@@ -127,6 +132,7 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
             dropDownDetailDefense.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.detailText = item
                 self.detailPosition.titleLabel?.text = item
+                self.selectedDetailPos.text = item
             }
         }
         
@@ -135,6 +141,7 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
             dropDownDetailMid.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.detailText = item
                 self.detailPosition.titleLabel?.text = item
+                self.selectedDetailPos.text = item
             }
         }
         
@@ -143,8 +150,10 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
             dropDownDetailGaolK.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.detailText = item
                 self.detailPosition.titleLabel?.text = item
+                self.selectedDetailPos.text = item
             }
         }
+        
     }
 
     

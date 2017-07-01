@@ -15,6 +15,7 @@ protocol getCurrentDate{
 
 class TeamScheduleAdd : UIViewController{
     
+    @IBOutlet var addSchedule: UIButton!
    
     var date = Date()
     var containerToMaster:getCurrentDate?
@@ -22,6 +23,7 @@ class TeamScheduleAdd : UIViewController{
     let dateForamtterGet = DateFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSchedule.layer.cornerRadius = 4
         print("뷰 생성")
         
     }
@@ -33,6 +35,8 @@ class TeamScheduleAdd : UIViewController{
         dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
 
         dataInsert.gameDateString = self.dateForamtterGet.string(from: self.date)
+        
+        
         
         navigationController?.pushViewController(dataInsert, animated: true)
 

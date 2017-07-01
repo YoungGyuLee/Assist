@@ -28,7 +28,7 @@ class SignTab : UITabBarController{
 
         self.tabBar.isHidden = true
         
-        signTabBarView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80)
+        signTabBarView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 67)
         signTabBarView.backgroundColor = uicolorFromHex(rgbValue: 0x012A6A)
         
 
@@ -36,12 +36,14 @@ class SignTab : UITabBarController{
         let widthOfOneBtn = self.tabBar.frame.size.width/3
         let heightOfOneBtn = self.signTabBarView.frame.height
         
-        tabBtn3.frame = CGRect(x: 0, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
+        tabBtn3.frame = CGRect(x: 13, y:21 , width: 32, height: 32)
         tabBtn1.frame = CGRect(x: widthOfOneBtn, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         tabBtn2.frame = CGRect(x: widthOfOneBtn*2, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         
         //tabBtn3.backgroundImage.()
-        tabBtn3.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        //tabBtn3.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        tabBtn3.setBackgroundImage(#imageLiteral(resourceName: "left"), for: UIControlState.normal)
+        
         //tabBtn3.setTitle("<<", for: UIControlState.normal)
         tabBtn1.setTitle("팀 검색", for: UIControlState.normal)
         tabBtn1.tintColor = uicolorFromHex(rgbValue: 0xffffff)

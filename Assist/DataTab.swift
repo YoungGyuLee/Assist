@@ -23,7 +23,7 @@ class DataTab : UITabBarController{
         
         self.tabBar.isHidden = true
         
-        signTabBarView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80)
+        signTabBarView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 67)
         signTabBarView.backgroundColor = uicolorFromHex(rgbValue: 0x012A6A)
         
         
@@ -31,12 +31,13 @@ class DataTab : UITabBarController{
         let widthOfOneBtn = self.tabBar.frame.size.width/4
         let heightOfOneBtn = self.signTabBarView.frame.height
         
-        tabBtn4.frame = CGRect(x: 0, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
+        tabBtn4.frame = CGRect(x: 17, y: 23, width: 22, height: 22)
         tabBtn1.frame = CGRect(x: widthOfOneBtn, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         tabBtn2.frame = CGRect(x: widthOfOneBtn*2, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         tabBtn3.frame = CGRect(x: widthOfOneBtn*3, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         
-        tabBtn4.setTitle("집", for: UIControlState.normal)
+        //tabBtn4.setTitle("집", for: UIControlState.normal)
+        tabBtn4.setBackgroundImage(#imageLiteral(resourceName: "yellow_home"), for: UIControlState.normal)
         tabBtn1.setTitle("경기 기록", for: UIControlState.normal)
         tabBtn2.setTitle("팀 기록", for: UIControlState.normal)
         tabBtn3.setTitle("개인 기록", for: UIControlState.normal)

@@ -9,29 +9,82 @@
 import UIKit
 class DataPersonalR1 : UIViewController{
     
-    @IBOutlet var container1: UIView!
-    @IBOutlet var container2: UIView!
+    var firstPoint2 = CGPoint()
+    var secondPoint2 = CGPoint()
+    var thirdPoint2 = CGPoint()
+    var forthPotin2 = CGPoint()
+    
+    var points = [CGPoint]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        container1.isHidden = false
-        container2.isHidden = false
-//        let graphView = ScrollableGraphView(frame: graphview.frame)
-//        let graphView1 = ScrollableGraphView(frame: graphview2.frame)
-//        let data: [Double] = [4, 8, 15, 16, 23, 42]
-//        let data1: [Double] = [10, 120, 20, 14, 17, 80]
-//        let labels = ["one", "two", "three", "four", "five", "six"]
-//        graphView.set(data: data, withLabels: labels)
-//       // graphView.set
-//        //graphview2.set(data: data, withLabels: labels)
-//        //graphView.set
-//        graphView1.set(data: data1, withLabels: labels)
-//        self.graphview.addSubview(graphView)
-//        self.graphview2.addSubview(graphView1)
+        firstPoint2.x = 150
+        firstPoint2.y = 150
+        
+        secondPoint2.x = 200
+        secondPoint2.y = 200
+        
+        thirdPoint2.x = 300
+        thirdPoint2.y = 300
+        
+        forthPotin2.x = 170
+        forthPotin2.y = 110
     
+        points.append(firstPoint2)
+        points.append(secondPoint2)
+        points.append(thirdPoint2)
+        
+      
+        
+        addLine(fromPoint: firstPoint2, toPoint: secondPoint2)
+        addLine(fromPoint: secondPoint2, toPoint: thirdPoint2)
+        
+        addLine2(fromPoint: secondPoint2, toPoint: forthPotin2)
+    }
+    func draw(_ rect: CGRect) {
+//        let aPath = UIBezierPath()
+//        
+//        aPath.move(to: CGPoint(x:100, y:50))
+//        
+//        aPath.addLine(to: CGPoint(x:300, y:50))
+//        
+//        //Keep using the method addLineToPoint until you get to the one where about to close the path
+//        
+//        aPath.close()
+//        
+//        //If you want to stroke it with a red color
+//        UIColor.red.set()
+//        aPath.stroke()
+//        //If you want to fill it as well
+//        aPath.fill()
+        
+        
+
     }
     
+    func addLine(fromPoint start: CGPoint, toPoint end:CGPoint) {
+        let line = CAShapeLayer()
+        let linePath = UIBezierPath()
+        linePath.move(to: start)
+        linePath.addLine(to: end)
+        line.path = linePath.cgPath
+        line.strokeColor = UIColor.red.cgColor
+        line.lineWidth = 1
+        line.lineJoin = kCALineJoinRound
+        self.view.layer.addSublayer(line)
+    }
     
+    func addLine2(fromPoint start: CGPoint, toPoint end:CGPoint) {
+        let line = CAShapeLayer()
+        let linePath = UIBezierPath()
+        linePath.move(to: start)
+        linePath.addLine(to: end)
+        line.path = linePath.cgPath
+        line.strokeColor = UIColor.yellow.cgColor
+        line.lineWidth = 1
+        line.lineJoin = kCALineJoinRound
+        self.view.layer.addSublayer(line)
+    }
     
 }

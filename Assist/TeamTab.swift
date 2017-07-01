@@ -33,12 +33,13 @@ class TeamTab : UITabBarController{
         let widthOfOneBtn = self.tabBar.frame.size.width/4
         let heightOfOneBtn = self.signTabBarView.frame.height
         
-        tabBtn4.frame = CGRect(x: 0, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
+        tabBtn4.frame = CGRect(x: 17, y: 23, width: 22, height: 22)
         tabBtn1.frame = CGRect(x: widthOfOneBtn, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         tabBtn2.frame = CGRect(x: widthOfOneBtn*2, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
          tabBtn3.frame = CGRect(x: widthOfOneBtn*3, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
         
-        tabBtn4.setTitle("집", for: UIControlState.normal)
+        //tabBtn4.setTitle("집", for: UIControlState.normal)
+        tabBtn4.setBackgroundImage(#imageLiteral(resourceName: "yellow_home"), for: UIControlState.normal)
         tabBtn1.setTitle("팀 메인", for: UIControlState.normal)
         tabBtn2.setTitle("일정", for: UIControlState.normal)
         tabBtn3.setTitle("팀 멤버", for: UIControlState.normal)

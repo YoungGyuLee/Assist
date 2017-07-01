@@ -525,6 +525,20 @@
                                     <action selector="toSignSearch:" destination="BV3-Mp-Ccl" eventType="touchUpInside" id="V3Y-lk-c2l"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-3p-9SR">
+                                <rect key="frame" x="87" y="426" width="44" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRa-1g-Pj6">
+                                <rect key="frame" x="103" y="474" width="77" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.1647058824" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -538,6 +552,8 @@
                         <outlet property="heightText" destination="82F-tx-geh" id="gug-qC-CMN"/>
                         <outlet property="mainFootText" destination="BT7-Wh-kDc" id="9IG-aL-fui"/>
                         <outlet property="mainPosition" destination="ggO-YI-ceC" id="i8p-CA-pYc"/>
+                        <outlet property="selectedDetailPos" destination="kRa-1g-Pj6" id="Dcz-BP-PjI"/>
+                        <outlet property="selectedPosition" destination="a3g-3p-9SR" id="d6R-sg-wb9"/>
                         <outlet property="toNext" destination="wxm-6j-sqX" id="GFg-Jn-H0c"/>
                         <outlet property="userImage" destination="XCc-In-iwN" id="Idy-22-3WX"/>
                         <outlet property="userImageSelect" destination="Nhp-9d-mQU" id="k2M-Yl-J3J"/>
@@ -546,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qlx-Al-XR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7206" y="742"/>
+            <point key="canvasLocation" x="7205.6000000000004" y="741.67916041979015"/>
         </scene>
         <!--Sign SearchVC-->
         <scene sceneID="uJa-z1-49z">
