@@ -37,5 +37,13 @@ extension UIViewController{
         return num
     }
 
+    func changeNum(label1 : UILabel, label2 : UILabel){
+        print("변경 들어옴")
+        var tempStr1 : String = ""
+        tempStr1 = label1.text!
+        label1.text = label2.text
+        label2.text = tempStr1
+
+    }
 }
 

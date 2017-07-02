@@ -47,6 +47,7 @@
 		0707BAF81F05111F006AD50F /* DataPersonalR2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707BAF71F05111F006AD50F /* DataPersonalR2.swift */; };
 		0707BAFA1F051128006AD50F /* DataPersonalR3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707BAF91F051128006AD50F /* DataPersonalR3.swift */; };
 		0707BAFC1F0519C9006AD50F /* ScrollableGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707BAFB1F0519C9006AD50F /* ScrollableGraphView.swift */; };
+		07097EA91F08EFD100C6EC92 /* TeamScheduleVCRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07097EA81F08EFD100C6EC92 /* TeamScheduleVCRoot.swift */; };
 		070A12E81F03BF1C00CAD26B /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12E71F03BF1C00CAD26B /* TeamTab.swift */; };
 		070A12F01F03CEF700CAD26B /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */; };
 		070A12F41F03EF9000CAD26B /* TeamToMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */; };
@@ -125,6 +126,7 @@
 		0707BAF71F05111F006AD50F /* DataPersonalR2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersonalR2.swift; sourceTree = "<group>"; };
 		0707BAF91F051128006AD50F /* DataPersonalR3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersonalR3.swift; sourceTree = "<group>"; };
 		0707BAFB1F0519C9006AD50F /* ScrollableGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphView.swift; sourceTree = "<group>"; };
+		07097EA81F08EFD100C6EC92 /* TeamScheduleVCRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamScheduleVCRoot.swift; sourceTree = "<group>"; };
 		070A12E71F03BF1C00CAD26B /* TeamTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
 		070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamToMainVC.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				072CCC301F07D54E0084BABE /* TeamEntryCell.swift */,
 				0701C5C11F080F7300FBEE03 /* TeamEntryMemCell.swift */,
 				0701C5C31F080F7C00FBEE03 /* TeamEntryMemVO.swift */,
+				07097EA81F08EFD100C6EC92 /* TeamScheduleVCRoot.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				0707BAE41F04E9D6006AD50F /* DataTeamRoot.swift in Sources */,
 				0701C5C41F080F7C00FBEE03 /* TeamEntryMemVO.swift in Sources */,
 				0701C5C61F08163000FBEE03 /* DataTeamRecordVO.swift in Sources */,
+				07097EA91F08EFD100C6EC92 /* TeamScheduleVCRoot.swift in Sources */,
 				07E9740C1F0208DC00728D21 /* DataVC.swift in Sources */,
 				0706B1C41F01180400ACE4A1 /* SignBaseVC.swift in Sources */,
 				0707BAF61F051115006AD50F /* DataPersonalR1.swift in Sources */,

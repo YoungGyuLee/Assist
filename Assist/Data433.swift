@@ -211,20 +211,7 @@ class Data433 : UIViewController{
     
     
     
-    func changeNum(label1 : UILabel, label2 : UILabel){
-        print("변경 들어옴")
-//        var tempStr : String = ""
-//        tempStr = (btn1.titleLabel?.text)!
-//        btn1.titleLabel?.text = btn2.titleLabel?.text
-//        btn2.titleLabel?.text = tempStr
-        
-        var tempStr1 : String = ""
-        tempStr1 = label1.text!
-        label1.text = label2.text
-        label2.text = tempStr1
-        
-        
-    }
+
 }
 
     

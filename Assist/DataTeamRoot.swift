@@ -28,10 +28,10 @@ class DataTeamRoot : UIPageViewController, UIPageViewControllerDataSource, UIPag
     }
     
     func set_pageControl(){
-        pageControl = UIPageControl(frame: CGRect(x: 0, y: view.frame.height/2-20, width: view.frame.width, height: 20))
+        pageControl = UIPageControl(frame: CGRect(x: 170, y: view.frame.height/2-36, width: 13, height: 13))
         pageControl?.numberOfPages = pageIndex.count
         pageControl?.pageIndicatorTintColor = UIColor.gray
-        pageControl?.currentPageIndicatorTintColor = UIColor.red;
+        pageControl?.currentPageIndicatorTintColor = UIColor.yellow;
         view.addSubview(pageControl!)
     }
     

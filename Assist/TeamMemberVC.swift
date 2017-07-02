@@ -15,6 +15,7 @@ class TeamMemeberVC : UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var entryList : [TeamEntryVO] = [TeamEntryVO]()
     
+    @IBOutlet var listView: UIView!
     //var place_data = ["서울시", "성남시", "제네바", "오타와", "레이캬비크"]
     
     override func viewDidLoad() {
@@ -48,7 +49,9 @@ class TeamMemeberVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.entryName.text = searchVO.entryName
         
-        
+        //listView.frame.height = (listView.frame.height + entryMemTable.frame.height)
+        //listView.frame.height.add(entryMemTable.frame.height)
+        listView.frame.size.height.add(entryMemTable.frame.height)
         return cell
         
     }
