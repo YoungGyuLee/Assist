@@ -34,8 +34,6 @@ class TeamMemeberVC : UIViewController, UITableViewDelegate, UITableViewDataSour
         //searchList.append(data2)
         //searchList.append(data3)
         entryMemTable.isHidden = false
-        entryMemTable.frame.size.height.adding(44)
-        
         entryMemTable.reloadData()
 
         
