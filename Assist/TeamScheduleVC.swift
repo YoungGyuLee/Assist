@@ -22,6 +22,7 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
     
     @IBOutlet var addView: UIView!
     
+    @IBOutlet var scroll: UIScrollView!
     var isDate : Bool = false//비어있는걸 통해 왔는지 아닌 지를 판다.
     
     var containerViewController : TeamScheduleAdd?
@@ -59,6 +60,8 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
         dates.append(date1!)
         dates.append(date2!)
         
+        scroll.isScrollEnabled = false
+        
         listView.isHidden = true
         addView.isHidden = true
         
@@ -81,6 +84,7 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
     
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {//이게 찍혀있는거 또 찍는거.
+        scroll.isScrollEnabled = true
         
         if dates.contains(date){
             listView.isHidden = false
@@ -100,6 +104,9 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {//이게 비어있는 날짜 찍는거.
+
+        scroll.isScrollEnabled = false
+        
         self.dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let mydate = dateForamtterGet.string(from: date)
         let mydateReal = dateForamtterGet.date(from: mydate)
