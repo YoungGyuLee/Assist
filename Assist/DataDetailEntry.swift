@@ -8,10 +8,37 @@
 
 import Foundation
 import UIKit
+//
+//protocol FristDelegate{
+//    var list : [Int]{ get set}
+//    
+//    func passData(list: [Int]) -> [Int]
+//}
+//
+//
+//
+//protocol getMemberList{
+//    func getList(memList : [Int]?, stg : String?)
+//   
+//}
+
+
 
 
 class DataDetailEntry : UIViewController{
     //433 442 343 352 451
+    
+    
+//    var listContainer : getMemberList?
+//    var container : FristDelegate?
+ 
+    
+    
+    var memList : [Int]?
+    var stg : String?
+    //var containerToMaster:getMemberList?
+    
+    let ad = UIApplication.shared.delegate as? AppDelegate
     
     @IBOutlet var stgNone: UIView!
     @IBOutlet var stg433: UIView!
@@ -20,7 +47,7 @@ class DataDetailEntry : UIViewController{
     @IBOutlet var stg352: UIView!
     @IBOutlet var stg451: UIView!
     var stgType : String?
-    
+    //var delegate
     
 
     override func viewDidLoad() {
@@ -30,7 +57,13 @@ class DataDetailEntry : UIViewController{
         stg343.isHidden = true
         stg352.isHidden = true
         stg451.isHidden = true
+        
+        //dataFirst.delegate = dataSecond
+        //sent.delegate
+       // listContainer.d
+        
         //일단 여기서 모든 데이터 받아옴.
+
     }
     
     @IBAction func set433(_ sender: Any) {
@@ -108,7 +141,25 @@ class DataDetailEntry : UIViewController{
     
     func nextStep(){
         print("다음 실행")
-//        guard let entry = storyboard?.instantiateViewController(withIdentifier: "DataDetailEntry2") as? DataDetailEntry2 else {return}
-//        navigationController?.present(entry, animated:false, completion:{})
+
     }
+    @IBAction func checkBtn(_ sender: Any) {
+        self.memList = ad?.memList
+        self.stgType = ad?.curStg
+        
+        if let list1 = self.memList{
+            print(list1)
+        }
+        print(self.memList!)
+        print(self.stgType!)
+
+    }
+
+//    func getList(memList : [Int]?, stg : String?){
+//        print("겟 리스트 실행")
+//        self.memList = memList
+//        self.stg = stg
+//        
+//
+//    }
 }

@@ -43,7 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    var memList : [Int]?
+    var curStg : String?
+    //경기 리스트
+    
+    var setRecord : Bool = false
+    //경기 기록 입력하는 부분
+    
+    var nowSelect : Int?
+    //내가 지금 선택한 선수 등번호.
+    var previousSelect : Int?
+    //이전에 선택한 선수 등번호.
+    
 }
 

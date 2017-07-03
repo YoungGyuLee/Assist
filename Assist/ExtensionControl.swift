@@ -9,8 +9,9 @@
 import Foundation
 import Kingfisher
 
+
+
 extension UIViewController{
-    
     
     
     func uicolorFromHex(rgbValue:UInt32)->UIColor{
@@ -44,6 +45,29 @@ extension UIViewController{
         label1.text = label2.text
         label2.text = tempStr1
 
+    }
+  
+    func returnList(list : [Int])-> [Int]{
+        let nowlist = list
+        return nowlist
+    }
+    
+    var globalList : [Int]{ get{
+            return [0]
+        }set(newVal){
+            //globalList = newVal
+        }}
+    
+    class Company {
+        var _members:[Int] = []
+        var members:[Int] {
+            get {
+                return _members
+            }
+            set (newVal) {
+                _members = newVal
+            }
+        }
     }
 }
 

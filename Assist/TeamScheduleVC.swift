@@ -136,6 +136,7 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "TeamScheduleAdd") {
+            print("프리페어")
             containerViewController = segue.destination as? TeamScheduleAdd
             //컨트롤러를 통해 목적지 세팅
             containerViewController!.containerToMaster = self

@@ -48,6 +48,13 @@
 		0707BAFA1F051128006AD50F /* DataPersonalR3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707BAF91F051128006AD50F /* DataPersonalR3.swift */; };
 		0707BAFC1F0519C9006AD50F /* ScrollableGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707BAFB1F0519C9006AD50F /* ScrollableGraphView.swift */; };
 		07097EA91F08EFD100C6EC92 /* TeamScheduleVCRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07097EA81F08EFD100C6EC92 /* TeamScheduleVCRoot.swift */; };
+		0709E5331F0A2DDA006CFB7F /* DataRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5321F0A2DDA006CFB7F /* DataRecordCell.swift */; };
+		0709E5351F0A2DFF006CFB7F /* DataRecordVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5341F0A2DFF006CFB7F /* DataRecordVO.swift */; };
+		0709E5371F0A3120006CFB7F /* DataEntry433.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5361F0A3120006CFB7F /* DataEntry433.swift */; };
+		0709E5391F0A3157006CFB7F /* DataEntry442.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5381F0A3157006CFB7F /* DataEntry442.swift */; };
+		0709E53B1F0A3162006CFB7F /* DataEntry352.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E53A1F0A3162006CFB7F /* DataEntry352.swift */; };
+		0709E53D1F0A318B006CFB7F /* DataEntry343.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E53C1F0A318B006CFB7F /* DataEntry343.swift */; };
+		0709E5411F0A31BE006CFB7F /* DataEntry451.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5401F0A31BE006CFB7F /* DataEntry451.swift */; };
 		070A12E81F03BF1C00CAD26B /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12E71F03BF1C00CAD26B /* TeamTab.swift */; };
 		070A12F01F03CEF700CAD26B /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */; };
 		070A12F41F03EF9000CAD26B /* TeamToMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */; };
@@ -76,6 +83,8 @@
 		07E974061F02075500728D21 /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E974051F02075500728D21 /* Card.storyboard */; };
 		07E974081F02078400728D21 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E974071F02078400728D21 /* CardVC.swift */; };
 		07E9740C1F0208DC00728D21 /* DataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9740B1F0208DC00728D21 /* DataVC.swift */; };
+		07EEB7D01F09FFAF0021F38B /* DataDetailEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB7CF1F09FFAF0021F38B /* DataDetailEntryCell.swift */; };
+		07EEB7D21F0A03240021F38B /* DetailEntrySubVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB7D11F0A03240021F38B /* DetailEntrySubVO.swift */; };
 		07F8BFDA1F03A372002CEA97 /* TeamMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFD91F03A372002CEA97 /* TeamMainVC.swift */; };
 		07F8BFDC1F03A37A002CEA97 /* TeamScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFDB1F03A37A002CEA97 /* TeamScheduleVC.swift */; };
 		07F8BFDE1F03A382002CEA97 /* TeamMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */; };
@@ -127,6 +136,13 @@
 		0707BAF91F051128006AD50F /* DataPersonalR3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersonalR3.swift; sourceTree = "<group>"; };
 		0707BAFB1F0519C9006AD50F /* ScrollableGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphView.swift; sourceTree = "<group>"; };
 		07097EA81F08EFD100C6EC92 /* TeamScheduleVCRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamScheduleVCRoot.swift; sourceTree = "<group>"; };
+		0709E5321F0A2DDA006CFB7F /* DataRecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRecordCell.swift; sourceTree = "<group>"; };
+		0709E5341F0A2DFF006CFB7F /* DataRecordVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRecordVO.swift; sourceTree = "<group>"; };
+		0709E5361F0A3120006CFB7F /* DataEntry433.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry433.swift; sourceTree = "<group>"; };
+		0709E5381F0A3157006CFB7F /* DataEntry442.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry442.swift; sourceTree = "<group>"; };
+		0709E53A1F0A3162006CFB7F /* DataEntry352.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry352.swift; sourceTree = "<group>"; };
+		0709E53C1F0A318B006CFB7F /* DataEntry343.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry343.swift; sourceTree = "<group>"; };
+		0709E5401F0A31BE006CFB7F /* DataEntry451.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry451.swift; sourceTree = "<group>"; };
 		070A12E71F03BF1C00CAD26B /* TeamTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
 		070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamToMainVC.swift; sourceTree = "<group>"; };
@@ -157,6 +173,8 @@
 		07E974051F02075500728D21 /* Card.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
 		07E974071F02078400728D21 /* CardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		07E9740B1F0208DC00728D21 /* DataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataVC.swift; sourceTree = "<group>"; };
+		07EEB7CF1F09FFAF0021F38B /* DataDetailEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetailEntryCell.swift; sourceTree = "<group>"; };
+		07EEB7D11F0A03240021F38B /* DetailEntrySubVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEntrySubVO.swift; sourceTree = "<group>"; };
 		07F8BFD91F03A372002CEA97 /* TeamMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMainVC.swift; sourceTree = "<group>"; };
 		07F8BFDB1F03A37A002CEA97 /* TeamScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamScheduleVC.swift; sourceTree = "<group>"; };
 		07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberVC.swift; sourceTree = "<group>"; };
@@ -278,6 +296,15 @@
 				070C5C6A1F078264008FBC7B /* Data451.swift */,
 				0701C5C51F08163000FBEE03 /* DataTeamRecordVO.swift */,
 				0701C5C71F08163D00FBEE03 /* DataTeamRecordCell.swift */,
+				07EEB7CF1F09FFAF0021F38B /* DataDetailEntryCell.swift */,
+				07EEB7D11F0A03240021F38B /* DetailEntrySubVO.swift */,
+				0709E5321F0A2DDA006CFB7F /* DataRecordCell.swift */,
+				0709E5341F0A2DFF006CFB7F /* DataRecordVO.swift */,
+				0709E5381F0A3157006CFB7F /* DataEntry442.swift */,
+				0709E5361F0A3120006CFB7F /* DataEntry433.swift */,
+				0709E53A1F0A3162006CFB7F /* DataEntry352.swift */,
+				0709E53C1F0A318B006CFB7F /* DataEntry343.swift */,
+				0709E5401F0A31BE006CFB7F /* DataEntry451.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -466,14 +493,17 @@
 				070C5C691F07825A008FBC7B /* Data352.swift in Sources */,
 				0707BAF41F05110D006AD50F /* DataPersonalRootC.swift in Sources */,
 				07F8BFDA1F03A372002CEA97 /* TeamMainVC.swift in Sources */,
+				0709E5351F0A2DFF006CFB7F /* DataRecordVO.swift in Sources */,
 				0707BAFA1F051128006AD50F /* DataPersonalR3.swift in Sources */,
 				0707BAFC1F0519C9006AD50F /* ScrollableGraphView.swift in Sources */,
 				070C5C631F078247008FBC7B /* Data433.swift in Sources */,
 				07F9305E1F060172000EB9DD /* SignSearchDetailScroll.swift in Sources */,
+				07EEB7D21F0A03240021F38B /* DetailEntrySubVO.swift in Sources */,
 				0707035B1F075FC900FF8EFA /* DataDetailEntry2.swift in Sources */,
 				0706B1C81F01181300ACE4A1 /* SignSearchVC.swift in Sources */,
 				07AEED0A1F037537001D21AF /* SignSearchDetail.swift in Sources */,
 				0707BAE01F04D61B006AD50F /* DataToMain.swift in Sources */,
+				07EEB7D01F09FFAF0021F38B /* DataDetailEntryCell.swift in Sources */,
 				0707BAE41F04E9D6006AD50F /* DataTeamRoot.swift in Sources */,
 				0701C5C41F080F7C00FBEE03 /* TeamEntryMemVO.swift in Sources */,
 				0701C5C61F08163000FBEE03 /* DataTeamRecordVO.swift in Sources */,
@@ -481,6 +511,7 @@
 				07E9740C1F0208DC00728D21 /* DataVC.swift in Sources */,
 				0706B1C41F01180400ACE4A1 /* SignBaseVC.swift in Sources */,
 				0707BAF61F051115006AD50F /* DataPersonalR1.swift in Sources */,
+				0709E5331F0A2DDA006CFB7F /* DataRecordCell.swift in Sources */,
 				0707035F1F0769F100FF8EFA /* DataGrp2.swift in Sources */,
 				070C5C651F07824D008FBC7B /* Data442.swift in Sources */,
 				070A12F01F03CEF700CAD26B /* KDCircularProgress.swift in Sources */,
@@ -490,6 +521,7 @@
 				070C5C6B1F078264008FBC7B /* Data451.swift in Sources */,
 				0706B1D51F011AAC00ACE4A1 /* SignTab.swift in Sources */,
 				07AEED181F039441001D21AF /* ExtensionControl.swift in Sources */,
+				0709E5411F0A31BE006CFB7F /* DataEntry451.swift in Sources */,
 				07E974021F01F47300728D21 /* SearchNavi.swift in Sources */,
 				070730E41F0371C30007E7D7 /* SearchTab.swift in Sources */,
 				0707BAF01F04F722006AD50F /* DataTeamRootC.swift in Sources */,
@@ -510,9 +542,11 @@
 				07AEED0C1F0376B2001D21AF /* SignTemp2.swift in Sources */,
 				0707BADE1F04D300006AD50F /* TeamEntryMem.swift in Sources */,
 				0701C5C81F08163D00FBEE03 /* DataTeamRecordCell.swift in Sources */,
+				0709E5371F0A3120006CFB7F /* DataEntry433.swift in Sources */,
 				07AB46451F027CEE001EFB89 /* BarCustom.swift in Sources */,
 				0716FA6F1F0673410046E156 /* TeamScheduleInsert.swift in Sources */,
 				07F930601F06219A000EB9DD /* TeamScheduleAdd.swift in Sources */,
+				0709E53B1F0A3162006CFB7F /* DataEntry352.swift in Sources */,
 				070C5C671F078254008FBC7B /* Data343.swift in Sources */,
 				070BDE911EFFF8BE0052FA77 /* AppDelegate.swift in Sources */,
 				070A12F41F03EF9000CAD26B /* TeamToMainVC.swift in Sources */,
@@ -520,6 +554,7 @@
 				0706B1C61F01180C00ACE4A1 /* SignDetailVC.swift in Sources */,
 				072CCC2F1F07D5470084BABE /* TeamEntryVO.swift in Sources */,
 				0707035D1F0769E500FF8EFA /* DataGrp1.swift in Sources */,
+				0709E5391F0A3157006CFB7F /* DataEntry442.swift in Sources */,
 				0707BADA1F04CA8F006AD50F /* DataDetailEntry.swift in Sources */,
 				0707BAF81F05111F006AD50F /* DataPersonalR2.swift in Sources */,
 				0706B1BF1F01178600ACE4A1 /* SplashVC.swift in Sources */,
@@ -527,6 +562,7 @@
 				0707BAEC1F04EE80006AD50F /* DataTeamR3.swift in Sources */,
 				0707BAD21F04C5E6006AD50F /* DataRecordVC.swift in Sources */,
 				070A12E81F03BF1C00CAD26B /* TeamTab.swift in Sources */,
+				0709E53D1F0A318B006CFB7F /* DataEntry343.swift in Sources */,
 				07E974041F01F49100728D21 /* CreateNavi.swift in Sources */,
 				0706B1D91F0176DB00ACE4A1 /* SignTemp.swift in Sources */,
 				0707BAE81F04EE6E006AD50F /* DataTeamR1.swift in Sources */,

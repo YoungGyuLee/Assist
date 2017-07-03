@@ -740,6 +740,10 @@
         <scene sceneID="5i7-nc-WAm">
             <objects>
                 <viewController storyboardIdentifier="TeamScheduleVC" id="JIz-gy-iqS" customClass="TeamScheduleVC" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q0e-id-836"/>
+                        <viewControllerLayoutGuide type="bottom" id="lMx-0A-ftw"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XbH-CV-TTE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="967"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -748,7 +752,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="967"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLP-OI-Yqt">
-                                        <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="500" width="375" height="100"/>
                                         <connections>
                                             <segue destination="Slu-Qg-PHi" kind="embed" id="byp-yG-eLu"/>
                                         </connections>
@@ -880,7 +884,7 @@
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUl-J9-yiL">
-                                        <rect key="frame" x="0.0" y="567" width="375" height="467"/>
+                                        <rect key="frame" x="0.0" y="500" width="375" height="467"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="467" id="5H3-mW-uwQ"/>
                                         </constraints>

@@ -35,9 +35,7 @@ class TeamScheduleAdd : UIViewController{
         dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
 
         dataInsert.gameDateString = self.dateForamtterGet.string(from: self.date)
-        
-        
-        
+
         navigationController?.pushViewController(dataInsert, animated: true)
 
     }
@@ -46,6 +44,4 @@ class TeamScheduleAdd : UIViewController{
         self.date = date
     }//인터페이스가 갖고 있는 함수.
 
-    
-    
 }
