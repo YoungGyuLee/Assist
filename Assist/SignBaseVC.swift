@@ -121,19 +121,9 @@ class SignBaseVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDel
     @IBAction func toSignDetail(_ sender: Any) {
         guard let signDetail = storyboard?.instantiateViewController(withIdentifier: "SignDetailVC") as? SignDetailVC else {return}
         
-        
-//        
-//        let objVC: SignDetailVC? = storyboard?.instantiateViewController(withIdentifier: "SignDetailVC") as! SignDetailVC
-//        //let objVC: SecondViewController? = SecondViewController()
-//        print("얘도 들어오오오오옴")
-//        
-//        let aObjNavi = UINavigationController(rootViewController: objVC!)
-//        //let aObjNavi = UINavigationController(rootViewController: objVC!)
-//        let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-//        // aObjNavi.isNavigationBarHidden = true
-//        //aObjNavi.isToolbarHidden = true
-//        
-//        appDelegate.window?.rootViewController = aObjNavi
+        signDetail.name = nameText.text
+        signDetail.email = emailText.text
+        signDetail.password = passwordText.text
         
         navigationController?.pushViewController(signDetail, animated: true)
         

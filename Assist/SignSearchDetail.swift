@@ -15,6 +15,7 @@ class SignSearchDetail : UIViewController{
     var team : String?
     var coach : String?
     var place : String?
+    var teamId : Int?
 
     @IBOutlet var placeName: UILabel!
     
@@ -24,16 +25,14 @@ class SignSearchDetail : UIViewController{
 
     
     @IBOutlet var scrolldetail: UIView!
-    
-
 
 
     override func viewDidLoad() {
-        print("상세 검색 들어옴")
+        print("들어옴2")
         
-        placeName.text = place!+","
-        teamName.text = team!+","
-        coachName.text = coach
+        placeName.text = gsno(place)+","
+        teamName.text = gsno(team)+","
+        coachName.text = gsno(coach)
         
         scrolldetail.isHidden = false
 
@@ -60,7 +59,18 @@ class SignSearchDetail : UIViewController{
     override func viewDidDisappear(_ animated: Bool) {
         print("상세 검색 사라짐")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("들어옴4")
 
+        
+        //테이블뷰 자체 크기보다 누적되어있는 셀들의 높이들의 합이 더 작을경우( 테이블뷰에 셀이 한두개만있고 나머지 셀은 비어있는 상태)
+        //해당 코드로 보기싫은 밑줄들을 지워줍니다
+        //쉽게생각해서 비어있는 셀들을 뷰로 덮어버리는거라고 생각하시면됩니다
+        //detailTable.tableFooterView = UIView.init(frame: CGRect.zero)
+    }
+    
+    //vieWillAppear
     @IBAction func back(_ sender: Any) {
         dismiss(animated: false, completion: {})
     }

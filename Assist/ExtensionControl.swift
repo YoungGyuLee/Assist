@@ -37,7 +37,15 @@ extension UIViewController{
         }
         return num
     }
+    func gfno(_ data: Float?) -> Float {
+        guard let floatinNum = data else {
+            return 0
+        }
+        return floatinNum
+    }
+    
 
+    
     func changeNum(label1 : UILabel, label2 : UILabel){
         print("변경 들어옴")
         var tempStr1 : String = ""
@@ -67,6 +75,28 @@ extension UIViewController{
             set (newVal) {
                 _members = newVal
             }
+        }
+    }
+    
+    func networkFailed() {
+        let alert = UIAlertController(title: "네트워크 오류", message: "인터넷 연결을 확인해주세요.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+}
+extension UIImageView {
+    public func imageFromUrl(_ urlString: String?, defaultImgPath : String) {
+        let defaultImg = UIImage(named: defaultImgPath)
+        if let url = urlString {
+            if url.isEmpty {
+                self.image = defaultImg
+            } else {
+                self.kf.setImage(with: URL(string: url), placeholder: defaultImg, options: [.transition(ImageTransition.fade(0.5))])
+            }
+        } else {
+            self.image = defaultImg
         }
     }
 }

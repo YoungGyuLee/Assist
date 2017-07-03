@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AlamofireObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -74,6 +84,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Assist.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -84,10 +99,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>33ACEABB2C2BD063AE225E1D100ECEA4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4BF191BE453061D4BA75EE4A43051665</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4F4B0A230500BD177FD4B590B409FB6D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -133,6 +153,26 @@
 			<true/>
 		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>92094067A12F4B423BD6E2A62B44C546</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93EB215CDBFD538373BD84183FD344EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9502FB01641FBABB78522037E882757B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

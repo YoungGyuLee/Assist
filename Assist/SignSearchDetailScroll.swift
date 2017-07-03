@@ -9,7 +9,7 @@
 import UIKit
 import KDCircularProgress
 
-class SignSearchDetailScroll : UIViewController{
+class SignSearchDetailScroll : UIViewController, NetworkCallback{
     
     @IBOutlet var teamImg: UIImageView!
     @IBOutlet var teamName: UILabel!
@@ -22,8 +22,108 @@ class SignSearchDetailScroll : UIViewController{
     @IBOutlet var progressbase: UIView!
     
     @IBOutlet var sign: UIButton!
+    var profileList : TeamProfileResponse?
+    var signResponse : SignResponse?
+    
+    var id : Int?
+    let ad = UIApplication.shared.delegate as? AppDelegate
+    
+    
+    func networkResult(resultData: Any, code: String) {
+        print("들어옴 3")
+        if code == "팀프로필"{
+            //progress1 = KDCircularProgress(frame: progressbase.frame)
+            profileList = resultData as! TeamProfileResponse
+
+            
+            place.text = gsno(profileList!.region)
+            coach.text = gsno(profileList!.manager)
+            foundDate.text = gsno(profileList!.found_dt)
+            teamMsg.text = gsno(profileList!.message)
+            //progressbase
+            progress1 = KDCircularProgress(frame: CGRect(x: progressbase.frame.minX, y: progressbase.frame.minY, width: progressbase.frame.size.width, height: progressbase.frame.size.height))
+            
+
+            progress1.angle = (Double(gino(profileList!.win_game!)))/(Double(gino(profileList!.total_game!)))*360
+
+            progress1.startAngle = -90
+            progress1.clockwise = true
+            progress1.glowMode = .forward
+            progress1.roundedCorners = false
+            progress1.set(colors: UIColor.yellow)
+            
+            print(gsno(profileList?.profile_pic_url))
+            
+            let imgURL = ""
+            
+            print(imgURL)
+            teamImg.imageFromUrl(imgURL, defaultImgPath: "symbol")
+            //teamImg.image
+
+            progress1.animate(fromAngle: 0, toAngle: progress1.angle
+, duration: 5) { completed in
+                if completed {
+                    print("animation stopped, completed")
+                } else {
+                    print("animation stopped, was interrupted")
+                }
+            }
+            
+            progress1.reloadInputViews()
+            progressbase.addSubview(progress1)
+            //progress1.
+            
+            //boardListTable.reloadData()
+        }
+        
+        if code == "회원가입" {
+            signResponse = resultData as! SignResponse
+            print(signResponse)
+        }
+
+        
+        
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print("들어옴 2")
+        id = gino(ad?.myTeamId)
+        if let detailID = id {
+            let model = SignSplashModel(self)
+            print(detailID)
+            model.getTeamProfile(team_id: detailID)
+        }
+       //테이블뷰 자체 크기보다 누적되어있는 셀들의 높이들의 합이 더 작을경우( 테이블뷰에 셀이 한두개만있고 나머지 셀은 비어있는 상태)
+        //해당 코드로 보기싫은 밑줄들을 지워줍니다
+        //쉽게생각해서 비어있는 셀들을 뷰로 덮어버리는거라고 생각하시면됩니다
+        //detailTable.tableFooterView = UIView.init(frame: CGRect.zero)
+    }
     
     @IBAction func sign(_ sender: Any) {
+        
+        let model = SignSplashModel(self)
+        
+        print(gsno(ad?.username))
+        print(gsno(ad?.email))
+        print(gsno(ad?.password))
+        print(gino(ad?.age))
+        print(gfno(ad?.height))
+        print(gsno(ad?.foot))
+        print(gsno("MF"))
+        print(gsno("RM"))
+        print(gino(ad?.backnumber))
+        print(gino(ad?.team_id))
+        
+        if let profile = ad?.profile_pic{
+         model.signUp(username:gsno(ad?.username), email:gsno(ad?.email), password:gsno(ad?.password),age:gino(ad?.age), height : gfno(ad?.height), weight : gfno(ad?.weight), foot : gsno(ad?.foot) ,position : gsno("MF"),position_detail : gsno("RM"),backnumber : gino(ad?.backnumber), team_id : gino(ad?.team_id), profile_pic:profile)
+        }
+        
+        
+        
+        
+
+        
+        
         let main_storyboard = UIStoryboard(name : "Main", bundle : nil)
         print("들어왔졍1")
         guard let main = main_storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else{return}
@@ -32,29 +132,8 @@ class SignSearchDetailScroll : UIViewController{
     }
     
     override func viewDidLoad() {
-        progress1 = KDCircularProgress(frame: progressbase.frame)
-        progress1.startAngle = -90
-        progress1.progressThickness = 0.2
-        progress1.trackThickness = 0.6
-        progress1.clockwise = true
-        progress1.gradientRotateSpeed = 4
-        progress1.roundedCorners = false
-        progress1.glowMode = .forward
-        progress1.glowAmount = 0.9
-        //progress1.backgroundColor = UIColor.red
-        // progress1.progressInsideFillColor = UIColor.red
-        //progress1.progressColors = [UIColor.red]
-        progress1.trackColor = UIColor.red
-        
-        //progress1.
-        // progress1.trackColor
-        // progress1
-        //progress1.UIColor = fromhe
-        progress1.center = CGPoint(x: view.center.x, y: view.center.y + 25)
-        
-        progressbase.addSubview(progress1)
-        
-        //place.text = self.viewCon
+        print("들어옴 설마 여기")
+
         
     }
     

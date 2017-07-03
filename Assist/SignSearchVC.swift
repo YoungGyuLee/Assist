@@ -6,13 +6,10 @@
 //  Copyright © 2017년 YG. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import DropDown
 //39 195 296 30
-class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-    
-    
+class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, NetworkCallback {
     
     @IBOutlet var back: UINavigationItem!
     @IBOutlet var searchTable: UITableView!
@@ -37,24 +34,37 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         initData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let model = SignSplashModel(self)
+        model.getTeamList()
+    }
+    
+    func networkResult(resultData: Any, code: String) {
+        if code == "팀조회"{
+            searchList = resultData as! [SearchVO]
+            //boardListTable.reloadData()
+        }
+    }
+    
+    
     func initData(){
         //TODO : 통신 전 미리 데이터 받아놔야 함.
         
 //        let infoVO = CellVO(name: name, campus: campus, part: part, partImg: "develop")
-        let string1 = "아아"
-        let string2 = "성남시"
-        let string3 = "이영규"
-        
-        
-        let data1 = SearchVO(teamName: string1, plcaeName: string2, coachName: string3)
-        
-//        let data2 = SearchVO(teamName: "아아1", plcaeName: "서울시", coachName: "이영규1")
+//        let string1 = "아아"
+//        let string2 = "성남시"
+//        let string3 = "이영규"
 //        
-//        let data3 = SearchVO(teamName: "아아2", plcaeName: "부산시", coachName: "이영규2")
-        searchList.append(data1)
-        //searchList.append(data2)
-        //searchList.append(data3)
-        print("테이블 다 들어감")
+//        
+//        let data1 = SearchVO(teamName: string1, plcaeName: string2, coachName: string3)
+//        
+////        let data2 = SearchVO(teamName: "아아1", plcaeName: "서울시", coachName: "이영규1")
+////        
+////        let data3 = SearchVO(teamName: "아아2", plcaeName: "부산시", coachName: "이영규2")
+//        searchList.append(data1)
+//        //searchList.append(data2)
+//        //searchList.append(data3)
+//        print("테이블 다 들어감")
         searchTable.isHidden = false
         searchTable.reloadData()
         
@@ -142,24 +152,17 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         guard let dvc = storyboard?.instantiateViewController(withIdentifier: "SignSearchDetail") as? SignSearchDetail else {return}
         
         
+        let ad = UIApplication.shared.delegate as? AppDelegate
         
         dvc.place = searchVO.plcaeName
         dvc.coach = searchVO.coachName
         dvc.team = searchVO.teamName
-    
-        
-      //  place = searchVO.plcaeName
-//        
-        
-//        dvc.name = infoVO.name//dvc는 DetailVC
-//        dvc.campus = infoVO.campus
-//        dvc.image = UIImage(named: infoVO.partImg!)//이미지를 통으로 넘김(String형식으로)
-        
+        ad?.myTeamId = searchVO.id
+        print("들어옴1")
+
         navigationController?.present(dvc, animated:false, completion:{})
         searchTable.deselectRow(at: indexPath, animated: false)
-        //navigationController?.pushViewController(dvc, animated: false)
 
-        //UImage(named : `)
         
         
     }

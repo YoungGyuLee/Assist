@@ -15,6 +15,10 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
 
     var navBar: UINavigationBar = UINavigationBar()
     
+    var name : String?
+    var email : String?
+    var password: String?
+    
     
     @IBOutlet var ageText: UITextField!
     
@@ -242,6 +246,26 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
     }
 
     @IBAction func toSignSearch(_ sender: Any) {
+        let ad = UIApplication.shared.delegate as? AppDelegate
+        if let image = userImage.image{
+            let imageData = UIImageJPEGRepresentation(image, 0.5)
+            //imageData.
+            ad?.username = name
+            ad?.email = email
+            ad?.password = password
+            ad?.age = Int(ageText.text!)
+            ad?.height = Float(heightText.text!)
+            ad?.weight = Float(weightText.text!)
+            ad?.foot = mainFootText.text
+            ad?.position = self.mainPosition.titleLabel?.text
+            ad?.position_detail = self.detailPosition.titleLabel?.text
+            ad?.backnumber = Int(backNumText.text!)
+            ad?.team_id = Int(backNumText.text!)
+            ad?.profile_pic = imageData
+            //ad?.age =
+        }
+        
+        
         
         guard let signTab = storyboard?.instantiateViewController(withIdentifier: "SignTabVC") as? SignTab else {return}
         navigationController?.present(signTab, animated: true, completion: {})

@@ -48,32 +48,40 @@ class Data433 : UIViewController{
     var memberList : [Int] = [1,2,3,4,5,6,7,8,9,10,11]
     var memberListString : [String] = ["1","2","3","4","5","6","7","8","9","10","11"]
     var stg : String = "433"
-    
-    
-    
+
     //int형 배열 선언
     //전술별로 얼마나 끊어야 하는 지 명세
     //번호 바뀔 때 마다 배열의 자리 바꿈
     //이 배열을 바꿀 때마다 부모로 보냄.
+    
+    //433이면 0//1~4//5~7//8~10 으로 끊어줘야 함.
+    
     override func viewDidLoad() {
 
         //memberList
-        
+        print(ad?.memList)
+        if ad?.memList != nil{
+            print("닐 아님")
+            self.memberList = (ad?.memList)!
+            print(self.memberList)
+        }
+    
         GKN.text = memberList[0].description
         
         def1N.text = memberList[1].description
-        def2N.text = 3.description
-        def3N.text = 4.description
-        def4N.text = 5.description
+        def2N.text = memberList[2].description
+        def3N.text = memberList[3].description
+        def4N.text = memberList[4].description
         
         
-        mid1N.text = 6.description
-        mid2N.text = 7.description
-        mid3N.text = 8.description
+        mid1N.text = memberList[5].description
+        mid2N.text = memberList[6].description
+        mid3N.text = memberList[7].description
         
-        atk1N.text = 9.description
-        atk2N.text = 10.description
-        atk3N.text = 11.description
+        atk1N.text = memberList[8].description
+        atk2N.text = memberList[9].description
+        atk3N.text = memberList[10].description
+    
         
         ad?.curStg = "433"
 

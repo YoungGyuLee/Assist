@@ -6,17 +6,31 @@
 //  Copyright © 2017년 YG. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-class SearchVO{
+
+class SearchVO : Mappable{
+    var id : Int?
     var teamName : String?
     var plcaeName : String?
     var coachName : String?
     
-    init(teamName:String?, plcaeName:String?, coachName:String?){
-        self.teamName = teamName
-        self.plcaeName = plcaeName
-        self.coachName = coachName
+    required init?(map: Map) {}
+    
+    
+    
+//    init(teamName:String?, plcaeName:String?, coachName:String?){
+//        self.teamName = teamName
+//        self.plcaeName = plcaeName
+//        self.coachName = coachName
+//    }
+//    
+    func mapping(map: Map) {
+        id<-map["id"]
+        teamName <- map["teamname"]
+        plcaeName <- map["region"]
+        coachName<-map["manager"]
+        
     }
     
 }

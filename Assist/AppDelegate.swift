@@ -44,6 +44,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    
+    //여기는 회원 가입//
+    var username : String?
+    var email : String?
+    var password : String?
+    var age : Int?
+    var height : Float?
+    var weight : Float?
+    var foot : String?
+    var position : String?
+    var position_detail : String?
+    var backnumber : Int?
+    var team_id : Int?
+    var profile_pic : Data?
+    
+    
+    
+    
+    
+    
+    var myTeamId : Int?
+    
+    
+    
     var memList : [Int]?
     var curStg : String?
     //경기 리스트
@@ -55,6 +79,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //내가 지금 선택한 선수 등번호.
     var previousSelect : Int?
     //이전에 선택한 선수 등번호.
+    
+    
+    
+    
+    
+    
     
 }
 

@@ -17,4 +17,8 @@ target 'Assist' do
     pod 'Kingfisher'
     pod 'KDCircularProgress'
     pod 'ScrollableGraphView'
+    pod 'Alamofire'
+    pod 'ObjectMapper'
+    pod 'AlamofireObjectMapper'
+    pod 'SwiftyJSON'
 end

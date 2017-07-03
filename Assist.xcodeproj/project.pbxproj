@@ -55,6 +55,12 @@
 		0709E53B1F0A3162006CFB7F /* DataEntry352.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E53A1F0A3162006CFB7F /* DataEntry352.swift */; };
 		0709E53D1F0A318B006CFB7F /* DataEntry343.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E53C1F0A318B006CFB7F /* DataEntry343.swift */; };
 		0709E5411F0A31BE006CFB7F /* DataEntry451.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5401F0A31BE006CFB7F /* DataEntry451.swift */; };
+		0709E5441F0A4FA0006CFB7F /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5431F0A4FA0006CFB7F /* NetworkModel.swift */; };
+		0709E5461F0A4FD0006CFB7F /* NetworkCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5451F0A4FD0006CFB7F /* NetworkCallback.swift */; };
+		0709E5491F0A51CE006CFB7F /* SignSplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E5481F0A51CE006CFB7F /* SignSplashModel.swift */; };
+		0709E54B1F0A80A4006CFB7F /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E54A1F0A80A4006CFB7F /* SearchResult.swift */; };
+		0709E54E1F0A8ACA006CFB7F /* TeamProfileResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E54D1F0A8ACA006CFB7F /* TeamProfileResult.swift */; };
+		0709E5501F0A8B11006CFB7F /* TeamProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E54F1F0A8B11006CFB7F /* TeamProfileResponse.swift */; };
 		070A12E81F03BF1C00CAD26B /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12E71F03BF1C00CAD26B /* TeamTab.swift */; };
 		070A12F01F03CEF700CAD26B /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */; };
 		070A12F41F03EF9000CAD26B /* TeamToMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */; };
@@ -90,6 +96,7 @@
 		07F8BFDE1F03A382002CEA97 /* TeamMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */; };
 		07F9305E1F060172000EB9DD /* SignSearchDetailScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9305D1F060172000EB9DD /* SignSearchDetailScroll.swift */; };
 		07F930601F06219A000EB9DD /* TeamScheduleAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9305F1F06219A000EB9DD /* TeamScheduleAdd.swift */; };
+		07FB2B5F1F0AD9D70048474E /* SignResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2B5E1F0AD9D70048474E /* SignResponse.swift */; };
 		C250D27597407B1F099AEA8C /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00911895D4294008CFF506E1 /* Pods_Assist.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +150,12 @@
 		0709E53A1F0A3162006CFB7F /* DataEntry352.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry352.swift; sourceTree = "<group>"; };
 		0709E53C1F0A318B006CFB7F /* DataEntry343.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry343.swift; sourceTree = "<group>"; };
 		0709E5401F0A31BE006CFB7F /* DataEntry451.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry451.swift; sourceTree = "<group>"; };
+		0709E5431F0A4FA0006CFB7F /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		0709E5451F0A4FD0006CFB7F /* NetworkCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCallback.swift; sourceTree = "<group>"; };
+		0709E5481F0A51CE006CFB7F /* SignSplashModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSplashModel.swift; sourceTree = "<group>"; };
+		0709E54A1F0A80A4006CFB7F /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		0709E54D1F0A8ACA006CFB7F /* TeamProfileResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileResult.swift; sourceTree = "<group>"; };
+		0709E54F1F0A8B11006CFB7F /* TeamProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileResponse.swift; sourceTree = "<group>"; };
 		070A12E71F03BF1C00CAD26B /* TeamTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
 		070A12EF1F03CEF700CAD26B /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		070A12F31F03EF9000CAD26B /* TeamToMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamToMainVC.swift; sourceTree = "<group>"; };
@@ -180,6 +193,7 @@
 		07F8BFDD1F03A382002CEA97 /* TeamMemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberVC.swift; sourceTree = "<group>"; };
 		07F9305D1F060172000EB9DD /* SignSearchDetailScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSearchDetailScroll.swift; sourceTree = "<group>"; };
 		07F9305F1F06219A000EB9DD /* TeamScheduleAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamScheduleAdd.swift; sourceTree = "<group>"; };
+		07FB2B5E1F0AD9D70048474E /* SignResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignResponse.swift; sourceTree = "<group>"; };
 		53A0CBBD52C9F9FC5B20C49A /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
 		67301E41C45862286ADE4DD3 /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +213,7 @@
 		0706B1BD1F01177400ACE4A1 /* SplashLogin */ = {
 			isa = PBXGroup;
 			children = (
+				0709E54C1F0A8640006CFB7F /* LoginResponse */,
 				0706B1BB1F00D66D00ACE4A1 /* SplashLogin.storyboard */,
 				07AEED0F1F038396001D21AF /* SearchCell.swift */,
 				0706B1BE1F01178600ACE4A1 /* SplashVC.swift */,
@@ -309,6 +324,35 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		0709E5421F0A4F84006CFB7F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0709E5471F0A51AE006CFB7F /* Model */,
+				0709E5431F0A4FA0006CFB7F /* NetworkModel.swift */,
+				0709E5451F0A4FD0006CFB7F /* NetworkCallback.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		0709E5471F0A51AE006CFB7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0709E5481F0A51CE006CFB7F /* SignSplashModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0709E54C1F0A8640006CFB7F /* LoginResponse */ = {
+			isa = PBXGroup;
+			children = (
+				0709E54A1F0A80A4006CFB7F /* SearchResult.swift */,
+				0709E54D1F0A8ACA006CFB7F /* TeamProfileResult.swift */,
+				0709E54F1F0A8B11006CFB7F /* TeamProfileResponse.swift */,
+				07FB2B5E1F0AD9D70048474E /* SignResponse.swift */,
+			);
+			name = LoginResponse;
+			sourceTree = "<group>";
+		};
 		070BDE841EFFF8BE0052FA77 = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +374,7 @@
 		070BDE8F1EFFF8BE0052FA77 /* Assist */ = {
 			isa = PBXGroup;
 			children = (
+				0709E5421F0A4F84006CFB7F /* Network */,
 				0706B1C21F0117B300ACE4A1 /* Main */,
 				0706B1BD1F01177400ACE4A1 /* SplashLogin */,
 				070BDE901EFFF8BE0052FA77 /* AppDelegate.swift */,
@@ -492,6 +537,7 @@
 			files = (
 				070C5C691F07825A008FBC7B /* Data352.swift in Sources */,
 				0707BAF41F05110D006AD50F /* DataPersonalRootC.swift in Sources */,
+				0709E54B1F0A80A4006CFB7F /* SearchResult.swift in Sources */,
 				07F8BFDA1F03A372002CEA97 /* TeamMainVC.swift in Sources */,
 				0709E5351F0A2DFF006CFB7F /* DataRecordVO.swift in Sources */,
 				0707BAFA1F051128006AD50F /* DataPersonalR3.swift in Sources */,
@@ -531,11 +577,15 @@
 				0707BAEA1F04EE77006AD50F /* DataTeamR2.swift in Sources */,
 				0706B1CC1F01191E00ACE4A1 /* LoginVC.swift in Sources */,
 				07AEED101F038396001D21AF /* SearchCell.swift in Sources */,
+				0709E5461F0A4FD0006CFB7F /* NetworkCallback.swift in Sources */,
+				0709E5491F0A51CE006CFB7F /* SignSplashModel.swift in Sources */,
 				07AEED161F039264001D21AF /* SearchDataPacket.swift in Sources */,
 				0707BAD61F04C5F7006AD50F /* DataPersonalVC.swift in Sources */,
+				0709E54E1F0A8ACA006CFB7F /* TeamProfileResult.swift in Sources */,
 				0707BAF21F0510D1006AD50F /* DataPeronalRoot.swift in Sources */,
 				072CCC311F07D54E0084BABE /* TeamEntryCell.swift in Sources */,
 				070BDE931EFFF8BE0052FA77 /* ViewController.swift in Sources */,
+				07FB2B5F1F0AD9D70048474E /* SignResponse.swift in Sources */,
 				0707BAD41F04C5EE006AD50F /* DataTeamVC.swift in Sources */,
 				0706B1CE1F0119E400ACE4A1 /* MainVC.swift in Sources */,
 				0706B1CA1F0118B300ACE4A1 /* SignCreateVC.swift in Sources */,
@@ -558,8 +608,10 @@
 				0707BADA1F04CA8F006AD50F /* DataDetailEntry.swift in Sources */,
 				0707BAF81F05111F006AD50F /* DataPersonalR2.swift in Sources */,
 				0706B1BF1F01178600ACE4A1 /* SplashVC.swift in Sources */,
+				0709E5441F0A4FA0006CFB7F /* NetworkModel.swift in Sources */,
 				07F8BFDC1F03A37A002CEA97 /* TeamScheduleVC.swift in Sources */,
 				0707BAEC1F04EE80006AD50F /* DataTeamR3.swift in Sources */,
+				0709E5501F0A8B11006CFB7F /* TeamProfileResponse.swift in Sources */,
 				0707BAD21F04C5E6006AD50F /* DataRecordVC.swift in Sources */,
 				070A12E81F03BF1C00CAD26B /* TeamTab.swift in Sources */,
 				0709E53D1F0A318B006CFB7F /* DataEntry343.swift in Sources */,
