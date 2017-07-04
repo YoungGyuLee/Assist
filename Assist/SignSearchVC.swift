@@ -157,7 +157,9 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         dvc.place = searchVO.plcaeName
         dvc.coach = searchVO.coachName
         dvc.team = searchVO.teamName
+        
         ad?.myTeamId = searchVO.id
+        print(searchVO.id)
         print("들어옴1")
 
         navigationController?.present(dvc, animated:false, completion:{})

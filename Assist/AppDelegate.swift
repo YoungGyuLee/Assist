@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    var userId : Int?
+    
     
     //여기는 회원 가입//
     var username : String?
@@ -57,11 +59,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var position_detail : String?
     var backnumber : Int?
     var team_id : Int?
-    var profile_pic : Data?
+    var profile_pic : Any?
     
     
+    //여기는 날짜 넘기기
+    var date : Date?
     
     
+    //스케줄 아이디
+    var scheduleId : Int?
     
     
     var myTeamId : Int?

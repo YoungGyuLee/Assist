@@ -18,9 +18,6 @@ class SignResponse : Mappable{
     func mapping(map: Map) {
         id<-map["id"]
         team_id<-map["team_id"]
-
-   
-        
     }
     
 }

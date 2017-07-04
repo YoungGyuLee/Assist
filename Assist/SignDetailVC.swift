@@ -250,6 +250,8 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         if let image = userImage.image{
             let imageData = UIImageJPEGRepresentation(image, 0.5)
             //imageData.
+            print(image)
+            print(imageData)
             ad?.username = name
             ad?.email = email
             ad?.password = password

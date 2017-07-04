@@ -8,6 +8,7 @@
 
 import Foundation
 import Kingfisher
+import UIKit
 
 
 
@@ -88,15 +89,22 @@ extension UIViewController{
 }
 extension UIImageView {
     public func imageFromUrl(_ urlString: String?, defaultImgPath : String) {
+        print("이미지 변환")
         let defaultImg = UIImage(named: defaultImgPath)
         if let url = urlString {
+            print(url)
             if url.isEmpty {
                 self.image = defaultImg
+                print("이미지 변환 1")
             } else {
+                KingfisherManager.shared.cache.clearMemoryCache()
                 self.kf.setImage(with: URL(string: url), placeholder: defaultImg, options: [.transition(ImageTransition.fade(0.5))])
+                KingfisherManager.shared.cache.clearMemoryCache()
+                print("이미지 변환 2")
             }
         } else {
             self.image = defaultImg
+            print("이미지 변환 3")
         }
     }
 }

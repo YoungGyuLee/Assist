@@ -151,9 +151,12 @@ class SignSplashModel : NetworkModel{
         let foot = foot.data(using: .utf8)
         let position = position.data(using: .utf8)
         let position_detail = position_detail.data(using: .utf8)
+        let backnumber = backnumber
+        let team_id = team_id
         
+        print("이미지 업로드1")
         
-        
+        //이미지, 백넘버, 팀 아이디
         if profile_pic == nil{
             
         }else{
@@ -171,6 +174,8 @@ class SignSplashModel : NetworkModel{
                 multipartFormData.append(foot!, withName: "foot")
                 multipartFormData.append(position!, withName: "position")
                 multipartFormData.append(position_detail!, withName: "position_detail")
+                multipartFormData.append("\(backnumber)".data(using: .utf8)!, withName: "backnumber")
+                multipartFormData.append("\(team_id)".data(using: .utf8)!, withName: "team_id")
                 multipartFormData.append(profile_pic!, withName: "profile_pic", fileName: "image.jpg", mimeType: "image/png")
             },
                              
@@ -186,9 +191,9 @@ class SignSplashModel : NetworkModel{
                                             print(JSON(res.result.value))
                                             if let value = res.result.value {
                                                 let data = JSON(value)
-                                                let msg = data["status"].stringValue
+                                                let msg = data["status"].intValue
                                                 let resultData = data["response"]
-                                                if msg == "200" {
+                                                if msg == 200 {
                                                     
                                                     
                                                     DispatchQueue.main.async(execute: {
@@ -215,6 +220,54 @@ class SignSplashModel : NetworkModel{
             
         }
     }
+    
+    func login(email : String, password : String){
+        
+        let URL : String = "\(baseURL)/login"
+        
+        
+        //        "game_dt": "2017-06-27 10:00:00",
+        //        "place": "서울시 성북구 고려대학교 화정체육관",
+        //        "against_team": "FC공돌이",
+        //        "message": "이기면 치킨 쏜다 -by 김자현"
+        
+  
+        let body : [String:String] = [
+            "email":email,
+            "password":password
+        ]
+        
+        
+        Alamofire.request(URL, method: .post, parameters:body, encoding: JSONEncoding.default, headers: nil).responseObject{
+            
+            (response:DataResponse<LoginResult>) in
+            
+        
+            print("일정일정")
+            switch response.result{
+            case .success:
+                print("로긴로긴")
+                
+                
+                guard let Message = response.result.value else{
+                    
+                    self.view.networkFailed()
+                    return
+                }
+   
+                    self.view.networkResult(resultData: response.result.value?.response, code: "로그인")
+                
+      
+                
+                
+            case .failure(let err):
+                print(err)
+                self.view.networkFailed()
+            }
+            
+        }
+    }
+    
     
     
 }

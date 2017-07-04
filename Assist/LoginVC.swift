@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginVC : UIViewController, UITextFieldDelegate{
+class LoginVC : UIViewController, UITextFieldDelegate, NetworkCallback{
     var navBar: UINavigationBar = UINavigationBar()
     @IBOutlet var barItem: UINavigationItem!
     
@@ -26,6 +26,26 @@ class LoginVC : UIViewController, UITextFieldDelegate{
     //var logoImage = String?
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
+    
+    var loginResult : LoginResponse?
+    let ad = UIApplication.shared.delegate as? AppDelegate
+    
+    func networkResult(resultData: Any, code: String) {
+        if code == "로그인"{
+            
+            loginResult = resultData as! LoginResponse
+            ad?.userId = loginResult?.id
+            ad?.myTeamId = loginResult?.team_id
+            //boardListTable.reloadData()
+            
+            let main_storyboard = UIStoryboard(name : "Main", bundle : nil)
+            print("들어왔졍1")
+            guard let main = main_storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else{return}
+            print("들어왔졍2")
+            self.present(main, animated: true)
+            
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -119,6 +139,13 @@ class LoginVC : UIViewController, UITextFieldDelegate{
 
         
     }
+    
+    @IBAction func Login(_ sender: Any) {
+        let model = SignSplashModel(self)
+        model.login(email: gsno(emailText.text), password: gsno(passwordText.text))
+        
+    }
+    
 }
     
 

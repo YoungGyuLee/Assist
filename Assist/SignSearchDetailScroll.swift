@@ -8,6 +8,7 @@
 
 import UIKit
 import KDCircularProgress
+import Kingfisher
 
 class SignSearchDetailScroll : UIViewController, NetworkCallback{
     
@@ -57,8 +58,12 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
             let imgURL = ""
             
             print(imgURL)
-            teamImg.imageFromUrl(imgURL, defaultImgPath: "symbol")
-            //teamImg.image
+            
+            KingfisherManager.shared.cache.clearMemoryCache()
+            teamImg.imageFromUrl(gsno(imgURL), defaultImgPath: "symbol")
+            
+            KingfisherManager.shared.cache.clearMemoryCache()
+        
 
             progress1.animate(fromAngle: 0, toAngle: progress1.angle
 , duration: 5) { completed in
@@ -78,6 +83,8 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
         
         if code == "회원가입" {
             signResponse = resultData as! SignResponse
+            ad?.userId = signResponse?.id
+            print(signResponse?.id)
             print(signResponse)
         }
 
@@ -114,8 +121,10 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
         print(gino(ad?.backnumber))
         print(gino(ad?.team_id))
         
+        
         if let profile = ad?.profile_pic{
-         model.signUp(username:gsno(ad?.username), email:gsno(ad?.email), password:gsno(ad?.password),age:gino(ad?.age), height : gfno(ad?.height), weight : gfno(ad?.weight), foot : gsno(ad?.foot) ,position : gsno("MF"),position_detail : gsno("RM"),backnumber : gino(ad?.backnumber), team_id : gino(ad?.team_id), profile_pic:profile)
+            print(profile)
+         model.signUp(username:gsno(ad?.username), email:gsno(ad?.email), password:gsno(ad?.password),age:gino(ad?.age), height : gfno(ad?.height), weight : gfno(ad?.weight), foot : gsno(ad?.foot) ,position : gsno("MF"),position_detail : gsno("RM"),backnumber : gino(ad?.backnumber), team_id : gino(ad?.team_id), profile_pic:profile as! Data)
         }
         
         

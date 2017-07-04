@@ -20,21 +20,27 @@ class TeamScheduleAdd : UIViewController{
     var date = Date()
     var containerToMaster:getCurrentDate?
     //인터페이스 변수
+    let ad = UIApplication.shared.delegate as? AppDelegate
     let dateForamtterGet = DateFormatter()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSchedule.layer.cornerRadius = 4
         print("뷰 생성")
         
     }
-    
+
+
     @IBAction func addSchedule(_ sender: Any) {
         //print(containerToMaster?.getDate(date: self.date))
         print(self.date)
         guard let dataInsert = storyboard?.instantiateViewController(withIdentifier: "TeamScheduleInsert") as? TeamScheduleInsert else {return}
-        dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
-
-        dataInsert.gameDateString = self.dateForamtterGet.string(from: self.date)
+        
+        dateForamtterGet.dateFormat = "yyyy-MM-dd"
+       // dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        
+        dataInsert.gameDateString = self.dateForamtterGet.string(from: (ad?.date)!)
 
         navigationController?.pushViewController(dataInsert, animated: true)
 

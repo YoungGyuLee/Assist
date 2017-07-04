@@ -25,7 +25,7 @@ class TeamTab : UITabBarController{
         
         self.tabBar.isHidden = true
         
-        signTabBarView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80)
+        signTabBarView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 67)
         signTabBarView.backgroundColor = uicolorFromHex(rgbValue: 0x012A6A)
         
         
