@@ -91,16 +91,11 @@ class TeamScheduleInsert : UIViewController, UIGestureRecognizerDelegate, Networ
         print(matchDay3)
         print(matchDay4)
         print(matchDay5)
-        //9시간 늦게 나옴
-        //dateForamtterGet.timeZone.identifier = "ko_kr"
-        let matchdate1 = dateForamtterGet.date(from: matchDay5)!
-        print(matchdate1)
+
         
         
         let model = TeamModel(self)
-        print(gsno(matchDay5))
         
-        //어딘가에 저장해 놓은 팀 아이디 불러올 것.
         
         model.addTeamSchedule(team_id: gino(ad?.myTeamId), game_dt: gsno(matchDay5), place: "마리하우스", against_team: "돔돔", message: "밥먹자")
     }

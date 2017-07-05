@@ -262,7 +262,7 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
             ad?.position = self.mainPosition.titleLabel?.text
             ad?.position_detail = self.detailPosition.titleLabel?.text
             ad?.backnumber = Int(backNumText.text!)
-            ad?.team_id = Int(backNumText.text!)
+            //ad?.myTeamId = Int(backNumText.text!)
             ad?.profile_pic = imageData
             //ad?.age =
         }

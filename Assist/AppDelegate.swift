@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var position : String?
     var position_detail : String?
     var backnumber : Int?
-    var team_id : Int?
+    //var team_id : Int?
     var profile_pic : Any?
     
     
@@ -72,8 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var myTeamId : Int?
     
-    
-    
+
     var memList : [Int]?
     var curStg : String?
     //경기 리스트
@@ -88,8 +87,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    
-    
+    //전술 등록 때 쓰는 스케줄.
+    var scheduleIdForStg : Int?
     
     
 }

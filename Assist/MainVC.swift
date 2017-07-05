@@ -35,5 +35,12 @@ class MainVC : UIViewController{
         
     }
     
+    @IBAction func toRanking(_ sender: Any) {
+        let team_storyboard = UIStoryboard(name : "Rank", bundle : nil)
+        guard let rank = team_storyboard.instantiateViewController(withIdentifier: "RankingVC") as? RankingVC else{return}
+        self.present(rank, animated: true)
+    }
+    
+    
     
 }

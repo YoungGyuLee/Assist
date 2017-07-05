@@ -302,6 +302,9 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="entryTable" destination="tig-Wm-sNq" id="reo-Xm-I4B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzO-Vb-df4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -846,6 +849,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74k-1r-uFF">
                                                 <rect key="frame" x="192" y="21" width="150" height="30"/>
                                                 <state key="normal" title="불참가"/>
+                                                <connections>
+                                                    <action selector="NoEntry:" destination="JIz-gy-iqS" eventType="touchUpInside" id="ggu-Fb-Df2"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gm-j2-VWQ">
                                                 <rect key="frame" x="181" y="55" width="1" height="139"/>
@@ -862,7 +868,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="140" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gjF-Eb-bSD" id="Xwb-3x-ZWX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbT-33-EWh">
@@ -895,7 +901,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="140" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c9i-IQ-OZR" id="K6D-NQ-tya">
-                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRf-9Y-T20">

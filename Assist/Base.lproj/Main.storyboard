@@ -66,6 +66,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjC-4K-7tc">
                                         <rect key="frame" x="0.0" y="388" width="375" height="129.5"/>
                                         <state key="normal" title="RANKING" image="main_ranking"/>
+                                        <connections>
+                                            <action selector="toRanking:" destination="zbw-pa-Wie" eventType="touchUpInside" id="q5m-rh-gn0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa4-WP-dfT">
                                         <rect key="frame" x="0.0" y="517.5" width="375" height="129.5"/>

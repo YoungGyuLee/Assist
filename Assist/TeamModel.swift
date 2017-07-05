@@ -23,6 +23,38 @@ class TeamModel : NetworkModel{
 //        "against_team": "FC공돌이",
 //        "message": "이기면 치킨 쏜다 -by 김자현"
         
+//        
+//        
+//        let body1 : [String: Any] = [
+//            "tatic":tatic,
+//            "player":player,
+//            "event":event
+//        ]
+//        
+//        let player:[String:Any] = [
+//            "ATK":ATk,
+//            
+//        ]
+//        
+//        let ATK:[Any]
+//        
+//        for i in 0...10{
+//            //UISplitViewController
+//            let atk : [String:Int] = ["player_id":vlaue]
+//            ATK.append(atk)
+//        }
+//        
+//    //DEF, MID, GK, SUB -->//player
+//        
+//        let event : [Any]
+//        for i in ~~~~{
+//            let evnet : [String:Any] = ["type":"value", "player":player]
+//            
+//        }
+//        
+//        
+        
+        
         print("일정일정1")
         let body : [String:Any] = [
             "game_dt":game_dt,
@@ -144,11 +176,11 @@ class TeamModel : NetworkModel{
         //        "against_team": "FC공돌이",
         //        "message": "이기면 치킨 쏜다 -by 김자현"
         
-        
-        print("참가참가1")
+
         let body : [String:Any] = [
             "player_id":player_id,
             "attendance":attendance
+            
         ]
         
         Alamofire.request(URL, method: .post, parameters:body, encoding: JSONEncoding.default, headers: nil).responseObject{
@@ -183,6 +215,41 @@ class TeamModel : NetworkModel{
         }
     }
     
+    
+    func getTeamMember(team_id : Int){
+        //team/[team_id]/members
+        let URL : String = "\(baseURL)/team/\(team_id)/members"
+        //schedule/[schedule_id]/attendee
+        print(URL)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject{
+            
+            (response : DataResponse<TeamMemberResult>) in
+            //DataResponse 괄호 안에 데이터를 받을 객체를 넣으면 됨.
+            switch response.result{
+            case .success:
+                //response.result.value
+                guard let teamMember = response.result.value else{
+                    self.view.networkFailed()
+                    return//데이터를 받아올 때는 result를 통해서.
+                }
+                
+                if let results = teamMember.response {//받아 온 데이터를 통해서 쓸 값을 여기서 정함.
+                    self.view.networkResult(resultData: results, code: "팀멤버조회")
+                }
+                
+//                if let results = teamEntry.response?.noattend {//받아 온 데이터를 통해서 쓸 값을 여기서 정함.
+//                    self.view.networkResult(resultData: results, code: "팀불참명단조회")
+//                }
+                
+            case .failure(let err):
+                print("통신 들어 왔었음4")
+                print(err)
+                self.view.networkFailed()
+            }
+            
+        }
+        
+    }
 
     
     

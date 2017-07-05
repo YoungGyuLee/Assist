@@ -8,21 +8,6 @@
 
 import Foundation
 import UIKit
-//
-//protocol FristDelegate{
-//    var list : [Int]{ get set}
-//    
-//    func passData(list: [Int]) -> [Int]
-//}
-//
-//
-//
-//protocol getMemberList{
-//    func getList(memList : [Int]?, stg : String?)
-//   
-//}
-
-
 
 
 class DataDetailEntry : UIViewController{
@@ -32,8 +17,20 @@ class DataDetailEntry : UIViewController{
 //    var listContainer : getMemberList?
 //    var container : FristDelegate?
  
+    //이전 뷰에서 받아오는 데이터들
+    
+            var id : Int?
+            var game_dt : String?
+            var place : String?
+            var against_team : String?
+            var message : String?
+            var score_team : Int?
+            var score_against_team : Int?
+            var tactic : String?
     
     
+    
+
     var memList : [Int]?
     var stg : String?
     //var containerToMaster:getMemberList?
@@ -57,6 +54,17 @@ class DataDetailEntry : UIViewController{
         stg343.isHidden = true
         stg352.isHidden = true
         stg451.isHidden = true
+        
+        print(id)
+        print(game_dt)
+        print(place)
+        print(against_team)
+        print(message)
+        print(score_team)
+        print(score_against_team)
+        print(tactic)
+        
+        
         
         //dataFirst.delegate = dataSecond
         //sent.delegate

@@ -1043,6 +1043,22 @@
                                     <action selector="toMain:" destination="Ywq-dV-q3a" eventType="touchUpInside" id="qm1-us-aLX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6I-Ys-o7K">
+                                <rect key="frame" x="119" y="352" width="198" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEH-4z-pG5">
+                                <rect key="frame" x="233" y="195" width="29" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="team_camera"/>
+                                <connections>
+                                    <action selector="SelectProfile:" destination="Ywq-dV-q3a" eventType="touchUpInside" id="6oz-Ly-DK9"/>
+                                    <action selector="setProfile:" destination="BV3-Mp-Ccl" eventType="touchUpInside" id="ufB-gn-TJ8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.16470588235294117" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1052,6 +1068,8 @@
                         <outlet property="back" destination="fOc-Ml-8fL" id="gLT-nD-djW"/>
                         <outlet property="coachText" destination="Ehc-qv-lYy" id="fp8-gT-5Mc"/>
                         <outlet property="foundText" destination="Hwx-CH-bEk" id="OLp-eC-1fQ"/>
+                        <outlet property="meaage" destination="xok-S2-oAe" id="hBC-xP-Lbc"/>
+                        <outlet property="placeName" destination="e6I-Ys-o7K" id="nK9-mw-lpA"/>
                         <outlet property="placeText" destination="qGR-lk-nvs" id="lYQ-cL-SHg"/>
                         <outlet property="signBtn" destination="8Pv-at-ReO" id="tnk-Ob-xus"/>
                         <outlet property="teamImg" destination="nsR-CQ-kHZ" id="v2z-4e-hZ9"/>
@@ -1494,7 +1512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evK-yH-0Hl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16768.799999999999" y="1347.0764617691154"/>
+            <point key="canvasLocation" x="16768.799999999999" y="1346.6266866566718"/>
         </scene>
     </scenes>
     <resources>

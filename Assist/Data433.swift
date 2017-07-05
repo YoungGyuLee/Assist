@@ -7,15 +7,10 @@
 //
 
 import UIKit
-//
-//protocol toDetail{
-//    func itsList() -> [Int]
-//}
 
-class Data433 : UIViewController{
-  
 
-    
+class Data433 : UIViewController, NetworkCallback{
+
     var touched : Bool = false
     var changedNum : String = ""
     var willChangNum : String = ""
@@ -27,8 +22,14 @@ class Data433 : UIViewController{
     let com = Company()
     let ad = UIApplication.shared.delegate as? AppDelegate
   
-    
+    var entryList : [TeamEntryVO] = [TeamEntryVO]()
 
+
+    var atkList : [DataDSAtk] = [DataDSAtk]()
+    var defList : [DataDSDef] = [DataDSDef]()
+    var midList : [DataDSMid] = [DataDSMid]()
+    var gkList : [DataDSGk] = [DataDSGk]()
+    var subList : [DataDSSub] = [DataDSSub]()
     
     @IBOutlet var GKN: UILabel!
     
@@ -48,24 +49,47 @@ class Data433 : UIViewController{
     var memberList : [Int] = [1,2,3,4,5,6,7,8,9,10,11]
     var memberListString : [String] = ["1","2","3","4","5","6","7","8","9","10","11"]
     var stg : String = "433"
-
     //int형 배열 선언
     //전술별로 얼마나 끊어야 하는 지 명세
     //번호 바뀔 때 마다 배열의 자리 바꿈
     //이 배열을 바꿀 때마다 부모로 보냄.
     
     //433이면 0//1~4//5~7//8~10 으로 끊어줘야 함.
-    
-    override func viewDidLoad() {
 
-        //memberList
-        print(ad?.memList)
-        if ad?.memList != nil{
-            print("닐 아님")
-            self.memberList = (ad?.memList)!
-            print(self.memberList)
+    func networkResult(resultData: Any, code: String) {
+        if code == "참가조회"{
+            print("참가조회")
+            let tempList = resultData as! DataResultTemp
+            atkList = tempList.ATK!
+            defList = tempList.DF!
+            midList = tempList.MF!
+            gkList = tempList.GK!
+            subList = tempList.SUB!
+            
+            makeBakcNumberList()
         }
     
+
+    }
+    
+    func makeBakcNumberList(){
+
+        print("얄루")
+        memberList[0] = gkList[0].backnumber!
+
+        memberList[1] = defList[0].backnumber!
+        memberList[2] = defList[1].backnumber!
+        memberList[3] = defList[2].backnumber!
+        memberList[4] = defList[3].backnumber!
+        
+        memberList[5] = midList[0].backnumber!
+        memberList[6] = midList[1].backnumber!
+        memberList[7] = midList[2].backnumber!
+        
+        memberList[8] = atkList[0].backnumber!
+        memberList[9] = atkList[1].backnumber!
+        memberList[10] = atkList[2].backnumber!
+        
         GKN.text = memberList[0].description
         
         def1N.text = memberList[1].description
@@ -81,8 +105,39 @@ class Data433 : UIViewController{
         atk1N.text = memberList[8].description
         atk2N.text = memberList[9].description
         atk3N.text = memberList[10].description
-    
         
+        
+        for i in 0...10{
+            print(memberList[i])
+            memberListString[i] = memberList[i].description
+        }
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        ad?.setRecord = true
+        //여기서 등번호->이름 딕셔너리 하나 만들어야 함.
+    }
+    
+    
+    override func viewDidLoad() {
+        //1. 목록을 다 불러온다.
+        
+        print("저어어어어언술")
+        //memberList
+        print(ad?.memList)
+        if ad?.memList != nil{
+            print("닐 아님")
+            self.memberList = (ad?.memList)!
+            print(self.memberList)
+        }
+        else{
+
+            let model = DataModel(self)
+            model.getDataFromStatus(schedule_id: gino(ad?.scheduleIdForStg), status: "4-3-3")
+        }
+        //멤버조회
+
         ad?.curStg = "433"
 
     }

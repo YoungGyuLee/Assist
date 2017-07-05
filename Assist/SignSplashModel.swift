@@ -124,22 +124,6 @@ class SignSplashModel : NetworkModel{
     //문법설명 따로
     func signUp(username:String, email:String, password:String,age:Int, height : Float, weight : Float, foot : String,position : String,position_detail : String,backnumber : Int, team_id : Int, profile_pic:Data?){
         
-//        
-//        'username': 'dshyun0226',
-//        'email': 'dshyun0226@gmail.com',
-//        'password': 'password',
-//        'age': 23,
-//        'height': 180,
-//        'weight': 73,
-//        'foot': 'right',
-//        'position': 'MF',
-//        'position_detail': 'RM',
-//        'backnumber': 14,
-//        'team_id': 1,
-//        'profile_pic': 개인사진.png
-        
-        
-        
         let URL : String = "\(baseURL)/signup"
         
         let username = username.data(using: .utf8)
@@ -193,15 +177,20 @@ class SignSplashModel : NetworkModel{
                                                 let data = JSON(value)
                                                 let msg = data["status"].intValue
                                                 let resultData = data["response"]
-                                                if msg == 200 {
-                                                    
-                                                    
+                                                let valueInt = resultData["id"].intValue
+                                                let valueInt2 = resultData["team_id"].intValue
+                                                
+                                                    print(valueInt)
+                                                    print(valueInt2)
+                                                    print(msg)
+                                                    print(resultData)
+                                                    print("회원가입 들어옴")
                                                     DispatchQueue.main.async(execute: {
                                                         print("dispatc Queue")
-                                                        self.view.networkResult(resultData: resultData, code: "회원가입")
+                                                        self.view.networkResult(resultData: SignVO(id: valueInt,team_id: valueInt2), code: "회원가입")
                                                     })
                                                     print(msg)
-                                                }//if msg == "ok
+                                                //if msg == "ok
                                         }//if let value
                                         case .failure(let err):
                                             print("upload Error : \(err)")
@@ -224,14 +213,7 @@ class SignSplashModel : NetworkModel{
     func login(email : String, password : String){
         
         let URL : String = "\(baseURL)/login"
-        
-        
-        //        "game_dt": "2017-06-27 10:00:00",
-        //        "place": "서울시 성북구 고려대학교 화정체육관",
-        //        "against_team": "FC공돌이",
-        //        "message": "이기면 치킨 쏜다 -by 김자현"
-        
-  
+    
         let body : [String:String] = [
             "email":email,
             "password":password
@@ -254,8 +236,12 @@ class SignSplashModel : NetworkModel{
                     self.view.networkFailed()
                     return
                 }
-   
-                    self.view.networkResult(resultData: response.result.value?.response, code: "로그인")
+                
+                //let resultData = data["response"]
+                let valueInt = response.result.value?.response?.id
+                let valueInt2 = response.result.value?.response?.team_id
+                    //response.result.value?.response
+                    self.view.networkResult(resultData: LoginVO(id: valueInt,team_id: valueInt2), code: "로그인")
                 
       
                 
@@ -267,6 +253,86 @@ class SignSplashModel : NetworkModel{
             
         }
     }
+    
+    
+    
+    func teamCreate(teamname:String, region:String, manager:String, found_dt : String, message : String,  profile_pic:Data?){
+        
+        
+        let URL : String = "\(baseURL)/team"
+        
+        let teamname = teamname.data(using: .utf8)
+        let region = region.data(using: .utf8)
+        let manager = manager.data(using: .utf8)
+        let found_dt = found_dt.data(using: .utf8)
+        let message = message.data(using: .utf8)
+
+        print("이미지 업로드1")
+        
+        //이미지, 백넘버, 팀 아이디
+        if profile_pic == nil{
+            
+        }else{
+            
+            Alamofire.upload(multipartFormData : { multipartFormData in
+                
+                //멀티파트를 이용해 데이터를 담습니다
+                
+                multipartFormData.append(teamname!, withName: "teamname")
+                multipartFormData.append(region!, withName: "region")
+                multipartFormData.append(manager!, withName: "manager")
+                multipartFormData.append(found_dt!, withName: "found_dt")
+                multipartFormData.append(message!, withName: "message")
+                multipartFormData.append(profile_pic!, withName: "profile_pic", fileName: "image.jpg", mimeType: "image/png")
+            },
+                             
+                             to: URL,
+                             encodingCompletion: { encodingResult in
+                                
+                                switch encodingResult{
+                                case .success(let upload, _, _):
+                                    upload.responseData { res in
+                                        switch res.result {
+                                        case .success:
+                                            print("팀창단1")
+                                            
+                                            print(JSON(res.result.value))
+                                            if let value = res.result.value {
+                                                let data = JSON(value)
+                                                print(data)
+                                                
+                                                let msg = data["status"].intValue
+                                                
+                                                let resultData = data["team_id"].intValue
+                                                    print("팀창단2")
+                                                    print(msg)
+                                                    print(resultData)
+                                                    DispatchQueue.main.async(execute: {
+                                                        print("dispatc Queue")
+                                                        self.view.networkResult(resultData: resultData, code: "팀창단")
+                                                    })
+                                                    print(msg)
+                                                //if msg == "ok
+                                        }//if let value
+                                        case .failure(let err):
+                                            print("upload Error : \(err)")
+                                            DispatchQueue.main.async(execute: {
+                                                self.view.networkFailed()
+                                            })
+                                        }
+                                    }
+                                case .failure(let err):
+                                    print("network Error : \(err)")
+                                    self.view.networkFailed()
+                                }//switch
+            }
+                
+            )   //Alamofire.upload
+            
+        }
+    }
+
+    
     
     
     

@@ -24,7 +24,7 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
     
     @IBOutlet var sign: UIButton!
     var profileList : TeamProfileResponse?
-    var signResponse : SignResponse?
+    var signResponse : SignVO?
     
     var id : Int?
     let ad = UIApplication.shared.delegate as? AppDelegate
@@ -55,7 +55,7 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
             
             print(gsno(profileList?.profile_pic_url))
             
-            let imgURL = ""
+            let imgURL = "http://13.124.136.174:3000/static/images/profileImg/team/\(gsno(profileList?.profile_pic_url))"
             
             print(imgURL)
             
@@ -82,10 +82,23 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
         }
         
         if code == "회원가입" {
-            signResponse = resultData as! SignResponse
+            print(resultData)
+            //signResponse = resultData as! SignResponse
+            signResponse = resultData as! SignVO
             ad?.userId = signResponse?.id
-            print(signResponse?.id)
-            print(signResponse)
+            //창단 아닌 회원가입의 경우 팀 아이디를 저장 해 놓음. 그래서 굳이 여기서도 저장할 필요는 없음.
+            
+            print("회원 아이디 \(ad?.userId)")
+            print("팀 아이디 \(ad?.myTeamId)")
+            
+            
+            let main_storyboard = UIStoryboard(name : "Main", bundle : nil)
+            print("들어왔졍1")
+            guard let main = main_storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else{return}
+            print("들어왔졍2")
+            self.present(main, animated: true)
+            
+            
         }
 
         
@@ -119,25 +132,15 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
         print(gsno("MF"))
         print(gsno("RM"))
         print(gino(ad?.backnumber))
-        print(gino(ad?.team_id))
+        print(gino(ad?.myTeamId))
         
         
         if let profile = ad?.profile_pic{
             print(profile)
-         model.signUp(username:gsno(ad?.username), email:gsno(ad?.email), password:gsno(ad?.password),age:gino(ad?.age), height : gfno(ad?.height), weight : gfno(ad?.weight), foot : gsno(ad?.foot) ,position : gsno("MF"),position_detail : gsno("RM"),backnumber : gino(ad?.backnumber), team_id : gino(ad?.team_id), profile_pic:profile as! Data)
+         model.signUp(username:gsno(ad?.username), email:gsno(ad?.email), password:gsno(ad?.password),age:gino(ad?.age), height : gfno(ad?.height), weight : gfno(ad?.weight), foot : gsno(ad?.foot) ,position : gsno("MF"),position_detail : gsno("RM"),backnumber : gino(ad?.backnumber), team_id : gino(ad?.myTeamId), profile_pic:profile as! Data)
         }
         
-        
-        
-        
 
-        
-        
-        let main_storyboard = UIStoryboard(name : "Main", bundle : nil)
-        print("들어왔졍1")
-        guard let main = main_storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else{return}
-        print("들어왔졍2")
-        self.present(main, animated: true)
     }
     
     override func viewDidLoad() {

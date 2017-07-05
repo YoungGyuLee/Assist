@@ -103,17 +103,6 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-//         print("스케줄로드1")
-//        let model = TeamModel(self)
-//        model.getTeamSchedule(team_id: 9, year: 2017, month: 6)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-    }
-    
     override func viewDidLoad() {
         //로드할 때 여태 찍힌 날짜들이랑 내용 다 불러올 것.
         
@@ -122,9 +111,11 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
         
         //값 넣어야 함.
         let model = TeamModel(self)
-        print(ad?.myTeamId!)
+        print("스케줄로드1")
+        print(gino(ad?.myTeamId!))
+        print("스케줄로드2")
         teamID = ad?.myTeamId
-        model.getTeamSchedule(team_id:(ad?.myTeamId!)!, year: 2017, month: 7)
+        model.getTeamSchedule(team_id:gino(ad?.myTeamId!), year: 2017, month: 7)
         
         scroll.isScrollEnabled = false
         
@@ -193,17 +184,10 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
             
         }
         
-
-        
-        
         if nonSelectedDates.contains(date) {
             listView.isHidden = true
             addView.isHidden = true
         }
-        
- 
-
-        
     }
     
     
@@ -301,6 +285,8 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
         calendar.allowsMultipleSelection = true
         //scheduleList.count
         print(scheduleList.count)
+        
+        if scheduleList.count != 0{
         for i in 0...(scheduleList.count-1){
             print("캘린더 인잇1")
             let index = scheduleList[i].game_dt?.index((scheduleList[i].game_dt?.startIndex)!, offsetBy: 10)
@@ -312,6 +298,7 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
             dates.append(date!)
             calendar.select(date)
             
+        }
         }
        // calendar.allowsMultipleSelection = true
 
@@ -357,7 +344,6 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
         }
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
@@ -370,6 +356,9 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
         
     }
     
-    
-    
+    @IBAction func NoEntry(_ sender: Any) {
+        let model = TeamModel(self)
+        model.addEntry(schedule_id : gino(ad?.scheduleId), player_id : gino(ad?.userId), attendance : "noattend")
+        noEntryMemTable.reloadData()
+    }
 }

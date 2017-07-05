@@ -41,7 +41,7 @@ class TeamScheduleAdd : UIViewController{
        // dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
         
         dataInsert.gameDateString = self.dateForamtterGet.string(from: (ad?.date)!)
-
+        print(ad?.date)
         navigationController?.pushViewController(dataInsert, animated: true)
 
     }

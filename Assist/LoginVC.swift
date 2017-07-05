@@ -27,16 +27,21 @@ class LoginVC : UIViewController, UITextFieldDelegate, NetworkCallback{
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
     
-    var loginResult : LoginResponse?
+   // var loginResult : LoginResponse?
     let ad = UIApplication.shared.delegate as? AppDelegate
     
     func networkResult(resultData: Any, code: String) {
         if code == "로그인"{
             
-            loginResult = resultData as! LoginResponse
-            ad?.userId = loginResult?.id
-            ad?.myTeamId = loginResult?.team_id
+            let loginResult = resultData as! LoginVO
+            ad?.userId = loginResult.id
+            ad?.myTeamId = loginResult.team_id
             //boardListTable.reloadData()
+            print(loginResult.id)
+            print(loginResult.team_id)
+            print(ad?.userId)
+            print(ad?.myTeamId)
+            
             
             let main_storyboard = UIStoryboard(name : "Main", bundle : nil)
             print("들어왔졍1")
