@@ -55,7 +55,7 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
             
             print(gsno(profileList?.profile_pic_url))
             
-            let imgURL = "http://13.124.136.174:3000/static/images/profileImg/team/\(gsno(profileList?.profile_pic_url))"
+            let imgURL = ""
             
             print(imgURL)
             

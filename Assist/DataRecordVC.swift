@@ -101,7 +101,10 @@ class DataRecordVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //테이블 셀 선택 이벤트.
         let recordVO = recordList[indexPath.row]
-        //if recordVO.score_team == -1{
+        ad?.scheduleIdForStg = gino(recordVO.id)
+        //ad?.curStg = gino(recordVO.tactic)
+        print(gino(recordVO.id))
+        if recordVO.score_team == -1{
         guard let entry = storyboard?.instantiateViewController(withIdentifier: "DataDetailEntry") as? DataDetailEntry else {return}
         
         
@@ -115,15 +118,16 @@ class DataRecordVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         entry.score_against_team = recordVO.score_against_team
         entry.tactic = recordVO.tactic
 
-            ad?.scheduleIdForStg = gino(recordVO.id)
+
         //        guard let entry = storyboard?.instantiateViewController(withIdentifier: "DataDetailEntry") as? DataDetailEntry else {return}
         //
         navigationController?.present(entry, animated:false, completion:{})
         //navigationController?.pushViewController(entry, animated: true)
-      ///  }
-     //   else{
-      //      //기록 조회 페이지로.
-     //   }
+        }
+        else{
+        guard let entry = storyboard?.instantiateViewController(withIdentifier: "DataResult") as? DataResult else {return}
+             navigationController?.present(entry, animated:false, completion:{})
+        }
         
         
     }

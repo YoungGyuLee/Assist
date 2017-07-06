@@ -54,16 +54,16 @@ class DataDetailEntry : UIViewController{
         stg343.isHidden = true
         stg352.isHidden = true
         stg451.isHidden = true
-        
-        print(id)
-        print(game_dt)
-        print(place)
-        print(against_team)
-        print(message)
-        print(score_team)
-        print(score_against_team)
-        print(tactic)
-        
+//        
+//        print(id)
+//        print(game_dt)
+//        print(place)
+//        print(against_team)
+//        print(message)
+//        print(score_team)
+//        print(score_against_team)
+//        print(tactic)
+//        
         
         
         //dataFirst.delegate = dataSecond

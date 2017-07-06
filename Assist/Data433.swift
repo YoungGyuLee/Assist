@@ -132,7 +132,8 @@ class Data433 : UIViewController, NetworkCallback{
             print(self.memberList)
         }
         else{
-
+            print("저어어어언술1")
+            
             let model = DataModel(self)
             model.getDataFromStatus(schedule_id: gino(ad?.scheduleIdForStg), status: "4-3-3")
         }
@@ -306,6 +307,7 @@ class Data433 : UIViewController, NetworkCallback{
           //  ad?.nowSelect = ad?.memList?[3]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[3]
+            print(ad?.memList)
         }
     }
     
@@ -386,6 +388,7 @@ class Data433 : UIViewController, NetworkCallback{
             //ad?.nowSelect = ad?.memList?[7]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[7]
+            print(ad?.memList)
         }
     }
     
@@ -423,6 +426,7 @@ class Data433 : UIViewController, NetworkCallback{
             //ad?.nowSelect = ad?.memList?[6]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[6]
+            print(ad?.memList)
         }
     }
     
@@ -495,6 +499,7 @@ class Data433 : UIViewController, NetworkCallback{
             //ad?.nowSelect = ad?.memList?[8]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[8]
+            print(ad?.memList)
         }
     }
     @IBAction func clickAtk2(_ sender: Any) {
@@ -530,6 +535,7 @@ class Data433 : UIViewController, NetworkCallback{
             //ad?.nowSelect = ad?.memList?[9]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[9]
+            print(ad?.memList)
         }
     }
     @IBAction func clickAtk3(_ sender: Any) {
@@ -565,6 +571,7 @@ class Data433 : UIViewController, NetworkCallback{
             //ad?.nowSelect = ad?.memList?[10]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[10]
+            print(ad?.memList)
         }
     }
 }
