@@ -394,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assist/SignDetailVC.swift"
-            timestampString = "520805112.38387"
+            timestampString = "521036887.713433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "SignDetailVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -538,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assist/DataModel.swift"
-            timestampString = "520974095.210298"
+            timestampString = "521024731.705483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "getDataFromStatus(schedule_id:status:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,13 +570,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assist/DataModel.swift"
-            timestampString = "520985089.78363"
+            timestampString = "521024731.705483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "addReport(schedule_id:tactic:player_id:eventTemp:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Assist/DataTeamR2.swift"
+            timestampString = "521041325.703387"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "networkResult(resultData:code:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Assist/DataMonthPersonalResult.swift"
+            timestampString = "521041325.703387"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "DataMonthPersonalResult"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Assist.DataMonthPersonalResult.response.getter : Swift.Optional&lt;Swift.Array&lt;Assist.DataMonthPersonalResponse&gt;&gt;"
+                  moduleName = "Assist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/2yg/Desktop/Assist/Assist/Assist/Assist/DataMonthPersonalResult.swift"
+                  timestampString = "521042133.822077"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Assist.DataMonthPersonalResult.response.setter : Swift.Optional&lt;Swift.Array&lt;Assist.DataMonthPersonalResponse&gt;&gt;"
+                  moduleName = "Assist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/2yg/Desktop/Assist/Assist/Assist/Assist/DataMonthPersonalResult.swift"
+                  timestampString = "521042133.824083"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Assist.DataMonthPersonalResult.init (map : ObjectMapper.Map) -&gt; Swift.Optional&lt;Assist.DataMonthPersonalResult&gt;"
+                  moduleName = "Assist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/2yg/Desktop/Assist/Assist/Assist/Assist/DataMonthPersonalResult.swift"
+                  timestampString = "521042133.826074"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

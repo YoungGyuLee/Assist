@@ -91,5 +91,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var scheduleIdForStg : Int?
     
     
+    //개인기록 조회
+    var myScore : Int?
+    var myAssist : Int?
+    
+    
 }
 

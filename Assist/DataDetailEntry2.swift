@@ -191,25 +191,6 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
         cell.goalMark.isHidden = dataRecordVO.goalMark!
         cell.assisMark.isHidden = dataRecordVO.assistMark!
         cell.lostMark.isHidden = dataRecordVO.lostMark!
-        
-//
-//        switch clickType {
-//        case 1:
-//            cell.goalMark.isHidden = false
-//            cell.assisMark.isHidden = true
-//            cell.lostMark.isHidden = true
-//        case 2:
-//            cell.goalMark.isHidden = false
-//            cell.assisMark.isHidden = false
-//            cell.lostMark.isHidden = true
-//        case 3:
-//            cell.goalMark.isHidden = true
-//            cell.assisMark.isHidden = true
-//            cell.lostMark.isHidden = false
-//        default:
-//            cell.goalMark.isHidden = true
-//            cell.assisMark.isHidden = true
-//            cell.lostMark.isHidden = true
 //            
 //        }
         

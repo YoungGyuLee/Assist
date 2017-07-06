@@ -47,35 +47,6 @@ class DataModel : NetworkModel{
     func getDataFromStatus(schedule_id : Int, status : String){
         //team/[team_id]/schedule
         
-        //        let body1 : [String: Any] = [
-        //            "tatic":tatic,
-        //            "player":player,
-        //            "event":event
-        //        ]
-        //
-        //        let player:[String:Any] = [
-        //            "ATK":ATk,
-        //        ]
-        //
-        //        let ATK:[Any]
-        //
-        //        for i in 0...10{
-        //            //UISplitViewController
-        //            let atk : [String:Int] = ["player_id":vlaue]
-        //            ATK.append(atk)
-        //        }
-        //
-        //    //DEF, MID, GK, SUB -->//player
-        //
-        //        let event : [Any]
-        //        for i in ~~~~{
-        //            let evnet : [String:Any] = ["type":"value", "player":player]
-        //            
-        //        }
-        
-        
-        
-        
         
         let URL : String = "\(baseURL)/schedule/\(schedule_id)/attendee/tactic/\(status)"
         
@@ -276,7 +247,7 @@ class DataModel : NetworkModel{
     
     func getTacticReport(team_id : Int){
         //team/[team_id]/schedule
-        let URL : String = "\(baseURL)/tema/\(team_id)/report/tactic"
+        let URL : String = "\(baseURL)/team/\(team_id)/report/tactic"
         ///team/[team_id]/report/tactic
         //schedule/[schedule_id]/attendee/tactic/4-5-1
         
@@ -297,7 +268,7 @@ class DataModel : NetworkModel{
                 print("팀 기록 들어감")
                 
                 if let results = dataTeam.response {
-                    self.view.networkResult(resultData: results, code: "팀기록일반")
+                    self.view.networkResult(resultData: results, code: "팀기록전술")
                     //print(dataSchedule.response?.ATK?[0].backnumber)
                 }
 
@@ -308,6 +279,266 @@ class DataModel : NetworkModel{
             
         }
         
+    }
+    
+    //team/[team_id]/report/month
+    
+    func getMonthReport(team_id : Int){
+        //team/[team_id]/schedule
+        let URL : String = "\(baseURL)/team/\(team_id)/schedule"
+        ///team/[team_id]/report/tactic
+        //schedule/[schedule_id]/attendee/tactic/4-5-1
+        
+        print(URL)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject{
+            
+            (response : DataResponse<DataTeamMonthResult>) in
+            //DataResponse 괄호 안에 데이터를 받을 객체를 넣으면 됨.
+            switch response.result{
+            case .success:
+                //response.result.value
+                //response.result.value.re
+                guard let dataTeam = response.result.value else{
+                    self.view.networkFailed()
+                    return//데이터를 받아올 때는 result를 통해서.
+                }
+                
+                print("팀 월별 기록 들어감")
+                
+                if let results = dataTeam.response {
+                    self.view.networkResult(resultData: results, code: "팀기록월별")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                
+            case .failure(let err):
+                print(err)
+                self.view.networkFailed()
+            }
+            
+        }
+    }
+    
+    
+    ///team/[team_id]/members/sort
+    func getTeamSort(team_id : Int){
+        //team/[team_id]/schedule
+        let URL : String = "\(baseURL)/team/\(team_id)/members/sort"
+        ///team/[team_id]/report/tactic
+        //schedule/[schedule_id]/attendee/tactic/4-5-1
+        
+        print(URL)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject{
+            
+            (response : DataResponse<DataMembersResult>) in
+            //DataResponse 괄호 안에 데이터를 받을 객체를 넣으면 됨.
+            switch response.result{
+            case .success:
+                //response.result.value
+                //response.result.value.re
+                guard let recordTeam = response.result.value else{
+                    self.view.networkFailed()
+                    return//데이터를 받아올 때는 result를 통해서.
+                }
+                
+                print("팀 득점 기록 들어감")
+                
+                if let results = recordTeam.response?.score {
+                    self.view.networkResult(resultData: results, code: "팀기록득점")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                
+                print("팀 도움 기록 들어감")
+                if let results = recordTeam.response?.assist {
+                    self.view.networkResult(resultData: results, code: "팀기록도움")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                
+                
+            case .failure(let err):
+                print(err)
+                self.view.networkFailed()
+            }
+            
+        }
+    }
+    
+    
+    ////////////이 밑에서부터는 개인 데이터/////////////////
+    func getUserInfo(player_id : Int){
+        //team/[team_id]/schedule
+        let URL : String = "\(baseURL)/player/\(player_id)"
+        ///team/[team_id]/report/tactic
+        //schedule/[schedule_id]/attendee/tactic/4-5-1
+        
+        //player/[player_id]
+  
+        print(URL)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject{
+            
+            (response : DataResponse<DataPersonalResult>) in
+            //DataResponse 괄호 안에 데이터를 받을 객체를 넣으면 됨.
+            switch response.result{
+            case .success:
+                //response.result.value
+                //response.result.value.re
+                guard let recordPersonal = response.result.value else{
+                    self.view.networkFailed()
+                    return//데이터를 받아올 때는 result를 통해서.
+                }
+                
+                print("개인 정보 들어감")
+                
+                if let results = recordPersonal.response {
+                    self.view.networkResult(resultData: results, code: "개인일반")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+
+                
+            case .failure(let err):
+                print(err)
+                self.view.networkFailed()
+            }
+            
+        }
+    }
+    
+    
+    ///player/[player_id]/report/affect/team
+    func getUserAffect(player_id : Int){
+        //team/[team_id]/schedule
+        let URL : String = "\(baseURL)/player/\(player_id)/report/affect/team"
+        ///team/[team_id]/report/tactic
+        //schedule/[schedule_id]/attendee/tactic/4-5-1
+        
+        //player/[player_id]
+        
+        print(URL)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject{
+            
+            (response : DataResponse<DataPersonalAfResult>) in
+            //DataResponse 괄호 안에 데이터를 받을 객체를 넣으면 됨.
+            switch response.result{
+            case .success:
+                //response.result.value
+                //response.result.value.re
+                guard let recordPersonal = response.result.value else{
+                    self.view.networkFailed()
+                    return//데이터를 받아올 때는 result를 통해서.
+                }
+                
+                print("개인 영향 들어감")
+                
+                if let results = recordPersonal.response?.attend {
+                    self.view.networkResult(resultData: results, code: "개인영향참가")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                
+                if let results = recordPersonal.response?.noattend {
+                    self.view.networkResult(resultData: results, code: "개인영향불참")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                
+            case .failure(let err):
+                print(err)
+                self.view.networkFailed()
+            }
+            
+        }
+    }
+    
+    func getUserMonthData(player_id : Int){
+        //team/[team_id]/schedule
+        let URL : String = "\(baseURL)/player/\(player_id)/report/month"
+       //player/[player_id]/report/month
+        print("개인월별기록 인")
+        
+        //player/[player_id]
+        
+        print(URL)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject{
+            
+            (response : DataResponse<DataMonthPersonalResult>) in
+            //DataResponse 괄호 안에 데이터를 받을 객체를 넣으면 됨.
+            switch response.result{
+            case .success:
+                //response.result.value
+                //response.result.value.re
+                guard let recordPersonal = response.result.value else{
+                    self.view.networkFailed()
+                    return//데이터를 받아올 때는 result를 통해서.
+                }
+                
+                print("개인 월별 기록")
+                
+                if let results = recordPersonal.response {
+                    self.view.networkResult(resultData: results, code: "개인월별기록")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                
+                
+            case .failure(let err):
+                print(err)
+                self.view.networkFailed()
+            }
+            
+        }
+    }
+    
+    
+    func getUserPositionData(player_id : Int){
+        //team/[team_id]/schedule
+        let URL : String = "\(baseURL)/player/\(player_id)/report/affect/position"
+        
+        //player/[player_id]/report/affect/position
+        
+        print("개인 포지션별 기록 인")
+        
+        //player/[player_id]
+        
+        print(URL)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject{
+            
+            (response : DataResponse<DataPersonalPositionResult>) in
+            //DataResponse 괄호 안에 데이터를 받을 객체를 넣으면 됨.
+            switch response.result{
+            case .success:
+                //response.result.value
+                //response.result.value.re
+                guard let recordPersonal = response.result.value else{
+                    self.view.networkFailed()
+                    return//데이터를 받아올 때는 result를 통해서.
+                }
+                
+                print("개인 포지션별 기록")
+                
+                if let results = recordPersonal.response?.ATK{
+                    self.view.networkResult(resultData: results, code: "개인포지션별기록공격")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                if let results = recordPersonal.response?.DF{
+                    self.view.networkResult(resultData: results, code: "개인포지션별기록수비")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                if let results = recordPersonal.response?.MF{
+                    self.view.networkResult(resultData: results, code: "개인포지션별기록미드")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                if let results = recordPersonal.response?.GK{
+                    self.view.networkResult(resultData: results, code: "개인포지션별기록골키")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                if let results = recordPersonal.response?.SUB{
+                    self.view.networkResult(resultData: results, code: "개인포지션별기록서브")
+                    //print(dataSchedule.response?.ATK?[0].backnumber)
+                }
+                
+                
+            case .failure(let err):
+                print(err)
+                self.view.networkFailed()
+            }
+            
+        }
     }
     
     

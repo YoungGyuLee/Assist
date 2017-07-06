@@ -66,6 +66,9 @@ class RankingVC : UIViewController, NetworkCallback, UITableViewDelegate, UITabl
         
         
     }    
+    @IBAction func toMain(_ sender: Any) {
+        dismiss(animated: true, completion: {})
+    }
     
 
     

@@ -106,6 +106,7 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         
         userImage.layer.cornerRadius = userImage.frame.size.height/2
         userImage.layer.mask?.masksToBounds = true
+        //imageview.layer.masktobounds
         
         userImageSelect.layer.cornerRadius = userImageSelect.frame.size.height/2
         userImageSelect.layer.mask?.masksToBounds = true

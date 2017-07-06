@@ -29,6 +29,9 @@
                                         <rect key="frame" x="21" y="22" width="75" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="yellow_home"/>
+                                        <connections>
+                                            <action selector="toMain:" destination="oiz-67-B7K" eventType="touchUpInside" id="wmC-3a-fig"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="랭킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfr-De-uHA">
                                         <rect key="frame" x="174" y="23" width="42" height="21"/>

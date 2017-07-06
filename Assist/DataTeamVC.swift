@@ -22,6 +22,7 @@ class DataTeamVC : UIViewController, NetworkCallback{
     var progress1: KDCircularProgress!
     @IBOutlet var progressbase: UIView!
     
+    @IBOutlet var teamName: UILabel!
     @IBOutlet var totalGame: UILabel!
     @IBOutlet var winGame: UILabel!
     @IBOutlet var drawGame: UILabel!
@@ -36,19 +37,25 @@ class DataTeamVC : UIViewController, NetworkCallback{
             //progress1 = KDCircularProgress(frame: progressbase.frame)
             profileList = resultData as! TeamProfileResponse
             
-
+            teamName.text = profileList?.teamname
             //progressbase
             progress1 = KDCircularProgress(frame: CGRect(x:141 , y: 277, width: progressbase.frame.size.width, height: progressbase.frame.size.height))
             
             
-            totalGame.text = gsno(profileList!.total_game?.description)
-            winGame.text = gsno(profileList!.win_game?.description)
-            drawGame.text = gsno(profileList!.draw_game?.description)
-            loseGame.text = gsno(profileList!.lose_game?.description)
+            totalGame.text = profileList!.total_game?.description
+            winGame.text = (gino(profileList!.win_game)).description
+            drawGame.text = (gino(profileList!.draw_game)).description
+            loseGame.text = (gino(profileList!.lose_game)).description
             
             progress1.angle = (Double(gino(profileList!.win_game!)))/(Double(gino(profileList!.total_game!)))*360
-            
-            winRate.text = (profileList!.win_game!*100/profileList!.total_game!).description
+            print(gino(profileList!.win_game))
+            print(gino(profileList!.total_game))
+            if gino(profileList!.total_game) == 0 {
+                winRate.text = "0"
+            }
+            else{
+            winRate.text = ((gino(profileList!.win_game))*100/(gino(profileList!.total_game))).description
+            }
             
             averageLost.text = ((Double(gino(profileList!.total_score_against!)))/(Double(gino(profileList!.total_game!)))).description
             
@@ -80,7 +87,9 @@ class DataTeamVC : UIViewController, NetworkCallback{
     
     override func viewDidLoad() {
         let model = SignSplashModel(self)
+        print("팀넘버 \(gino(ad?.myTeamId))")
         model.getTeamProfile(team_id: gino(ad?.myTeamId))
+        
     }
     
 }

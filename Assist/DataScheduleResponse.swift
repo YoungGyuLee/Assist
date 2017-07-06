@@ -19,6 +19,7 @@ class DataScheduleResponse : Mappable{
     var message : String?
     var score_team : Int?
     var score_against_team : Int?
+    var attendee : Int?
     var tactic : String?
     
     
@@ -37,6 +38,7 @@ class DataScheduleResponse : Mappable{
         score_team <- map["score_team"]
         score_against_team <- map["score_against_team"]
         tactic <- map["tactic"]
+        attendee <- map["attendee"]
         
     }
     
