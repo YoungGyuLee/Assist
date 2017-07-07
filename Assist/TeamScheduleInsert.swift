@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TeamScheduleInsert : UIViewController, UIGestureRecognizerDelegate, NetworkCallback{
+class TeamScheduleInsert : UIViewController, UIGestureRecognizerDelegate, NetworkCallback, UITextFieldDelegate{
     
     
     @IBOutlet var registerSchedule: UIButton!
@@ -30,8 +30,8 @@ class TeamScheduleInsert : UIViewController, UIGestureRecognizerDelegate, Networ
     func networkResult(resultData: Any, code: String)
     {
         if code == "일정등록"{
-            //let _ = navigationController?.popViewController(animated: true)
-            print("등록 완료")
+            guard let dataInsert = storyboard?.instantiateViewController(withIdentifier: "TeamScheduleVC") as? TeamScheduleVC else {return}
+            navigationController?.present(dataInsert, animated: true, completion: {})
         }
         else{
             print("등록실패")
@@ -44,6 +44,24 @@ class TeamScheduleInsert : UIViewController, UIGestureRecognizerDelegate, Networ
         super.viewDidLoad()
         var tap = UITapGestureRecognizer(target: self, action: #selector(handleTap_mainview(_:)))
         tap.delegate = self
+        
+        matchHour.delegate = self
+        matchHour.tag = 0
+        
+        matchMin.delegate = self
+        matchMin.tag = 1
+        
+        place.delegate = self
+        place.tag = 2
+        
+        againstTeam.delegate = self
+        againstTeam.tag = 3
+        
+        message.delegate = self
+        message.tag = 4
+        
+        
+        
         
         gameDate.text = gameDateString
         registerSchedule.layer.cornerRadius = 4
@@ -93,10 +111,41 @@ class TeamScheduleInsert : UIViewController, UIGestureRecognizerDelegate, Networ
         print(matchDay5)
 
         
-        
+            
         let model = TeamModel(self)
         
-        
-        model.addTeamSchedule(team_id: gino(ad?.myTeamId), game_dt: gsno(matchDay5), place: "마리하우스", against_team: "돔돔", message: "밥먹자")
+        if gino(Int(matchH)) > 23 || gino(Int(matchM)) > 59{
+            simpleAlert(title: "시간 입력 오류", message: "시간은 24 \n 분은 60보다 작은 수를 입력해주세요")
+        }
+        else{
+        model.addTeamSchedule(team_id: gino(ad?.myTeamId), game_dt: gsno(matchDay5), place: gsno(place.text), against_team: gsno(againstTeam.text), message: gsno(message.text))
+        }
     }
+    
+    func simpleAlert(title:String, message msg:String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        //let okAction = UIAlertAction(title:"확인", style:.default)
+
+        let okAction = UIAlertAction(title:"확인",  style:.cancel)
+    
+        alert.addAction(okAction)
+        
+        present(alert, animated:true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+    
+
+    
+    
 }

@@ -29,20 +29,34 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
     var id : Int?
     let ad = UIApplication.shared.delegate as? AppDelegate
     
+    @IBOutlet var regionRank: UILabel!
+    
+    
+    @IBOutlet var totalGame: UILabel!
+    @IBOutlet var winGame: UILabel!
+    @IBOutlet var drawGame: UILabel!
+    @IBOutlet var loseGame: UILabel!
+    
+    @IBOutlet var averageLost: UILabel!
+    @IBOutlet var averageScore: UILabel!
+    
+    @IBOutlet var winRate: UILabel!
+    
+    
     
     func networkResult(resultData: Any, code: String) {
         print("들어옴 3")
         if code == "팀프로필"{
             //progress1 = KDCircularProgress(frame: progressbase.frame)
             profileList = resultData as! TeamProfileResponse
-
             
+            teamName.text = gsno(profileList!.teamname)
             place.text = gsno(profileList!.region)
             coach.text = gsno(profileList!.manager)
-            foundDate.text = gsno(profileList!.found_dt)
+            foundDate.text = transferString(date: gsno(profileList!.found_dt))
             teamMsg.text = gsno(profileList!.message)
             //progressbase
-            progress1 = KDCircularProgress(frame: CGRect(x: progressbase.frame.minX, y: progressbase.frame.minY, width: progressbase.frame.size.width, height: progressbase.frame.size.height))
+            progress1 = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: progressbase.frame.size.width, height: progressbase.frame.size.height))
             
 
             progress1.angle = (Double(gino(profileList!.win_game!)))/(Double(gino(profileList!.total_game!)))*360
@@ -53,14 +67,27 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
             progress1.roundedCorners = false
             progress1.set(colors: UIColor.yellow)
             
-            print(gsno(profileList?.profile_pic_url))
             
+            totalGame.text = profileList!.total_game?.description
+            winGame.text = (gino(profileList!.win_game)).description
+            drawGame.text = (gino(profileList!.draw_game)).description
+            loseGame.text = (gino(profileList!.lose_game)).description
+            
+            winRate.text = ((gino(profileList!.win_game))*100/(gino(profileList!.total_game))).description
+            
+            print(gsno(profileList?.profile_pic_url))
+         
             let imgURL = ""
+            
+            averageLost.text = ((Double(gino(profileList!.total_score_against!)))/(Double(gino(profileList!.total_game!)))).description
+            
+            averageScore.text = ((Double(gino(profileList!.total_score!)))/(Double(gino(profileList!.total_game!)))).description
+            
             
             print(imgURL)
             
             KingfisherManager.shared.cache.clearMemoryCache()
-            teamImg.imageFromUrl(gsno(imgURL), defaultImgPath: "symbol")
+            teamImg.imageFromUrl(imgURL, defaultImgPath: "symbol")
             
             KingfisherManager.shared.cache.clearMemoryCache()
         
@@ -74,35 +101,13 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
                 }
             }
             
-            progress1.reloadInputViews()
             progressbase.addSubview(progress1)
             //progress1.
             
             //boardListTable.reloadData()
         }
-        
-        if code == "회원가입" {
-            print(resultData)
-            //signResponse = resultData as! SignResponse
-            signResponse = resultData as! SignVO
-            ad?.userId = signResponse?.id
-            //창단 아닌 회원가입의 경우 팀 아이디를 저장 해 놓음. 그래서 굳이 여기서도 저장할 필요는 없음.
-            
-            print("회원 아이디 \(ad?.userId)")
-            print("팀 아이디 \(ad?.myTeamId)")
-            
-            
-            let main_storyboard = UIStoryboard(name : "Main", bundle : nil)
-            print("들어왔졍1")
-            guard let main = main_storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else{return}
-            print("들어왔졍2")
-            self.present(main, animated: true)
-            
-            
-        }
 
-        
-        
+
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -113,33 +118,12 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
             print(detailID)
             model.getTeamProfile(team_id: detailID)
         }
-       //테이블뷰 자체 크기보다 누적되어있는 셀들의 높이들의 합이 더 작을경우( 테이블뷰에 셀이 한두개만있고 나머지 셀은 비어있는 상태)
-        //해당 코드로 보기싫은 밑줄들을 지워줍니다
-        //쉽게생각해서 비어있는 셀들을 뷰로 덮어버리는거라고 생각하시면됩니다
-        //detailTable.tableFooterView = UIView.init(frame: CGRect.zero)
+
     }
     
     @IBAction func sign(_ sender: Any) {
         
-        let model = SignSplashModel(self)
-        
-        print(gsno(ad?.username))
-        print(gsno(ad?.email))
-        print(gsno(ad?.password))
-        print(gino(ad?.age))
-        print(gfno(ad?.height))
-        print(gsno(ad?.foot))
-        print(gsno("MF"))
-        print(gsno("RM"))
-        print(gino(ad?.backnumber))
-        print(gino(ad?.myTeamId))
-        
-        
-        if let profile = ad?.profile_pic{
-            print(profile)
-         model.signUp(username:gsno(ad?.username), email:gsno(ad?.email), password:gsno(ad?.password),age:gino(ad?.age), height : gfno(ad?.height), weight : gfno(ad?.weight), foot : gsno(ad?.foot) ,position : gsno("MF"),position_detail : gsno("RM"),backnumber : gino(ad?.backnumber), team_id : gino(ad?.myTeamId), profile_pic:profile as! Data)
-        }
-        
+
 
     }
     
@@ -147,6 +131,26 @@ class SignSearchDetailScroll : UIViewController, NetworkCallback{
         print("들어옴 설마 여기")
 
         
+    }
+    
+    func transferString(date : String)->String{
+        let index = date.index(date.startIndex, offsetBy: 10)
+        var fullDate: String = date.substring(to: index)
+        
+        //fullDate.components(separatedBy: )
+        let fullDateArr = fullDate.components(separatedBy: "-")
+        
+        let year = fullDateArr[0]
+        let month = fullDateArr[1]
+        let day = fullDateArr[2]
+        
+        let dateText = "\(year)년 \(month)월 \(day)월 "
+        
+        
+        
+        
+        
+        return dateText
     }
     
     

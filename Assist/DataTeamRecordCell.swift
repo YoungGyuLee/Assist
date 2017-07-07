@@ -9,6 +9,7 @@
 import UIKit
 class DataTeamRecordCell : UITableViewCell{
     
+    @IBOutlet var selectBgrd: UIView!
     
     @IBOutlet var matchDay: UILabel!
     

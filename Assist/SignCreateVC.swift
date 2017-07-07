@@ -30,7 +30,7 @@ class SignCreateVC : UIViewController, UITextFieldDelegate, NetworkCallback, UIG
     let picker = UIImagePickerController()
     var signResponse : SignVO?
     @IBOutlet var teamImg: UIImageView!
-    var place_data = ["서울시", "성남시", "제네바", "오타와", "레이캬비크"]
+    var place_data = ["성남시"]
     let dropDownPlace = DropDown()
     let ad = UIApplication.shared.delegate as? AppDelegate
     

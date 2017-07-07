@@ -11,10 +11,8 @@ import Foundation
 class DataRecordPostVO{
     var type : String?
     var player_id : Int?
-    var player_id2 : Int?
-    init(type : String?, player_id : Int?, player_id2 : Int?) {
+    init(type : String?, player_id : Int?) {
         self.type = type
         self.player_id = player_id
-        self.player_id2 = player_id2
     }
 }

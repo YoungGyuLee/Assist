@@ -60,6 +60,9 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
     
     @IBOutlet var tempView: UIView!
     
+    
+    
+    
     var teamID : Int?
     func networkResult(resultData: Any, code: String) {
         print("통신~")
@@ -150,6 +153,7 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {//이게 찍혀있는거 또 찍는거.
         scroll.isScrollEnabled = true
+        tempView.isHidden = true
         
         if dates.contains(date){
             listView.isHidden = false
@@ -228,6 +232,9 @@ class TeamScheduleVC : UIViewController, FSCalendarDelegate, FSCalendarDataSourc
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {//이게 비어있는 날짜 찍는거.
 
         scroll.isScrollEnabled = false
+        
+        
+        tempView.isHidden = true
         
         self.dateForamtterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let mydate = dateForamtterGet.string(from: date)

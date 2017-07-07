@@ -35,6 +35,8 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
     let ad = UIApplication.shared.delegate as? AppDelegate
     var sub : [Int] = []
     
+    var allPlayerID : [Int] = []
+    
     @IBOutlet var scrollVIew: UIScrollView!
     override func viewDidLoad(){
         scrollVIew.isScrollEnabled = false
@@ -46,21 +48,15 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
         sumCollection.dataSource = self
         
         //self.setRecord = true
+        if ad?.memberSubList?.count == 0{
+            for i in 0...((ad?.memberSubList?.count)!-1){
+                subList.append(DetailEntrySubVO(sub:ad?.memberSubList?[i]))
+            }
+        }
+        //self.allPlayerID = (ad?.memberIdList)!
+        //self.allPlayerID.append(contentsOf: (ad?.memberSubId)!)
         
-        subList.append(DetailEntrySubVO(sub : 1))
-        subList.append(DetailEntrySubVO(sub : 3))
-        subList.append(DetailEntrySubVO(sub : 5))
-        subList.append(DetailEntrySubVO(sub : 7))
-        subList.append(DetailEntrySubVO(sub : 9))
-        subList.append(DetailEntrySubVO(sub : 1))
-        subList.append(DetailEntrySubVO(sub : 13))
-        subList.append(DetailEntrySubVO(sub : 15))
-        subList.append(DetailEntrySubVO(sub : 17))
-        subList.append(DetailEntrySubVO(sub : 19))
-        subList.append(DetailEntrySubVO(sub : 21))
-        subList.append(DetailEntrySubVO(sub : 23))
-        subList.append(DetailEntrySubVO(sub : 25))
-        subList.append(DetailEntrySubVO(sub : 27))
+        
         
         print(ad?.memList)
         setGround()
@@ -130,34 +126,39 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
     @IBAction func clickGoal(_ sender: Any) {
         
         //셀렉트에 넣어야 할 것이 플레이어 아이디.
-        let goal = DataRecordVO(goal: ad?.nowSelect?.description, assist: "", lost: "", goalMark : false, assistMark : true, lostMark : true)
+        let goal = DataRecordVO(goal: gsno(ad?.memberListString?[gino(ad?.nowSelect)]), assist: "", lost: "", goalMark : false, assistMark : true, lostMark : true)
         recordList.append(goal)
         scrollVIew.isScrollEnabled = true
         recordData.reloadData()
         self.clickType = 1
         previousGoal = true
         //플레이어 아이디를 넣어야 함.
-        recordPost.append(DataRecordPostVO(type: "score", player_id: 1, player_id2: 0))
+        recordPost.append(DataRecordPostVO(type: "score", player_id: gino(ad?.memberIdList?[gino(ad?.nowSelect)])))
+        print("골-골 \(gino(ad?.memberIdList?[gino(ad?.nowSelect)]))")
         
     }
     @IBAction func clickAssist(_ sender: Any) {
         
         if previousGoal == true{
-        let assist = DataRecordVO(goal: ad?.previousSelect?.description, assist: ad?.nowSelect?.description, lost: "", goalMark : false, assistMark : false, lostMark : true)
+        let assist = DataRecordVO(goal: gsno(ad?.memberListString?[gino(ad?.previousSelect)]) , assist: gsno(ad?.memberListString?[gino(ad?.nowSelect)]), lost: "", goalMark : false, assistMark : false, lostMark : true)
 
+            print("이름")
+            print(gsno(ad?.previousName))
+            
+            
         recordList.removeLast()
         recordList.append(assist)
         scrollVIew.isScrollEnabled = true
         recordData.reloadData()
         self.clickType = 2
         previousGoal = false
-        recordPost.append(DataRecordPostVO(type: "assist", player_id: 1, player_id2: 1))
+        recordPost.append(DataRecordPostVO(type: "assist", player_id: gino(ad?.memberIdList?[gino(ad?.nowSelect)])))
         }
         else{
-            simpleAlert(title: "득점 먼저 누르셈", message: "알간?")
+            simpleAlert1(title: "득점 먼저 누르셈", message: "알간?")
             
         }
-        
+        print("골-어시스트 \(gino(ad?.memberIdList?[gino(ad?.nowSelect)]))")
     }
     @IBAction func clickLost(_ sender: Any) {
         
@@ -168,7 +169,7 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
         recordData.reloadData()
         self.clickType = 3
         previousGoal = false
-        recordPost.append(DataRecordPostVO(type: "against_goal",player_id: 0, player_id2: 0))
+        recordPost.append(DataRecordPostVO(type: "score_against",player_id: -1))
     }
     
     
@@ -185,9 +186,9 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
          let dataRecordVO = recordList[indexPath.row]
 //        
 //        
-        cell.goal.text = dataRecordVO.goal
-        cell.assist.text = dataRecordVO.assist
-        cell.lost.text = dataRecordVO.lost
+        cell.goal.text = gsno(dataRecordVO.goal)
+        cell.assist.text = gsno(dataRecordVO.assist)
+        cell.lost.text = gsno(dataRecordVO.lost)
         cell.goalMark.isHidden = dataRecordVO.goalMark!
         cell.assisMark.isHidden = dataRecordVO.assistMark!
         cell.lostMark.isHidden = dataRecordVO.lostMark!
@@ -201,6 +202,19 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
         simpleAlert(title: "끝", message: "레알?")
         
     }
+    
+    func simpleAlert1(title:String, message msg:String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title:"확인", style:.default)
+        
+        let noAction = UIAlertAction(title:"아니오", style:.cancel)
+
+        alert.addAction(okAction)
+        alert.addAction(noAction)
+        
+        present(alert, animated:true)
+    }
+    
     
     func simpleAlert(title:String, message msg:String){
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
@@ -224,7 +238,11 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
 //            //boardListTable.reloadData()
 //            rankTable.reloadData()
             print("뭔가 되긴 됨")
+            
             ad?.memList = []
+            guard let entry = storyboard?.instantiateViewController(withIdentifier: "DataRecordVC") as? DataRecordVC else {return}
+            navigationController?.present(entry, animated:true, completion:{})
+            //여기서 모든 애들 초기화.
         }
         
     }
@@ -234,18 +252,18 @@ class DataDetailEntry2 : UIViewController,UICollectionViewDataSource, UICollecti
         let model = DataModel(self)
         //subList.
         //var sendMemLsit : [Int]
-        for i in 0...(subList.count-1){
-            print("등록1")
-            ad?.memList?.append(gino(subList[i].sub))
-//                = gino(subList[i].sub)
-//            //print(ad?.memList?[i])
-//            sub.append(gino(subList[i].sub))
-        }
-        print(gino(ad?.scheduleIdForStg))
-        print(gsno("4-3-3"))
+//        for i in 0...(subList.count-1){
+//            print("등록1")
+//            ad?.memList?.append(gino(subList[i].sub))
+////                = gino(subList[i].sub)
+////            //print(ad?.memList?[i])
+////            sub.append(gino(subList[i].sub))
+//        }
+        //print(gino(ad?.scheduleIdForStg))
+        //print(gsno("4-3-3"))
         //print((ad?.memList)!)
-        print(recordPost)
-        model.addReport(schedule_id: gino(ad?.scheduleIdForStg), tactic: gsno("4-3-3"), player_id: (ad?.memList)!, eventTemp: recordPost)
+       // print(recordPost)
+        model.addReport(schedule_id: gino(ad?.scheduleIdForStg), tactic: gsno("4-3-3"), player_id: (ad?.memberIdList)!, eventTemp: recordPost)
         print("등록2")
         
     }

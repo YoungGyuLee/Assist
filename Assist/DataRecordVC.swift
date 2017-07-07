@@ -17,6 +17,9 @@ class DataRecordVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
     var recordList : [DataScheduleResponse] = [DataScheduleResponse]()
     
     
+    
+    
+    
     let ad = UIApplication.shared.delegate as? AppDelegate
     
     
@@ -28,13 +31,6 @@ class DataRecordVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
             recordTable.reloadData()
         }
         
-    }
-    
-    @IBAction func temp(_ sender: Any) {
-//        guard let entry = storyboard?.instantiateViewController(withIdentifier: "DataDetailEntry") as? DataDetailEntry else {return}
-//        
-//        navigationController?.present(entry, animated:false, completion:{})
-        //navigationController?.pushViewController(entry, animated: true)
     }
     
     override func viewDidLoad() {
@@ -54,26 +50,6 @@ class DataRecordVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         let cell = recordTable.dequeueReusableCell(withIdentifier: "DataTeamRecordCell") as! DataTeamRecordCell
         
         
-//        @IBOutlet var matchDay: UILabel!
-//        
-//        @IBOutlet var myTeamProfile: UIImageView!
-//        @IBOutlet var myTeamName: UILabel!
-//        @IBOutlet var myTeamScore: UILabel!
-//        
-//        @IBOutlet var enemyProfile: UIImageView!
-//        @IBOutlet var enemyScore: UILabel!
-//        @IBOutlet var enemyName: UILabel!
-//        
-        
-//        var id : Int?
-//        var game_dt : String?
-//        var place : String?
-//        var against_team : String?
-//        var message : String?
-//        var score_team : Int?
-//        var score_against_team : Int?
-//        var tactic : String?
-        
         
         //해당 셀 이름과 클래스 명시
         let recordVO = recordList[indexPath.row]
@@ -82,18 +58,17 @@ class DataRecordVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         cell.matchDay.text = recordVO.game_dt
         cell.myTeamScore.text = recordVO.score_team?.description
         cell.enemyScore.text = recordVO.score_against_team?.description
+        //cell.myTeamName.text = recordVO.
+        cell.enemyName.text = recordVO.against_team
         
-//        cell.draw.text = rankVO.draw_game?.description
-//        let winGame : Int = rankVO.win_game!
-//        cell.win.text = winGame.description
-//        cell.lose.text = rankVO.lose_game?.description
-//        let totalGame : Int = rankVO.total_game!
-//        cell.totalGame.text = totalGame.description
-//        cell.rate.text = ((Float(winGame)/Float(totalGame)*100)).description
-//        cell.rank.text = rankVO.rank?.description
-//        
-        
-        
+        if recordVO.score_team == -1{
+            //cell.backgroundColor = uicolorFromHex(rgbValue: 0xE73770)
+            cell.selectBgrd.backgroundColor = uicolorFromHex(rgbValue: 0xE73770)
+        }
+        else{
+            //cell.backgroundColor = uicolorFromHex(rgbValue: 0x003E8C)
+            cell.selectBgrd.backgroundColor = uicolorFromHex(rgbValue: 0x003E8C)
+        }
         return cell
         
     }
@@ -104,6 +79,8 @@ class DataRecordVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         ad?.scheduleIdForStg = gino(recordVO.id)
         //ad?.curStg = gino(recordVO.tactic)
         print(gino(recordVO.id))
+        
+        
         if recordVO.score_team == -1{
         guard let entry = storyboard?.instantiateViewController(withIdentifier: "DataDetailEntry") as? DataDetailEntry else {return}
         
@@ -117,6 +94,7 @@ class DataRecordVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         entry.score_team = recordVO.score_team
         entry.score_against_team = recordVO.score_against_team
         entry.tactic = recordVO.tactic
+        //entry.selectBgrd.
 
 
         //        guard let entry = storyboard?.instantiateViewController(withIdentifier: "DataDetailEntry") as? DataDetailEntry else {return}

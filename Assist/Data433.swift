@@ -47,6 +47,9 @@ class Data433 : UIViewController, NetworkCallback{
     @IBOutlet var atk3N: UILabel!
     
     var memberList : [Int] = [1,2,3,4,5,6,7,8,9,10,11]
+    var memberIdList : [Int] = [1,2,3,4,5,6,7,8,9,10,11]
+    var memberIdString : [Int : String] = [:]//백넘버에 이름 매치
+    //플레이어 아이디에 알맞은 이름 매치.
     var memberListString : [String] = ["1","2","3","4","5","6","7","8","9","10","11"]
     var stg : String = "433"
     //int형 배열 선언
@@ -65,31 +68,82 @@ class Data433 : UIViewController, NetworkCallback{
             midList = tempList.MF!
             gkList = tempList.GK!
             subList = tempList.SUB!
-            
+            if subList.count != 0 {
+            for i in 0...(subList.count-1){
+                ad?.memberSubList?.append(subList[i].backnumber!)
+                ad?.memberSubName?.append(subList[i].username!)
+                ad?.memberSubId?.append(subList[i].id!)
+            }
+            }
+            //ad?.memberSubList?.append(contentsOf: subList)
             makeBakcNumberList()
         }
-    
 
     }
     
     func makeBakcNumberList(){
 
         print("얄루")
-        memberList[0] = gkList[0].backnumber!
+        //memberList는 백넘버에 저장
+        memberList[0] = gino(gkList[0].backnumber)
+        print("얄루1")
+        memberList[1] = gino(defList[0].backnumber)
+        memberList[2] = gino(defList[1].backnumber)
+        memberList[3] = gino(defList[2].backnumber)
+        memberList[4] = gino(defList[3].backnumber)
+        print("얄루2")
+        memberList[5] = gino(midList[0].backnumber)
+        memberList[6] = gino(midList[1].backnumber)
+        memberList[7] = gino(midList[2].backnumber)
+        print("얄루3")
+        memberList[8] = gino(atkList[0].backnumber)
+        memberList[9] = gino(atkList[1].backnumber)
+        memberList[10] = gino(atkList[2].backnumber)
+        
+        print("얄루4")
+        
+        //아이디 저장
+        memberIdList[0] = gino(gkList[0].id)
+        print("얄루5")
+        memberIdList[1] = gino(defList[0].id)
+        memberIdList[2] = gino(defList[1].id)
+        memberIdList[3] = gino(defList[2].id)
+        memberIdList[4] = gino(defList[3].id)
+        
+        print("얄루6")
+        memberIdList[5] = gino(midList[0].id)
+        memberIdList[6] = gino(midList[1].id)
+        memberIdList[7] = gino(midList[2].id)
+        print("얄루7")
+        memberIdList[8] = gino(atkList[0].id)
+        memberIdList[9] = gino(atkList[1].id)
+        memberIdList[10] = gino(atkList[2].id)
+        print(memberIdList)
+        
+        ad?.memberIdList = memberIdList
+        
+        print("얄루8")
+        memberIdString[memberList[0]] = gsno(gkList[0].username)
+        print("얄루10")
+        memberIdString[memberList[1]] = gsno(defList[0].username)
+        memberIdString[memberList[2]] = gsno(defList[1].username)
+        memberIdString[memberList[3]] = gsno(defList[2].username)
+        memberIdString[memberList[4]] = gsno(defList[3].username)
+        print("얄루11")
+        memberIdString[memberList[5]] = gsno(midList[0].username)
+        memberIdString[memberList[6]] = gsno(midList[1].username)
+        memberIdString[memberList[7]] = gsno(midList[2].username)
+        print("얄루12")
+        memberIdString[memberList[8]] = gsno(atkList[0].username)
+        memberIdString[memberList[9]] = gsno(atkList[1].username)
+        memberIdString[memberList[10]] = gsno(atkList[2].username)
+        
+        //ad.member
+        ad?.memberListString = memberIdString
+        
+        print(memberIdString)
 
-        memberList[1] = defList[0].backnumber!
-        memberList[2] = defList[1].backnumber!
-        memberList[3] = defList[2].backnumber!
-        memberList[4] = defList[3].backnumber!
-        
-        memberList[5] = midList[0].backnumber!
-        memberList[6] = midList[1].backnumber!
-        memberList[7] = midList[2].backnumber!
-        
-        memberList[8] = atkList[0].backnumber!
-        memberList[9] = atkList[1].backnumber!
-        memberList[10] = atkList[2].backnumber!
-        
+        print("얄루13")
         GKN.text = memberList[0].description
         
         def1N.text = memberList[1].description
@@ -129,6 +183,22 @@ class Data433 : UIViewController, NetworkCallback{
         if ad?.memList != nil{
             print("닐 아님")
             self.memberList = (ad?.memList)!
+            print(ad?.memberIdList)
+            GKN.text = memberList[0].description
+            
+            def1N.text = memberList[1].description
+            def2N.text = memberList[2].description
+            def3N.text = memberList[3].description
+            def4N.text = memberList[4].description
+            
+            mid1N.text = memberList[5].description
+            mid2N.text = memberList[6].description
+            mid3N.text = memberList[7].description
+            
+            atk1N.text = memberList[8].description
+            atk2N.text = memberList[9].description
+            atk3N.text = memberList[10].description
+            
             print(self.memberList)
         }
         else{
@@ -164,11 +234,16 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[myIndex!] = memberList[curIndex!]
             memberList[curIndex!] = temp
             
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
+            
+            
             var tempString : String = memberListString[myIndex!]
             memberListString[myIndex!] = memberListString[curIndex!]
             memberListString[curIndex!] = tempString
             ad?.memList = self.memberList
-            
+            ad?.memberIdList = self.memberIdList
 
         }
         else {//내가 처음 선택 됨
@@ -182,7 +257,7 @@ class Data433 : UIViewController, NetworkCallback{
             ad?.previousSelect = ad?.nowSelect
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[0]
-            
+            //print(memberIdString[memberList[0]])
         }
     }
     //333(세부 포지션)
@@ -204,6 +279,10 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[myIndex!] = memberList[curIndex!]
             memberList[curIndex!] = temp
             
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
+            
             
             print(memberList)
             
@@ -211,7 +290,7 @@ class Data433 : UIViewController, NetworkCallback{
             memberListString[myIndex!] = memberListString[curIndex!]
             memberListString[curIndex!] = tempString
             ad?.memList = self.memberList
-
+            ad?.memberIdList = self.memberIdList
             
         }
         else {//내가 처음 선택 됨
@@ -243,6 +322,9 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[myIndex!] = memberList[curIndex!]
             memberList[curIndex!] = temp
             
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
             
             print(memberList)
             
@@ -252,7 +334,7 @@ class Data433 : UIViewController, NetworkCallback{
             
             
             ad?.memList = self.memberList
-
+            ad?.memberIdList = self.memberIdList
         }
         else {//내가 처음 선택 됨
             //changedNum = GKN.text!
@@ -263,7 +345,6 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-            //ad?.nowSelect = ad?.memList?[2]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[2]
         }
@@ -283,6 +364,9 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[myIndex!] = memberList[curIndex!]
             memberList[curIndex!] = temp
             
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
             
             print(memberList)
             
@@ -292,6 +376,7 @@ class Data433 : UIViewController, NetworkCallback{
             
             
             ad?.memList = self.memberList
+            ad?.memberIdList = self.memberIdList
 //            print(memberListString)
 //            //containerMaster1?.container?.list = self.memberList
 //            globalList = self.memberList
@@ -304,10 +389,8 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-          //  ad?.nowSelect = ad?.memList?[3]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[3]
-            print(ad?.memList)
         }
     }
     
@@ -326,6 +409,9 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[curIndex!] = temp
             
             
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
             print(memberList)
             
             
@@ -334,6 +420,7 @@ class Data433 : UIViewController, NetworkCallback{
             memberListString[curIndex!] = tempString
             
             ad?.memList = self.memberList
+            ad?.memberIdList = self.memberIdList
         }
         else {//내가 처음 선택 됨
             //changedNum = GKN.text!
@@ -344,9 +431,10 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-           //ad?.nowSelect = ad?.memList?[4]
+            ad?.previousName = ad?.nowSelectName
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[4]
+            ad?.nowSelectName = memberIdString[memberIdList[4]]
         }
     }
     
@@ -366,7 +454,9 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[myIndex!] = memberList[curIndex!]
             memberList[curIndex!] = temp
             
-            
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
             print(memberList)
             
             var tempString : String = memberListString[myIndex!]
@@ -375,6 +465,7 @@ class Data433 : UIViewController, NetworkCallback{
 
             
             ad?.memList = self.memberList
+            ad?.memberIdList = self.memberIdList
         }
         else {//내가 처음 선택 됨
             //changedNum = GKN.text!
@@ -385,10 +476,8 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-            //ad?.nowSelect = ad?.memList?[7]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[7]
-            print(ad?.memList)
         }
     }
     
@@ -402,7 +491,9 @@ class Data433 : UIViewController, NetworkCallback{
             var temp : Int = memberList[myIndex!]
             memberList[myIndex!] = memberList[curIndex!]
             memberList[curIndex!] = temp
-            
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
             print(memberList)
             
             changeNum(label1: mid2N, label2: currentSelectedLabel)
@@ -413,6 +504,7 @@ class Data433 : UIViewController, NetworkCallback{
             memberListString[curIndex!] = tempString
             
             ad?.memList = self.memberList
+            ad?.memberIdList = self.memberIdList
         }
         else {//내가 처음 선택 됨
             //changedNum = GKN.text!
@@ -423,10 +515,8 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-            //ad?.nowSelect = ad?.memList?[6]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[6]
-            print(ad?.memList)
         }
     }
     
@@ -441,6 +531,11 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[myIndex!] = memberList[curIndex!]
             memberList[curIndex!] = temp
             
+            
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
+            
             print(memberList)
             changeNum(label1: mid1N, label2: currentSelectedLabel)
             touched = false
@@ -450,6 +545,7 @@ class Data433 : UIViewController, NetworkCallback{
             memberListString[curIndex!] = tempString
 
             ad?.memList = self.memberList
+            ad?.memberIdList = self.memberIdList
         }
         else {//내가 처음 선택 됨
             //changedNum = GKN.text!
@@ -460,7 +556,6 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-            //ad?.nowSelect = ad?.memList?[5]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[5]
         }
@@ -477,6 +572,11 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[curIndex!] = temp
             print(memberList)
             
+            
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
+            
             changeNum(label1: atk1N, label2: currentSelectedLabel)
             touched = false
             var tempString : String = memberListString[myIndex!]
@@ -485,6 +585,7 @@ class Data433 : UIViewController, NetworkCallback{
             
 
             ad?.memList = self.memberList
+            ad?.memberIdList = self.memberIdList
             
         }
         else {//내가 처음 선택 됨
@@ -496,10 +597,8 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-            //ad?.nowSelect = ad?.memList?[8]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[8]
-            print(ad?.memList)
         }
     }
     @IBAction func clickAtk2(_ sender: Any) {
@@ -513,6 +612,10 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[curIndex!] = temp
             print(memberList)
             
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
+            
             
             changeNum(label1: atk2N, label2: currentSelectedLabel)
             touched = false
@@ -522,6 +625,7 @@ class Data433 : UIViewController, NetworkCallback{
             memberListString[curIndex!] = tempString
 
             ad?.memList = self.memberList
+            ad?.memberIdList = self.memberIdList
         }
         else {//내가 처음 선택 됨
             //changedNum = GKN.text!
@@ -532,10 +636,8 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-            //ad?.nowSelect = ad?.memList?[9]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[9]
-            print(ad?.memList)
         }
     }
     @IBAction func clickAtk3(_ sender: Any) {
@@ -549,6 +651,10 @@ class Data433 : UIViewController, NetworkCallback{
             memberList[curIndex!] = temp
             print(memberList)
             
+            var temp1 : Int = memberIdList[myIndex!]
+            memberIdList[myIndex!] = memberIdList[curIndex!]
+            memberIdList[curIndex!] = temp1
+            
             changeNum(label1: atk3N, label2: currentSelectedLabel)
             touched = false
             
@@ -557,6 +663,7 @@ class Data433 : UIViewController, NetworkCallback{
             memberListString[curIndex!] = tempString
             
             ad?.memList = self.memberList
+            ad?.memberIdList = self.memberIdList
             
         }
         else {//내가 처음 선택 됨
@@ -568,10 +675,8 @@ class Data433 : UIViewController, NetworkCallback{
         }
         else{
             ad?.previousSelect = ad?.nowSelect
-            //ad?.nowSelect = ad?.memList?[10]
             ad?.memList = self.memberList
             ad?.nowSelect = ad?.memList?[10]
-            print(ad?.memList)
         }
     }
 }

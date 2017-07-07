@@ -60,34 +60,34 @@ class DataRecord433 : UIViewController, NetworkCallback{
     
     func networkResult(resultData: Any, code: String) {
         if code == "리포트플레이어공격"{
-            print("리포트")
+            print("리포트플레이어공격")
             atkList = resultData as! [DataReportATK]
             makeBakcNumberListATK()
 //            makeBakcNumberList()
         }
         if code == "리포트플레이어수비"{
-            print("리포트")
+            print("리포트플레이어수비")
             defList = resultData as! [DataReportDEF]
             makeBakcNumberListDEF()
             //            makeBakcNumberList()
         }
         
         if code == "리포트플레이어미드"{
-            print("리포트")
+            print("리포트플레이어미드")
             midList = resultData as! [DataReportMID]
             makeBakcNumberListMD()
             //            makeBakcNumberList()
         }
         
         if code == "리포트플레이어골키"{
-            print("리포트")
+            print("리포트플레이어골키")
             gkList = resultData as! [DataReportGK]
             makeBakcNumberListGK()
             //            makeBakcNumberList()
         }
         
         if code == "리포트플레이어서브"{
-            print("리포트")
+            print("리포트플레이어서브")
             subList = resultData as! [DataReportSUB]
             makeBakcNumberListSUB()
             //            makeBakcNumberList()

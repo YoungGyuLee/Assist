@@ -39,7 +39,7 @@ class DataTeamVC : UIViewController, NetworkCallback{
             
             teamName.text = profileList?.teamname
             //progressbase
-            progress1 = KDCircularProgress(frame: CGRect(x:141 , y: 277, width: progressbase.frame.size.width, height: progressbase.frame.size.height))
+            progress1 = KDCircularProgress(frame: CGRect(x:0 , y: 0, width: progressbase.frame.size.width, height: progressbase.frame.size.height))
             
             
             totalGame.text = profileList!.total_game?.description
@@ -47,14 +47,15 @@ class DataTeamVC : UIViewController, NetworkCallback{
             drawGame.text = (gino(profileList!.draw_game)).description
             loseGame.text = (gino(profileList!.lose_game)).description
             
-            progress1.angle = (Double(gino(profileList!.win_game!)))/(Double(gino(profileList!.total_game!)))*360
-            print(gino(profileList!.win_game))
-            print(gino(profileList!.total_game))
+
             if gino(profileList!.total_game) == 0 {
                 winRate.text = "0"
             }
             else{
             winRate.text = ((gino(profileList!.win_game))*100/(gino(profileList!.total_game))).description
+                progress1.angle = (Double(gino(profileList!.win_game!)))/(Double(gino(profileList!.total_game!)))*360
+                print(gino(profileList!.win_game))
+                print(gino(profileList!.total_game))
             }
             
             averageLost.text = ((Double(gino(profileList!.total_score_against!)))/(Double(gino(profileList!.total_game!)))).description

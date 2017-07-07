@@ -97,15 +97,42 @@ class DataTeamR4 : UIViewController, NetworkCallback{
     }
     
     
-
+//    1. 클라이언트에서 팀의 프로필 사진을 로드하는 url
+//    public IP/static/images/profileImg/team/[profile_pic_url]
+//    
+//    2, 클라이언트에서 선수의 프로필사진을 로드하는 url public public IP/public/images/profileImg/player/[profile_pic_url]
     
     override func viewDidLoad(){
+        goal1st.layer.cornerRadius = goal1st.frame.height/2
+        goal1st.layer.mask?.masksToBounds = true
+        
+        goal2nd.layer.cornerRadius = goal2nd.frame.height/2
+        goal2nd.layer.mask?.masksToBounds = true
+        
+        goal3rd.layer.cornerRadius = goal3rd.frame.height/2
+        goal3rd.layer.mask?.masksToBounds = true
+        
+        goal4th.layer.cornerRadius = goal4th.frame.height/2
+        goal4th.layer.mask?.masksToBounds = true
+        
+        assist1st.layer.cornerRadius = assist1st.frame.height/2
+        assist1st.layer.mask?.masksToBounds = true
+        
+        assist2nd.layer.cornerRadius = assist2nd.frame.height/2
+        assist2nd.layer.mask?.masksToBounds = true
+        
+        assisst3rd.layer.cornerRadius = assisst3rd.frame.height/2
+        assisst3rd.layer.mask?.masksToBounds = true
+        
+        assist4th.layer.cornerRadius = assist4th.frame.height/2
+        assist4th.layer.mask?.masksToBounds = true
+        
         let model = DataModel(self)
         model.getTeamSort(team_id: gino(ad?.myTeamId))
     
     }
     func getImgUrl(base : String) -> String{
-        let imgURL = ""
+        let imgURL = "http://13.124.136.174:3000/static/images/profileImg/player/\(base)"
         return imgURL
     }
 }

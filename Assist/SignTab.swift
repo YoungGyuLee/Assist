@@ -37,11 +37,9 @@ class SignTab : UITabBarController{
         let heightOfOneBtn = self.signTabBarView.frame.height
         
         tabBtn3.frame = CGRect(x: 13, y:21 , width: 32, height: 32)
-        tabBtn1.frame = CGRect(x: widthOfOneBtn, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
-        tabBtn2.frame = CGRect(x: widthOfOneBtn*2, y: 0, width: widthOfOneBtn, height: heightOfOneBtn)
+        tabBtn1.frame = CGRect(x: 80, y:21, width: 100, height: 32)
+        tabBtn2.frame = CGRect(x: 190, y:21, width: 100, height: 32)
         
-        //tabBtn3.backgroundImage.()
-        //tabBtn3.tintColor = uicolorFromHex(rgbValue: 0xffffff)
         tabBtn3.setBackgroundImage(#imageLiteral(resourceName: "left"), for: UIControlState.normal)
         
         //tabBtn3.setTitle("<<", for: UIControlState.normal)
@@ -49,7 +47,7 @@ class SignTab : UITabBarController{
         tabBtn1.tintColor = uicolorFromHex(rgbValue: 0xffffff)
     
         tabBtn2.setTitle("팀 창단", for: UIControlState.normal)
-        tabBtn1.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        tabBtn2.tintColor = uicolorFromHex(rgbValue: 0xffffff)
         
         
         tabBtn1.tag = 0
@@ -72,8 +70,8 @@ class SignTab : UITabBarController{
     func setAttributeTabBarButton(btn : UIButton){
         
         btn.addTarget(self, action: #selector(onBtnClick(sender:)), for: UIControlEvents.touchUpInside)
-        btn.setTitleColor(UIColor(red: 0.5, green: 0.5, blue: 0, alpha: 1), for: UIControlState.normal)
-        btn.setTitleColor(UIColor(red: 1, green: 1, blue: 0, alpha: 1), for: UIControlState.selected)
+        btn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.5), for: UIControlState.normal)
+        btn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: UIControlState.selected)
         self.signTabBarView.addSubview(btn)
     }
     

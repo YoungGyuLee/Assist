@@ -54,16 +54,6 @@ class TeamEntryMem : UIViewController, NetworkCallback, UITableViewDelegate, UIT
         //해당 셀 이름과 클래스 명시
         let memVO = memList[indexPath.row]
         
-//        @IBOutlet var backNum: UILabel!
-//        
-//        @IBOutlet var name: UILabel!
-//        @IBOutlet var age: UILabel!
-//        
-//        @IBOutlet var position: UILabel!
-//        @IBOutlet var gameDay: UILabel!
-//        @IBOutlet var goal: UILabel!
-//        @IBOutlet var assist: UILabel!
-        
         cell.age.text = memVO.age?.description
         cell.name.text = memVO.username
         cell.backNum.text = memVO.backnumber?.description
@@ -73,12 +63,6 @@ class TeamEntryMem : UIViewController, NetworkCallback, UITableViewDelegate, UIT
         cell.assist.text = memVO.assist?.description
         
         return cell
-        
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //테이블 셀 선택 이벤트.
-        
         
     }
     

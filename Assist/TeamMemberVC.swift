@@ -139,13 +139,4 @@ class TeamMemeberVC : UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
     }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
-
-    
-    
-    
 }

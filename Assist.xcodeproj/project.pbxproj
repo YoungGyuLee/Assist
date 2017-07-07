@@ -166,6 +166,17 @@
 		07FBB6C51F0E7B3E00AF4B3C /* DataPersonalMF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBB6C41F0E7B3E00AF4B3C /* DataPersonalMF.swift */; };
 		07FBB6C71F0E7B4800AF4B3C /* DataPersonalGK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBB6C61F0E7B4800AF4B3C /* DataPersonalGK.swift */; };
 		07FBB6C91F0E7B5500AF4B3C /* DataPersonalSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBB6C81F0E7B5500AF4B3C /* DataPersonalSub.swift */; };
+		07FBB6CC1F0F5E2600AF4B3C /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FBB6CB1F0F5E2600AF4B3C /* MyPage.storyboard */; };
+		07FBB6CE1F0F5E3400AF4B3C /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBB6CD1F0F5E3400AF4B3C /* MyPageVC.swift */; };
+		07FBB6D01F0F5E4000AF4B3C /* MyPageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBB6CF1F0F5E4000AF4B3C /* MyPageResult.swift */; };
+		07FBB6D21F0F5E4E00AF4B3C /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBB6D11F0F5E4E00AF4B3C /* MyPageResponse.swift */; };
+		07FBB6D41F0F988200AF4B3C /* splash.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07FBB6D31F0F988200AF4B3C /* splash.gif */; };
+		07FBB6DC1F0FC00B00AF4B3C /* 윤고딕310.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07FBB6D61F0FC00B00AF4B3C /* 윤고딕310.ttf */; };
+		07FBB6DD1F0FC00B00AF4B3C /* 윤고딕320.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07FBB6D71F0FC00B00AF4B3C /* 윤고딕320.ttf */; };
+		07FBB6DE1F0FC00B00AF4B3C /* 윤고딕330.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07FBB6D81F0FC00B00AF4B3C /* 윤고딕330.ttf */; };
+		07FBB6DF1F0FC00B00AF4B3C /* 윤고딕340.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07FBB6D91F0FC00B00AF4B3C /* 윤고딕340.ttf */; };
+		07FBB6E01F0FC00B00AF4B3C /* 윤고딕350.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07FBB6DA1F0FC00B00AF4B3C /* 윤고딕350.ttf */; };
+		07FBB6E11F0FC00B00AF4B3C /* 윤고딕360.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07FBB6DB1F0FC00B00AF4B3C /* 윤고딕360.ttf */; };
 		07FE3E181F0D1BF500D528E1 /* DataDSResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FE3E171F0D1BF500D528E1 /* DataDSResult.swift */; };
 		07FE3E1A1F0D1C1700D528E1 /* DataDSAtk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FE3E191F0D1C1700D528E1 /* DataDSAtk.swift */; };
 		07FE3E1C1F0D1C1F00D528E1 /* DataDSDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FE3E1B1F0D1C1F00D528E1 /* DataDSDef.swift */; };
@@ -339,6 +350,17 @@
 		07FBB6C41F0E7B3E00AF4B3C /* DataPersonalMF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersonalMF.swift; sourceTree = "<group>"; };
 		07FBB6C61F0E7B4800AF4B3C /* DataPersonalGK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersonalGK.swift; sourceTree = "<group>"; };
 		07FBB6C81F0E7B5500AF4B3C /* DataPersonalSub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersonalSub.swift; sourceTree = "<group>"; };
+		07FBB6CB1F0F5E2600AF4B3C /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		07FBB6CD1F0F5E3400AF4B3C /* MyPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		07FBB6CF1F0F5E4000AF4B3C /* MyPageResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageResult.swift; sourceTree = "<group>"; };
+		07FBB6D11F0F5E4E00AF4B3C /* MyPageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
+		07FBB6D31F0F988200AF4B3C /* splash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = splash.gif; path = ../../../../Downloads/splash.gif; sourceTree = "<group>"; };
+		07FBB6D61F0FC00B00AF4B3C /* 윤고딕310.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "윤고딕310.ttf"; sourceTree = "<group>"; };
+		07FBB6D71F0FC00B00AF4B3C /* 윤고딕320.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "윤고딕320.ttf"; sourceTree = "<group>"; };
+		07FBB6D81F0FC00B00AF4B3C /* 윤고딕330.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "윤고딕330.ttf"; sourceTree = "<group>"; };
+		07FBB6D91F0FC00B00AF4B3C /* 윤고딕340.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "윤고딕340.ttf"; sourceTree = "<group>"; };
+		07FBB6DA1F0FC00B00AF4B3C /* 윤고딕350.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "윤고딕350.ttf"; sourceTree = "<group>"; };
+		07FBB6DB1F0FC00B00AF4B3C /* 윤고딕360.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "윤고딕360.ttf"; sourceTree = "<group>"; };
 		07FE3E171F0D1BF500D528E1 /* DataDSResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDSResult.swift; sourceTree = "<group>"; };
 		07FE3E191F0D1C1700D528E1 /* DataDSAtk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDSAtk.swift; sourceTree = "<group>"; };
 		07FE3E1B1F0D1C1F00D528E1 /* DataDSDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDSDef.swift; sourceTree = "<group>"; };
@@ -390,6 +412,7 @@
 		0706B1C21F0117B300ACE4A1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				07FBB6CA1F0F5E0200AF4B3C /* MyName */,
 				078BCC361F0C2D9800246FE6 /* Rank */,
 				0706B1D11F011A0300ACE4A1 /* Data */,
 				0706B1D01F0119FD00ACE4A1 /* Card */,
@@ -536,6 +559,7 @@
 		070BDE841EFFF8BE0052FA77 = {
 			isa = PBXGroup;
 			children = (
+				07FBB6D31F0F988200AF4B3C /* splash.gif */,
 				070BDE8F1EFFF8BE0052FA77 /* Assist */,
 				070BDE8E1EFFF8BE0052FA77 /* Products */,
 				336D041AA4772F0E893DEAEC /* Pods */,
@@ -554,6 +578,7 @@
 		070BDE8F1EFFF8BE0052FA77 /* Assist */ = {
 			isa = PBXGroup;
 			children = (
+				07FBB6D51F0FBFE900AF4B3C /* Resources */,
 				0709E5421F0A4F84006CFB7F /* Network */,
 				0706B1C21F0117B300ACE4A1 /* Main */,
 				0706B1BD1F01177400ACE4A1 /* SplashLogin */,
@@ -690,6 +715,30 @@
 			name = DataRootsPersonal;
 			sourceTree = "<group>";
 		};
+		07FBB6CA1F0F5E0200AF4B3C /* MyName */ = {
+			isa = PBXGroup;
+			children = (
+				07FBB6CB1F0F5E2600AF4B3C /* MyPage.storyboard */,
+				07FBB6CD1F0F5E3400AF4B3C /* MyPageVC.swift */,
+				07FBB6CF1F0F5E4000AF4B3C /* MyPageResult.swift */,
+				07FBB6D11F0F5E4E00AF4B3C /* MyPageResponse.swift */,
+			);
+			name = MyName;
+			sourceTree = "<group>";
+		};
+		07FBB6D51F0FBFE900AF4B3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07FBB6D61F0FC00B00AF4B3C /* 윤고딕310.ttf */,
+				07FBB6D71F0FC00B00AF4B3C /* 윤고딕320.ttf */,
+				07FBB6D81F0FC00B00AF4B3C /* 윤고딕330.ttf */,
+				07FBB6D91F0FC00B00AF4B3C /* 윤고딕340.ttf */,
+				07FBB6DA1F0FC00B00AF4B3C /* 윤고딕350.ttf */,
+				07FBB6DB1F0FC00B00AF4B3C /* 윤고딕360.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		336D041AA4772F0E893DEAEC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,11 +822,19 @@
 				0706B1D71F011D6300ACE4A1 /* Data.storyboard in Resources */,
 				070BDE9B1EFFF8BE0052FA77 /* LaunchScreen.storyboard in Resources */,
 				078BCC3A1F0C2DF200246FE6 /* Rank.storyboard in Resources */,
+				07FBB6DF1F0FC00B00AF4B3C /* 윤고딕340.ttf in Resources */,
 				0706B1BC1F00D66D00ACE4A1 /* SplashLogin.storyboard in Resources */,
+				07FBB6E11F0FC00B00AF4B3C /* 윤고딕360.ttf in Resources */,
+				07FBB6E01F0FC00B00AF4B3C /* 윤고딕350.ttf in Resources */,
+				07FBB6DC1F0FC00B00AF4B3C /* 윤고딕310.ttf in Resources */,
+				07FBB6DD1F0FC00B00AF4B3C /* 윤고딕320.ttf in Resources */,
+				07FBB6CC1F0F5E2600AF4B3C /* MyPage.storyboard in Resources */,
 				070BDE981EFFF8BE0052FA77 /* Assets.xcassets in Resources */,
 				070BDE961EFFF8BE0052FA77 /* Main.storyboard in Resources */,
 				07E974061F02075500728D21 /* Card.storyboard in Resources */,
 				0706B1D31F011A2200ACE4A1 /* Team.storyboard in Resources */,
+				07FBB6D41F0F988200AF4B3C /* splash.gif in Resources */,
+				07FBB6DE1F0FC00B00AF4B3C /* 윤고딕330.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,6 +972,7 @@
 				07FBB6C71F0E7B4800AF4B3C /* DataPersonalGK.swift in Sources */,
 				07FBB6B01F0E5B0C00AF4B3C /* DataPersonalNoattendAf.swift in Sources */,
 				0707BADC1F04CA9C006AD50F /* DataDetail.swift in Sources */,
+				07FBB6D01F0F5E4000AF4B3C /* MyPageResult.swift in Sources */,
 				07E6227F1F0CD1A70020C9FC /* TeamMemberResponse.swift in Sources */,
 				07F8BFDE1F03A382002CEA97 /* TeamMemberVC.swift in Sources */,
 				0707BAEA1F04EE77006AD50F /* DataTeamR2.swift in Sources */,
@@ -930,6 +988,7 @@
 				0709E5491F0A51CE006CFB7F /* SignSplashModel.swift in Sources */,
 				07AEED161F039264001D21AF /* SearchDataPacket.swift in Sources */,
 				07FE3E241F0D1C4300D528E1 /* DataDSSub.swift in Sources */,
+				07FBB6CE1F0F5E3400AF4B3C /* MyPageVC.swift in Sources */,
 				07086CED1F0B585F0017B83B /* TeamMonthResponse.swift in Sources */,
 				0707BAD61F04C5F7006AD50F /* DataPersonalVC.swift in Sources */,
 				0709E54E1F0A8ACA006CFB7F /* TeamProfileResult.swift in Sources */,
@@ -981,6 +1040,7 @@
 				07FE3E221F0D1C3A00D528E1 /* DataDSGk.swift in Sources */,
 				0709E5501F0A8B11006CFB7F /* TeamProfileResponse.swift in Sources */,
 				07FBB6C11F0E7AFF00AF4B3C /* DataPersonalATK.swift in Sources */,
+				07FBB6D21F0F5E4E00AF4B3C /* MyPageResponse.swift in Sources */,
 				0707BAD21F04C5E6006AD50F /* DataRecordVC.swift in Sources */,
 				070A12E81F03BF1C00CAD26B /* TeamTab.swift in Sources */,
 				07FBB6961F0E040C00AF4B3C /* DataTeamMonthResponse.swift in Sources */,

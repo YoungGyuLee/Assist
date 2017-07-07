@@ -46,6 +46,9 @@ class TeamScheduleAdd : UIViewController{
 
     }
     
+    
+    
+    
     func getDate(date : Date){
         self.date = date
     }//인터페이스가 갖고 있는 함수.

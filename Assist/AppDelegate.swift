@@ -62,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var profile_pic : Any?
     
     
+    
+    
+    
+    
     //여기는 날짜 넘기기
     var date : Date?
     
@@ -85,6 +89,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var previousSelect : Int?
     //이전에 선택한 선수 등번호.
     
+    
+    //지금 선택한 이름
+    var nowSelectName : String?
+    var previousName : String?
+    
+    //지금 현재 등번호열
+    var memberIdList : [Int]?
+    
+    //지금 현재 리스트배열
+    var memberListString : [Int:String]?
+    
+    //서브배열.
+    var memberSubList : [Int]?
+    var memberSubName : [String]?
+    var memberSubId : [Int]?
     
     
     //전술 등록 때 쓰는 스케줄.

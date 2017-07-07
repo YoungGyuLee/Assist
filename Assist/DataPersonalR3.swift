@@ -91,20 +91,24 @@ class DataPersonalR3 : UIViewController, NetworkCallback{
         var totalGame : Int
         
         totalGame = gino(df?.total_game)
+        if totalGame>0 {
         dgNoLost = gino(df?.no_score_against) + gino(gk?.no_score_against)
-     //   dgAvgLost = (gino(df?.score_against_team) + gino(gk?.score_against_team))/totalGame
+        dgAvgLost = (gino(df?.score_against_team) + gino(gk?.score_against_team))/totalGame
         dgAvgScore = (gino(df?.score) + gino(gk?.score))/totalGame
-        
-        
-        
-        
-        
-            
-            
-            
+        }
+
     }
     
+    
+    @IBOutlet var atkView: UIView!
+    @IBOutlet var mfView: UIView!
+    @IBOutlet var dfView: UIView!
+    
     override func viewDidLoad(){
+        atkView.layer.cornerRadius = 4
+        mfView.layer.cornerRadius = 4
+        dfView.layer.cornerRadius = 4
+        
         let model = DataModel(self)
         model.getUserPositionData(player_id: gino(ad?.userId))
     }

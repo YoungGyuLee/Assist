@@ -48,6 +48,7 @@ class SignBaseVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDel
         checkText.delegate = self
         checkText.tag = 3
         
+        //틴트가 커서.
         nameText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
         emailText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
         passwordText.tintColor = uicolorFromHex(rgbValue: 0xffffff)
@@ -119,13 +120,18 @@ class SignBaseVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDel
     }
     
     @IBAction func toSignDetail(_ sender: Any) {
-        guard let signDetail = storyboard?.instantiateViewController(withIdentifier: "SignDetailVC") as? SignDetailVC else {return}
+        guard let signTab = storyboard?.instantiateViewController(withIdentifier: "SignTabVC") as? SignTab else {return}
+        let ad = UIApplication.shared.delegate as? AppDelegate
+        ad?.username = gsno(nameText.text)
+        ad?.email = gsno(emailText.text)
+        ad?.password = gsno(passwordText.text)
         
-        signDetail.name = nameText.text
-        signDetail.email = emailText.text
-        signDetail.password = passwordText.text
         
-        navigationController?.pushViewController(signDetail, animated: true)
+//        signDetail.name = nameText.text
+//        signDetail.email = emailText.text
+//        signDetail.password = passwordText.text
+        
+        navigationController?.pushViewController(signTab, animated: true)
         
         //self.present(signDetail, animated: true, completion: {})
         

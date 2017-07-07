@@ -63,9 +63,44 @@ class DataPersonalR1 : UIViewController, NetworkCallback{
             avgLost.text = (Float(gino(userNoaffect?.score_against_team))/Float(gino(userNoaffect?.total_game))).description
         }
     }
+    
+    
+    @IBOutlet var totalView: UIView!
+    
+    @IBOutlet var scoreView: UIView!
+    
+    @IBOutlet var assistView: UIView!
 
+    @IBOutlet var lostView: UIView!
+    
+    @IBOutlet var attendView: UIView!
+    
+    
+    @IBOutlet var noattendView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        coachText.layer.borderWidth = 1
+//        coachText.layer.borderColo = uicolorFromHex(rgbValue: 0x46B2CE)
+        
+        
+        totalView.layer.cornerRadius = totalView.frame.height/2
+        totalView.layer.mask?.masksToBounds = true
+        
+        scoreView.layer.cornerRadius = scoreView.frame.height/2
+        scoreView.layer.mask?.masksToBounds = true
+        
+        assistView.layer.cornerRadius = assistView.frame.height/2
+        assistView.layer.mask?.masksToBounds = true
+        
+        lostView.layer.cornerRadius = lostView.frame.height/2
+        lostView.layer.mask?.masksToBounds = true
+        
+        
+        attendView.layer.cornerRadius = 4
+        noattendView.layer.cornerRadius = 4
+        
         let model = DataModel(self)
         model.getUserAffect(player_id: gino(ad?.userId))
         

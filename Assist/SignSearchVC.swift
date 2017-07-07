@@ -72,19 +72,21 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     
     override func viewDidLoad() {
-        
-        
         //initData()
         searchTable.isHidden = true
         searchTable.delegate = self
         searchTable.dataSource = self
         
-        
         teamText.delegate = self
         teamText.tag = 0
-        
+        teamText.layer.borderWidth = 1
+        //teamText.layer.borderColor = uicolorFromHex(rgbValue: 0x46B2CE) as! CGColor
+
         coachText.delegate = self
         coachText.tag = 1
+        coachText.layer.borderWidth = 1
+        //coachText.layer.borderColor = uicolorFromHex(rgbValue: 0x46B2CE) as! CGColor
+        
         print("테이블 이제 시작")
         
         dropDownPlace.anchorView = placeText.self
@@ -93,9 +95,6 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         setEmpty.layer.cornerRadius = 4
         searchBtn.layer.cornerRadius = 4
-        
-        
-       // initData()
     }
     
     @IBAction func clickSetEmpty(_ sender: Any) {
@@ -162,12 +161,8 @@ class SignSearchVC : UIViewController, UITableViewDelegate, UITableViewDataSourc
         print(searchVO.id)
         print("들어옴1")
 
-        navigationController?.present(dvc, animated:false, completion:{})
+        navigationController?.pushViewController(dvc, animated:false)
         searchTable.deselectRow(at: indexPath, animated: false)
 
-        
-        
     }
-    
-    
 }

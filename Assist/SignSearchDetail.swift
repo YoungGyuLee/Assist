@@ -72,6 +72,6 @@ class SignSearchDetail : UIViewController{
     
     //vieWillAppear
     @IBAction func back(_ sender: Any) {
-        dismiss(animated: false, completion: {})
+        //dismiss(animated: false, completion: {})
     }
 }

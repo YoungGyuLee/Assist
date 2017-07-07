@@ -43,8 +43,6 @@ class DataResult : UIViewController,UICollectionViewDataSource, UICollectionView
     
     @IBOutlet var scrollVIew: UIScrollView!
     override func viewDidLoad(){
-        scrollVIew.isScrollEnabled = false
-        
         recordData.delegate = self
         recordData.dataSource = self
         

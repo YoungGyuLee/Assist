@@ -17,6 +17,10 @@ class DataTeamR2 : UIViewController, NetworkCallback{
     var forthPotin2 = CGPoint()
     var teamMonthResponse : [DataTeamMonthResponse]?
     
+    @IBOutlet var markDraw: UIImageView!
+    @IBOutlet var markVic: UIImageView!
+    
+    
     var scoreForMonth : [Int:Int] = [:]
     var lostForMonth : [Int:Int] = [:]
     
@@ -62,6 +66,12 @@ class DataTeamR2 : UIViewController, NetworkCallback{
     }
     
       override func viewDidLoad(){
+        markDraw.layer.cornerRadius = markDraw.frame.height/2
+        markVic.layer.cornerRadius = markVic.frame.height/2
+        
+        
+        
+        
         let model = DataModel(self)
         model.getMonthReport(team_id: gino(ad?.myTeamId))
         print(gino(ad?.myTeamId))

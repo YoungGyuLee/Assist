@@ -12,6 +12,7 @@ import UIKit
 class SignTemp : UIViewController{
     override func viewDidLoad() {
         self.navigationController?.isNavigationBarHidden = true
+        dismiss(animated: true, completion: {})
     }
     override func viewWillAppear(_ animated: Bool) {
 //        print("comeTOHere")
@@ -20,7 +21,7 @@ class SignTemp : UIViewController{
 //        self.present(signDetail, animated: true, completion: {})
         //navigationController?.popViewController(animated: true)
         
-         dismiss(animated: true, completion: {})
+         
         
     }
     

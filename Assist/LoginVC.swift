@@ -15,7 +15,6 @@ class LoginVC : UIViewController, UITextFieldDelegate, NetworkCallback{
     
     @IBOutlet var loginBtn: UIButton!//커스텀 로그인
     @IBOutlet var facebookBtn: UIButton!//페북 로그인
-    @IBOutlet var kakoBtn: UIButton!//카카오 로그인
     @IBOutlet var signBtn: UIButton!//회원가입
     
     @IBOutlet var forgetPwd: UITextView!
@@ -59,6 +58,7 @@ class LoginVC : UIViewController, UITextFieldDelegate, NetworkCallback{
         //self.view.addSubview(barItem)
         emailText.delegate = self
         emailText.tag = 0
+        //emailText.textColor.
         
         passwordText.delegate = self
         passwordText.tag = 1
@@ -89,7 +89,6 @@ class LoginVC : UIViewController, UITextFieldDelegate, NetworkCallback{
         //loginBtn.frame.
         loginBtn.layer.cornerRadius = 4
         facebookBtn.layer.cornerRadius = 4
-        kakoBtn.layer.cornerRadius = 4
         signBtn.layer.cornerRadius = 4
         signBtn.layer.borderColor = UIColor.init(red: 0.31, green: 0.62, blue: 0.8, alpha: 1).cgColor
         signBtn.layer.borderWidth = 2

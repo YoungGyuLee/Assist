@@ -11,7 +11,7 @@ import UIKit
 import DropDown
 
 
-class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate{
+class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate, NetworkCallback{
 
     var navBar: UINavigationBar = UINavigationBar()
     
@@ -56,9 +56,10 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
   
     @IBOutlet var selectedDetailPos: UILabel!
     
-    
+    var mainPositionKey : [String:String] = [:]
+    var mainDetailKey : [String:String] = [:]
     var main_data = ["", "수비수", "골키퍼", "공격수", "미드필더"]
-    var detail_data : [[String]] = [["수1","수2","수3"],["공1", "공2", "공3"], ["골키퍼"],["미1", "미2", "미3"]]
+    var detail_data : [[String]] = [["수1","수2","수3"],["스트라이커(ST)", "공2", "공3"], ["골키퍼"],["미1", "미2", "미3"]]
     
     
     @IBOutlet var userImage: UIImageView!
@@ -98,15 +99,13 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         self.navBar.setItems([back], animated: false)
         self.view.addSubview(navBar)
         
-        //userImage.image.layer.cornerRadius
-        
-       // userImage.image?.accessibilityFrame.cor
+
         
         toNext.layer.cornerRadius = 4
         
         userImage.layer.cornerRadius = userImage.frame.size.height/2
         userImage.layer.mask?.masksToBounds = true
-        //imageview.layer.masktobounds
+ 
         
         userImageSelect.layer.cornerRadius = userImageSelect.frame.size.height/2
         userImageSelect.layer.mask?.masksToBounds = true
@@ -163,6 +162,27 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
 
     
     override func viewDidLoad() {
+        
+        print("얍")
+        
+        // = ["공격수":"ATK", "미드필더":"MF", "수비수:DF", "골키퍼:GK"]
+        mainPositionKey["공격수"] = "ATK"
+        mainPositionKey["미드필더"] = "MF"
+        mainPositionKey["골키퍼"] = "GK"
+        mainPositionKey["수비수"] = "DF"
+        print("얍")
+        mainDetailKey["중앙수비수(CB)"] = "CB"
+        mainDetailKey["측면수비수(FB)"] = "FB"
+        mainDetailKey["윙백(WB)"] = "WB"
+        mainDetailKey["골키퍼(GK)"] = "GK"
+        mainDetailKey["스트라이커(ST)"] = "ST"
+        mainDetailKey["윙포워드(WF)"] = "WF"
+        mainDetailKey["센터포워드(CF)"] = "CF"
+        mainDetailKey["공격형미드필더(AM)"] = "AM"
+        mainDetailKey["수비형미드필더(DM)"] = "DM"
+        mainDetailKey["윙어(WM)"] = "WM"
+        
+        print("얍")        
         print("이미지 들어옴요2")
         self.view.isUserInteractionEnabled = true
         ageText.delegate = self
@@ -197,22 +217,22 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         dropDownMain.anchorView = mainPosition.self
         dropDownMain.dataSource = ["", "공격수", "수비수", "미드필더", "골키퍼"]
         dropDownMain.direction = .bottom
-
         
         dropDownDetailAttack.anchorView = detailPosition.self
-        dropDownDetailAttack.dataSource = ["공1","공2","공3"]
+        dropDownDetailAttack.dataSource = ["스트라이커(ST)","윙포워드(WF)","센터포워드(CF)"]
         dropDownDetailAttack.direction = .bottom
         
         dropDownDetailDefense.anchorView = detailPosition.self
-        dropDownDetailDefense.dataSource = ["수1", "수2", "수3"]
+        dropDownDetailDefense.dataSource = ["중앙수비수(CB)", "측면수비수(FB)", "윙백(WB)"]
         dropDownDetailDefense.direction = .bottom
         
+   
         dropDownDetailMid.anchorView = detailPosition.self
-        dropDownDetailMid.dataSource = ["미1", "미2", "미3"]
+        dropDownDetailMid.dataSource = ["공격형미드필더(AM)", "수비형미드필더(DM)", "윙어(WM)"]
         dropDownDetailMid.direction = .bottom
         
         dropDownDetailGaolK.anchorView = detailPosition.self
-        dropDownDetailGaolK.dataSource = ["골키퍼"]
+        dropDownDetailGaolK.dataSource = ["골키퍼(GK)"]
         dropDownDetailGaolK.direction = .bottom
         
         dropDownMain.backgroundColor = uicolorFromHex(rgbValue: 0x165388)
@@ -245,30 +265,30 @@ class SignDetailVC : UIViewController, UIGestureRecognizerDelegate, UITextFieldD
         
         
     }
+    func networkResult(resultData: Any, code: String) {
+        
+    }
+    
+    
 
     @IBAction func toSignSearch(_ sender: Any) {
         let ad = UIApplication.shared.delegate as? AppDelegate
         if let image = userImage.image{
             let imageData = UIImageJPEGRepresentation(image, 0.5)
-            //imageData.
-            print(image)
-            print(imageData)
-            ad?.username = name
-            ad?.email = email
-            ad?.password = password
-            ad?.age = Int(ageText.text!)
-            ad?.height = Float(heightText.text!)
-            ad?.weight = Float(weightText.text!)
-            ad?.foot = mainFootText.text
-            ad?.position = self.mainPosition.titleLabel?.text
-            ad?.position_detail = self.detailPosition.titleLabel?.text
-            ad?.backnumber = Int(backNumText.text!)
-            //ad?.myTeamId = Int(backNumText.text!)
+
             ad?.profile_pic = imageData
             //ad?.age =
+            
+            let model = SignSplashModel(self)
+
+            model.signUp(username:gsno(ad?.username), email:gsno(ad?.email), password:gsno(ad?.password),age: gino(Int(ageText.text!)), height : gfno(Float(heightText.text!)), weight : gfno(Float(weightText.text!)), foot : gsno(mainFootText.text) ,position :  mainPositionKey[gsno(selectedPosition.text)]!,position_detail : mainDetailKey[gsno(selectedDetailPos.text)]!,backnumber : gino(ad?.backnumber), team_id : gino(ad?.myTeamId), profile_pic:userImage as! Data)
+        
+        
+        
+        
         }
         
-        
+ 
         
         guard let signTab = storyboard?.instantiateViewController(withIdentifier: "SignTabVC") as? SignTab else {return}
         navigationController?.present(signTab, animated: true, completion: {})
@@ -293,6 +313,8 @@ extension SignDetailVC : UINavigationControllerDelegate, UIImagePickerController
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         var newImage: UIImage
+        
+        
         
         if let possibleImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
             // UIImagePickerControllerEditedImage 이미지가 수정된 경우 수정된 이미지를 전달합니다

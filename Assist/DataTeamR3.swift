@@ -34,18 +34,19 @@ class DataTeamR3 : UIViewController, NetworkCallback, UITableViewDelegate, UITab
         let cell = taticRecord.dequeueReusableCell(withIdentifier: "DataTacTicCell") as! DataTacTicCell
         //해당 셀 이름과 클래스 명시
         let tacticVO = taticList[indexPath.row]
-        //'tactic': '4-5-1',
-        //'total_game': 5,
-        //'win_game': 999,
-        //'draw_game': 999,
-        //'lose_game': 999
+
         cell.tactic.text = tacticVO.tactic
         cell.total_game.text = tacticVO.total_game?.description
         cell.win_game.text = tacticVO.win_game?.description
         cell.draw_game.text = tacticVO.draw_game?.description
         cell.lose_game.text = tacticVO.lose_game?.description
-//        cell.win_rate.text = ((gino(tacticVO.win_game))*100/(gino(tacticVO.total_game))).description
         
+        if tacticVO.total_game != 0{
+            cell.win_rate.text = Float((gino(tacticVO.win_game))*100/(gino(tacticVO.total_game))).description
+        }
+        else{
+            cell.win_rate.text = "0"
+        }
         
         return cell
         

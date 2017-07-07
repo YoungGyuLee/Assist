@@ -32,7 +32,7 @@ class DataPeronalRoot : UIPageViewController, UIPageViewControllerDataSource, UI
         pageControl = UIPageControl(frame: CGRect(x: 170, y: view.frame.height/2-36, width: 13, height: 13))
         pageControl?.numberOfPages = pageIndex.count
         pageControl?.pageIndicatorTintColor = UIColor.gray
-        pageControl?.currentPageIndicatorTintColor = UIColor.red;
+        pageControl?.currentPageIndicatorTintColor = UIColor.yellow;
         view.addSubview(pageControl!)
     }
     

@@ -147,61 +147,74 @@ class DataModel : NetworkModel{
         
         let URL : String = "\(baseURL)/schedule/\(schedule_id)/report"
 
-        
+        print(player_id)
         let seperate = tactic.components(separatedBy: "-")
         //4.3.3
         print("등록3")
         var GK : [Any] = []
-        for i in 0...(Int(seperate[0])!-1){
-            let gk : [String:Int] = ["player_id":gino(player_id[i])]
-            GK.append(gk)
+        for i in 0...0 {
+            let gk : [String:Any] = ["player_id":gino(player_id[i])]
+            GK.append(gk as AnyObject)
+            
             print("등록4")
         }
         
+        print(GK)
         
         var DF : [Any] = []
         for i in 0...(Int(seperate[0])!-1){
-            let def : [String:Int] = ["player_id":gino(player_id[i+1])]
+            let def : [String:Any] = ["player_id":gino(player_id[i+1])]
             DF.append(def)
             print("등록5")
         }
-        
+        print(DF)
         var MF:[Any] = []
         for i in 0...(Int(seperate[1])!-1){
-            let mf : [String:Int] = ["player_id":gino(player_id[Int(seperate[0])!+i]+1)]
+            let mf : [String:Any] = ["player_id":gino(player_id[Int(seperate[0])!+i+1])]
             MF.append(mf)
             print("등록6")
         }
-        
+        print(MF)
         var ATK:[Any] = []
         for i in 0...(Int(seperate[2])!-1){
-            let atk : [String:Int] = ["player_id":gino(player_id[Int(seperate[1])!+i]+1)]
-            MF.append(atk)
+            let atk : [String:Any] = ["player_id":gino(player_id[Int(seperate[0])!+Int(seperate[1])!+i+1])]
+            ATK.append(atk)
             print("등록7")
         }
+        print(ATK)
         
         var SUB:[Any] = []
-        for i in 0...player_id.count-12 {
-            let sub : [String:Int] = ["player_id":gino(player_id[i+11])]
+        for i in 0...0{
+            let sub : [String:Any] =  ["player_id":42]
             SUB.append(sub)
-            print("등록8")
+           
         }
+        
+//        for i in 0...player_id.count-12 {
+//            let sub : [String:Int] = ["player_id":gino(player_id[i+11])]
+//            SUB.append(sub)
+//            print("등록8")
+//        }
         //여기까지 player
         
         var Event : [Any] = []
         for i in 0...(eventTemp.count-1){
             print("등록9")
-            let event : [String:Any] = ["type":gsno(eventTemp[i].type), "player_id":gino(eventTemp[i].player_id), "player_id2":gino(eventTemp[i].player_id2)]
+            let event : [String:Any] = ["type":gsno(eventTemp[i].type), "player_id":gino(eventTemp[i].player_id)]
             Event.append(event)
             
         }
         
-        let player : [String:Any] = [
-            "ATK" : ATK,
-            "MF" : MF,
-            "DF" : DF,
-            "GK" : GK,
-            "SUB" : SUB
+        var Event2 : [String:Any] = [
+            "Event" : Event
+            ]
+        print(GK, ATK, Event)
+        let player : [String:AnyObject] = [
+            "ATK" : ATK as AnyObject,
+            "MF" : MF as AnyObject,
+            "DF" : DF as AnyObject,
+            "GK" : GK as AnyObject,
+            "SUB" : SUB as AnyObject
         ]
         
         let body : [String:Any]=[
@@ -451,9 +464,7 @@ class DataModel : NetworkModel{
         let URL : String = "\(baseURL)/player/\(player_id)/report/month"
        //player/[player_id]/report/month
         print("개인월별기록 인")
-        
         //player/[player_id]
-        
         print(URL)
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject{
             

@@ -35,7 +35,7 @@ class DataPersonalVC : UIViewController, NetworkCallback{
         if code == "개인일반"{
             userData = resultData as! DataPersonalResponse
             
-            let URL = "http://13.124.136.174:3000/static/images/profileImg/player/\(gsno(userData?.profile_pic_url))"
+            let URL = ""
             
             userProfile.imageFromUrl(URL, defaultImgPath: "symbol")
             
@@ -55,7 +55,7 @@ class DataPersonalVC : UIViewController, NetworkCallback{
         }
         if code == "팀프로필" {
             teamData = resultData as! TeamProfileResponse
-            let URL = "http://13.124.136.174:3000/static/images/profileImg/team/FC/\(gsno(teamData?.profile_pic_url))"
+            let URL = ""
             teamProfile.imageFromUrl(URL, defaultImgPath: "symbol")
             teamName.text = gsno(teamData?.teamname)
             
